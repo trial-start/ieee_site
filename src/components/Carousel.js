@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 
-const ImageCarousel = ({ val }) => {
+const ImageCarousel = ({ val,imgs=['tem.jpg','temp.jpg']}) => { 
   const carouselStyle = {
     paddingTop: val === "x" ? "" : "56px", // Adjust the value based on your NavBar height
   };
@@ -9,7 +9,7 @@ const ImageCarousel = ({ val }) => {
   return (
     <Carousel style={carouselStyle} interval={3000} className="custom1">
       <Carousel.Item>
-        <img className="d-block w-100" src="images/tem.jpg" alt="First slide" />
+        <img className="d-block w-100" src={`images/${imgs[0]}`} alt="First slide" />
         <Carousel.Caption>
           <h3>Slide 1</h3>
           <p>Description for Slide 1</p>
@@ -19,7 +19,7 @@ const ImageCarousel = ({ val }) => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/1100x500"
+          src={`images/${imgs[1]}`} 
           alt="Second slide"
         />
         <Carousel.Caption>

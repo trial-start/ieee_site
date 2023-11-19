@@ -3,13 +3,25 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./PageNotFound";
 import ComputerSociety from "./ComputerSociety";
+import SignalProcessingSociety from "./SignalProcessingSociety";
+import CircuitsAndSystemsSociety from "./CircuitsAndSystemsSociety";
+import RoboticsAutomationSociety from "./RoboticsAutomationSociety";
+import WomenEngineeringSociety from "./WomenEngineeringSociety";
+import EducationSociety from "./EducationSociety";
+import PowerEnergySociety from "./PowerEnergySociety";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="computer-society" element={<ComputerSociety />} />
+        <Route path="computer-society" element={<ComputerSociety imgs={['tem.jpg','image1.jpeg']} />} />
+        <Route path="signal-processing-society" element={<SignalProcessingSociety/>} />
+        <Route path="circuits-systems-society" element={<CircuitsAndSystemsSociety/>} />
+        <Route path="robotics-automation-society" element={<RoboticsAutomationSociety/>} />
+        <Route path="women-engineering-society" element={<WomenEngineeringSociety/>} />
+        <Route path="education-society" element={<EducationSociety/>} />
+        <Route path="power-energy-society" element={<PowerEnergySociety/>} />
         <Route path="*" element={<PageNotFound />}/>
       </Routes>
     </BrowserRouter>

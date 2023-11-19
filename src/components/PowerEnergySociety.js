@@ -4,12 +4,12 @@ import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 
-const ComputerSociety = ({imgs}) => {
+const PowerEnergySociety = ({imgs}) => {
   return (
     <div>
       <NavBar />
       <section className="society-section">
-        <h2 className="section-heading">Computer Society</h2>
+        <h2 className="section-heading">Power and Energy Society</h2>
         <Carousel val="x" imgs={imgs}/>
         <p className="section-description">
           Sure. Here are small descriptions of the following societies which are
@@ -36,4 +36,4 @@ const ComputerSociety = ({imgs}) => {
   );
 };
 
-export default ComputerSociety;
+export default PowerEnergySociety;

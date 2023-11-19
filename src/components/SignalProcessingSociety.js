@@ -4,13 +4,13 @@ import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 
-const ComputerSociety = ({imgs}) => {
+const SignalProcessingSociety = () => {
   return (
     <div>
       <NavBar />
       <section className="society-section">
-        <h2 className="section-heading">Computer Society</h2>
-        <Carousel val="x" imgs={imgs}/>
+        <h2 className="section-heading">Signal Processing Society</h2>
+        <Carousel val="x" />
         <p className="section-description">
           Sure. Here are small descriptions of the following societies which are
           part of the IEEE club: Computer Society Computer Society logoOpens in
@@ -36,4 +36,4 @@ const ComputerSociety = ({imgs}) => {
   );
 };
 
-export default ComputerSociety;
+export default SignalProcessingSociety  ;

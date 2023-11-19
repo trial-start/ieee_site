@@ -225,6 +225,18 @@ h3 {
 @media (max-width: 600px) {
   /* Adjust the max-width value based on your desired breakpoint for mobile screens */
   .carousel{
-    margin-top: 40px ;
+    margin-top: 4% ;
   }
+}
+
+
+a {
+  text-decoration: none; /* Remove underline for all links */
+  color: inherit; /* Inherit the default text color for links */
+  transition: color 0.3s ease; /* Add a smooth transition effect for color changes */
+}
+
+a:hover {
+  color: lightblue; /* Set the text color for links on hover */
+  text-decoration: none; /* Remove underline on hover for links */
 }
