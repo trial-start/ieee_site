@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import ImageCarousel from "./Carousel";
 import CoreTeam from "./CoreTeam";
 import NavBar from "./NavBar";
