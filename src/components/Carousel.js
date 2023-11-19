@@ -7,7 +7,7 @@ const ImageCarousel = ({ val }) => {
   };
 
   return (
-    <Carousel style={carouselStyle} interval={3000}>
+    <Carousel style={carouselStyle} interval={3000} className="custom1">
       <Carousel.Item>
         <img className="d-block w-100" src="images/tem.jpg" alt="First slide" />
         <Carousel.Caption>

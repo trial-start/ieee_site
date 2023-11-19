@@ -220,3 +220,11 @@ h3 {
 .cutom_margin {
   margin-top: 0px;
 }
+/* Add this CSS in your stylesheet or component style block */
+
+@media (max-width: 600px) {
+  /* Adjust the max-width value based on your desired breakpoint for mobile screens */
+  .carousel{
+    margin-top: 40px ;
+  }
+}
