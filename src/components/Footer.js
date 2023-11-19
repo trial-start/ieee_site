@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import ContactForm from "./ContactForm";
 
 const Footer = () => {
   return (
@@ -66,6 +67,7 @@ const Footer = () => {
               <i className="fab fa-twitter"></i> Twitter
             </a>
           </Col>
+          <ContactForm />
         </Row>
       </Container>
     </footer>

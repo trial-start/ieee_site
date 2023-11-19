@@ -15,14 +15,31 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="computer-society" element={<ComputerSociety imgs={['tem.jpg','image1.jpeg']} num="9"/>} />
-        <Route path="signal-processing-society" element={<SignalProcessingSociety num="7"/>} />
-        <Route path="circuits-systems-society" element={<CircuitsAndSystemsSociety/>} />
-        <Route path="robotics-automation-society" element={<RoboticsAutomationSociety/>} />
-        <Route path="women-engineering-society" element={<WomenEngineeringSociety/>} />
-        <Route path="education-society" element={<EducationSociety/>} />
-        <Route path="power-energy-society" element={<PowerEnergySociety/>} />
-        <Route path="*" element={<PageNotFound />}/>
+        <Route
+          path="computer-society"
+          element={
+            <ComputerSociety imgs={["tem.jpg", "image1.jpeg"]} num="9" />
+          }
+        />
+        <Route
+          path="signal-processing-society"
+          element={<SignalProcessingSociety num="7" />}
+        />
+        <Route
+          path="circuits-systems-society"
+          element={<CircuitsAndSystemsSociety />}
+        />
+        <Route
+          path="robotics-automation-society"
+          element={<RoboticsAutomationSociety />}
+        />
+        <Route
+          path="women-engineering-society"
+          element={<WomenEngineeringSociety />}
+        />
+        <Route path="education-society" element={<EducationSociety />} />
+        <Route path="power-energy-society" element={<PowerEnergySociety />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

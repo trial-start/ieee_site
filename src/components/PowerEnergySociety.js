@@ -4,13 +4,13 @@ import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 
-const PowerEnergySociety = ({imgs}) => {
+const PowerEnergySociety = ({ imgs, num }) => {
   return (
     <div>
-      <NavBar />
-      <section className="society-section">
+      <NavBar itemId="about" itemName="About" teamType="Team" />
+      <section className="society-section" id="about">
         <h2 className="section-heading">Power and Energy Society</h2>
-        <Carousel val="x" imgs={imgs}/>
+        <Carousel val="x" imgs={imgs} />
         <p className="section-description">
           Sure. Here are small descriptions of the following societies which are
           part of the IEEE club: Computer Society Computer Society logoOpens in
@@ -24,12 +24,12 @@ const PowerEnergySociety = ({imgs}) => {
           promotes diversity and inclusion in the computing field.
         </p>
       </section>
-      <section className="core-team-section">
-        <h2 className="section-heading">Core Team</h2>
+      <section className="core-team-section" id="coreteam">
+        <h2 className="section-heading">Team</h2>
         <p className="section-description">
-          Meet the dedicated members of our Computer Society's Core Team.
+          Meet the dedicated members of our Power and Energy Society's Team.
         </p>
-        <CoreTeam />
+        <CoreTeam num={num} />
       </section>
       <Footer />
     </div>

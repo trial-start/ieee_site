@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({ itemId, itemName, teamType }) => {
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
@@ -41,21 +42,23 @@ const NavBar = () => {
       expanded={expanded}
       style={{ transition: "top 0.7s" }}
     >
-      <Navbar.Brand href="#home">
-        <img
-          src="images/logo_n.jpg"
-          alt="IEEE Logo"
-          style={{ width: "170px", height: "60px", marginLeft: "15px" }}
-        />{" "}
+      <Navbar.Brand>
+        <Link to="/">
+          <img
+            src="images/logo_n.jpg"
+            alt="IEEE Logo"
+            style={{ width: "170px", height: "60px", marginLeft: "15px" }}
+          />{" "}
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto custom-nav">
-          <Nav.Link href="#societies" className="custom-margin">
-            Societies
+          <Nav.Link href={`#${itemId}`} className="custom-margin">
+            {itemName}
           </Nav.Link>
           <Nav.Link href="#coreteam" className="custom-margin">
-            CoreTeam
+            {teamType}
           </Nav.Link>
           <Nav.Link href="#contact1" className="custom-margin">
             Contact
