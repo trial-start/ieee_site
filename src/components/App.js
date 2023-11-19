@@ -1,6 +1,7 @@
 import HomePage from "./HomePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PageNotFound from "./PageNotFound";
 import ComputerSociety from "./ComputerSociety";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="computer-society" element={<ComputerSociety />} />
+        <Route path="*" element={<PageNotFound />}/>
       </Routes>
     </BrowserRouter>
   );
