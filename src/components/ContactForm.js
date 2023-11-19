@@ -17,12 +17,12 @@ const ContactForm = () => {
     e.preventDefault();
 
     // Use your own Email.js template and service IDs
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      to_name: "Your Recipient Name", // Update with your recipient's name
-      message_html: formData.message,
-    };
+    // const templateParams = {
+    //   from_name: formData.name,
+    //   from_email: formData.email,
+    //   to_name: "Your Recipient Name", // Update with your recipient's name
+    //   message_html: formData.message,
+    // };
 
     // Use your own Email.js service ID and user ID
     // emailjs.send(
