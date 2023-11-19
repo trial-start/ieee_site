@@ -34,7 +34,7 @@ export default function HomePage() {
         </div>
         <div className="section" id="coreteam">
           <h2 className="section-heading">Core Team</h2>
-          <CoreTeam />
+          <CoreTeam num="5"/>
           <hr className="section-divider" />
         </div>
 

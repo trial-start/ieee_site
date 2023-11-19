@@ -1,9 +1,9 @@
 import { Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Cards({ img, societyName, description,link }) {
   return (
     <Col>
-      <Link to={link}  style={{textDecoration:"none"}}>
+      <NavLink to={`/${link}`}  style={{textDecoration:"none"}}>
         <Card style={{ margin: "15px" }}>
           <Card.Img variant="top" src={img} style={{ height: "350px" }} />
           <Card.Body>
@@ -11,7 +11,7 @@ export default function Cards({ img, societyName, description,link }) {
             <Card.Text>{description}</Card.Text>
           </Card.Body>
         </Card>
-      </Link>
+      </NavLink>
     </Col>
   );
 }

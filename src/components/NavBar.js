@@ -51,13 +51,13 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto custom-nav">
-          <Nav.Link href="#home" className="custom-margin">
-            Home
+          <Nav.Link href="#societies" className="custom-margin">
+            Societies
           </Nav.Link>
-          <Nav.Link href="#about" className="custom-margin">
-            About
+          <Nav.Link href="#coreteam" className="custom-margin">
+            CoreTeam
           </Nav.Link>
-          <Nav.Link href="#contact" className="custom-margin">
+          <Nav.Link href="#contact1" className="custom-margin">
             Contact
           </Nav.Link>
         </Nav>

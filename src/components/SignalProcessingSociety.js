@@ -4,7 +4,7 @@ import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 
-const SignalProcessingSociety = () => {
+const SignalProcessingSociety = ({num,imgs}) => {
   return (
     <div>
       <NavBar />
@@ -29,7 +29,7 @@ const SignalProcessingSociety = () => {
         <p className="section-description">
           Meet the dedicated members of our Computer Society's Core Team.
         </p>
-        <CoreTeam />
+        <CoreTeam num={num}/>
       </section>
       <Footer />
     </div>
