@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-// import emailjs from "emailjs-com";
+ import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -17,20 +17,20 @@ const ContactForm = () => {
     e.preventDefault();
 
     // Use your own Email.js template and service IDs
-    // const templateParams = {
-    //   from_name: formData.name,
-    //   from_email: formData.email,
-    //   to_name: "Your Recipient Name", // Update with your recipient's name
-    //   message_html: formData.message,
-    // };
+    const templateParams = {
+     from_name: formData.name,
+     from_email: formData.email,
+      to_name: "Your Recipient Name", // Update with your recipient's name
+     message_html: formData.message,
+     };
 
     // Use your own Email.js service ID and user ID
-    // emailjs.send(
-    //   "service_tdrt432",
-    //   "template_tb1c1ym",
-    //   templateParams,
-    //   "2pWMiPSLQ8WR-SfSF"
-    // );
+    emailjs.send(
+     "service_tdrt432",
+     "template_tb1c1ym",
+     templateParams,
+     "2pWMiPSLQ8WR-SfSF"
+   );
 
     // After sending the email, you may want to reset the form
     setFormData({
