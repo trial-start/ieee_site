@@ -27,7 +27,12 @@ const ContactForm = () => {
 
     // Use your own Email.js service ID and user ID
     emailjs
-      .send("service_tdrt432", "template_tb1c1ym", templateParams, "2pWMiPSLQ8WR-SfSF")
+      .send(
+        "service_tdrt432",
+        "template_tb1c1ym",
+        templateParams,
+        "2pWMiPSLQ8WR-SfSF"
+      )
       .then((response) => {
         console.log("Email sent successfully:", response);
 
@@ -59,12 +64,20 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-5 bg-dark text-white" style={{ minHeight: "60vh" }}>
+    <section
+      id="contact"
+      className="py-5  text-white cust_bg_color"
+      style={{ minHeight: "60vh" }}
+    >
       <Container>
         <h1 className="text-center mb-5">Contact Us</h1>
         <div className="col-md-6 mx-auto">
           {alert && (
-            <Alert variant={alert.variant} onClose={() => setAlert(null)} dismissible>
+            <Alert
+              variant={alert.variant}
+              onClose={() => setAlert(null)}
+              dismissible
+            >
               {alert.message}
             </Alert>
           )}

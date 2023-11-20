@@ -224,11 +224,10 @@ h3 {
 
 @media (max-width: 600px) {
   /* Adjust the max-width value based on your desired breakpoint for mobile screens */
-  .carousel{
-    margin-top: 4% ;
+  .carousel {
+    margin-top: 4%;
   }
 }
-
 
 a {
   text-decoration: none; /* Remove underline for all links */
@@ -237,6 +236,10 @@ a {
 }
 
 a:hover {
-  color: lightblue; /* Set the text color for links on hover */
+  color: #add8e6; /* Set the text color for links on hover */
   text-decoration: none; /* Remove underline on hover for links */
+}
+
+.cust_bg_color {
+  background-color: #8d9c9b;
 }
