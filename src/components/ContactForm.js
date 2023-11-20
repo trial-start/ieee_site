@@ -20,7 +20,7 @@ const ContactForm = () => {
     const templateParams = {
      from_name: formData.name,
      from_email: formData.email,
-      to_name: "Your Recipient Name", // Update with your recipient's name
+      //to_name: "", // Update with your recipient's name
      message: formData.message,
      };
 
