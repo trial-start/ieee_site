@@ -19,7 +19,7 @@ const ContactForm = () => {
     // Use your own Email.js template and service IDs
     const templateParams = {
      from_name: formData.name,
-     from_email: formData.email,
+     reply_to: formData.email,
       //to_name: "", // Update with your recipient's name
      message: formData.message,
      };
