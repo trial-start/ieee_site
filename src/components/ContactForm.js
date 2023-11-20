@@ -21,7 +21,7 @@ const ContactForm = () => {
      from_name: formData.name,
      from_email: formData.email,
       to_name: "Your Recipient Name", // Update with your recipient's name
-     message_html: formData.message,
+     message: formData.message,
      };
 
     // Use your own Email.js service ID and user ID
