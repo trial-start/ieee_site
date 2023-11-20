@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
- import emailjs from "emailjs-com";
+import { Container, Form, Button, Alert } from "react-bootstrap";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,8 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+
+  const [alert, setAlert] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -18,19 +20,29 @@ const ContactForm = () => {
 
     // Use your own Email.js template and service IDs
     const templateParams = {
-     reply_to: formData.email,
-     from_name: formData.name,
-      //to_name: "", // Update with your recipient's name
-     message: formData.message,
-     };
+      reply_to: formData.email,
+      from_name: formData.name,
+      message: formData.message,
+    };
 
     // Use your own Email.js service ID and user ID
-    emailjs.send(
-     "service_tdrt432",
-     "template_tb1c1ym",
-     templateParams,
-     "2pWMiPSLQ8WR-SfSF"
-   );
+    emailjs
+      .send("service_tdrt432", "template_tb1c1ym", templateParams, "2pWMiPSLQ8WR-SfSF")
+      .then((response) => {
+        console.log("Email sent successfully:", response);
+
+        // Show success alert
+        setAlert({ variant: "success", message: "Email sent successfully!" });
+      })
+      .catch((error) => {
+        console.error("Email failed to send:", error);
+
+        // Show failure alert
+        setAlert({
+          variant: "danger",
+          message: "Failed to send email. Please try again later.",
+        });
+      });
 
     // After sending the email, you may want to reset the form
     setFormData({
@@ -40,15 +52,20 @@ const ContactForm = () => {
     });
   };
 
+  const handleAlertClose = () => {
+    setAlert(null);
+  };
+
   return (
-    <section
-      id="contact"
-      className="py-5 bg-dark text-white"
-      style={{ minHeight: "60vh" }}
-    >
+    <section id="contact" className="py-5 bg-dark text-white" style={{ minHeight: "60vh" }}>
       <Container>
         <h1 className="text-center mb-5">Contact Us</h1>
         <div className="col-md-6 mx-auto">
+          {alert && (
+            <Alert variant={alert.variant} onClose={handleAlertClose} dismissible>
+              {alert.message}
+            </Alert>
+          )}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="name">
               <Form.Label>Name</Form.Label>
