@@ -31,17 +31,23 @@ const ContactForm = () => {
       .then((response) => {
         console.log("Email sent successfully:", response);
 
-        // Show success alert
+        // Show success alert for 5 seconds
         setAlert({ variant: "success", message: "Email sent successfully!" });
+        setTimeout(() => {
+          setAlert(null);
+        }, 5000);
       })
       .catch((error) => {
         console.error("Email failed to send:", error);
 
-        // Show failure alert
+        // Show failure alert for 5 seconds
         setAlert({
           variant: "danger",
           message: "Failed to send email. Please try again later.",
         });
+        setTimeout(() => {
+          setAlert(null);
+        }, 5000);
       });
 
     // After sending the email, you may want to reset the form
@@ -52,17 +58,13 @@ const ContactForm = () => {
     });
   };
 
-  const handleAlertClose = () => {
-    setAlert(null);
-  };
-
   return (
     <section id="contact" className="py-5 bg-dark text-white" style={{ minHeight: "60vh" }}>
       <Container>
         <h1 className="text-center mb-5">Contact Us</h1>
         <div className="col-md-6 mx-auto">
           {alert && (
-            <Alert variant={alert.variant} onClose={handleAlertClose} dismissible>
+            <Alert variant={alert.variant} onClose={() => setAlert(null)} dismissible>
               {alert.message}
             </Alert>
           )}
