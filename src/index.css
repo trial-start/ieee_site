@@ -21,12 +21,11 @@ code {
 }
 
 .app-container {
-  /* padding: 20px; */
+  padding: 20px;
 }
 
 .section {
   margin-bottom: 40px;
-  padding: 0px 20px;
 }
 
 .section-heading {
@@ -228,9 +227,13 @@ h3 {
   .carousel {
     margin-top: 4%;
   }
-  /* .app-container {
+  .app-container {
     padding: 0px;
-  } */
+  }
+  .section {
+    margin-bottom: 40px;
+    padding: 0px 20px;
+  }
   .footer_parent {
     padding-bottom: 0px;
     /* margin: 0px !important; */
