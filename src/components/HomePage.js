@@ -24,7 +24,7 @@ export default function HomePage() {
       ) : ( */}
       <>
         <NavBar itemId="societies" itemName="Socities" teamType="CoreTeam" />
-        <div className="section">
+        <div className="section" style={{ padding: "0px" }}>
           <ImageCarousel />
         </div>
         <p
