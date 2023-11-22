@@ -60,6 +60,9 @@ const NavBar = ({ itemId, itemName, teamType }) => {
           <Nav.Link href="#coreteam" className="custom-margin">
             {teamType}
           </Nav.Link>
+          <Nav.Link href="#events" className="custom-margin">
+            Events
+          </Nav.Link>
           <Nav.Link href="#contact1" className="custom-margin">
             Contact
           </Nav.Link>

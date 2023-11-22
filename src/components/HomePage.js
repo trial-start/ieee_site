@@ -3,6 +3,7 @@ import CoreTeam from "./CoreTeam";
 import NavBar from "./NavBar";
 import SocietyCards from "./SocietyCards";
 import Footer from "./Footer";
+import Events from "./Events";
 export default function HomePage() {
   //   const [showWelcome, setShowWelcome] = useState(true);
 
@@ -24,7 +25,7 @@ export default function HomePage() {
       ) : ( */}
       <>
         <NavBar itemId="societies" itemName="Socities" teamType="CoreTeam" />
-        <div className="section">
+        <div className="section" id="home">
           <ImageCarousel />
         </div>
         <p
@@ -51,6 +52,11 @@ export default function HomePage() {
         <div className="section" id="coreteam">
           <h2 className="section-heading">Core Team</h2>
           <CoreTeam num="5" />
+          <hr className="section-divider" />
+        </div>
+        <div className="section" id="events">
+          <h2 className="section-heading">Events</h2>
+          <Events />
           <hr className="section-divider" />
         </div>
 
