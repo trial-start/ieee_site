@@ -17,6 +17,11 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+       // Check if the domain is allowed (Gmail or cbit.org.in)
+    if (emailDomain !== 'gmail.com' && emailDomain !== 'cbit.org.in') {
+      alert('Only Gmail and cbit.org.in domains are allowed.');
+      return;
+    }
 
     // Use your own Email.js template and service IDs
     const templateParams = {
