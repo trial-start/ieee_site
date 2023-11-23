@@ -1,5 +1,5 @@
 import ImageCarousel from "./Carousel";
-import CoreTeam from "./CoreTeam";
+// import CoreTeam from "./CoreTeam";
 import NavBar from "./NavBar";
 import SocietyCards from "./SocietyCards";
 import Footer from "./Footer";
