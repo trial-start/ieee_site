@@ -18,6 +18,7 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
        // Check if the domain is allowed (Gmail or cbit.org.in)
+     const emailDomain = formData.email.split('@')[1];
     if (emailDomain !== 'gmail.com' && emailDomain !== 'cbit.org.in') {
       setAlert({
           variant: "danger",
