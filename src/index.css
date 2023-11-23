@@ -279,3 +279,12 @@ a:hover {
 .event-card:hover {
   opacity: 0.8;
 }
+
+/* team carousel */
+.custom-carousel {
+  pointer-events: auto;
+}
+
+.custom-carousel:hover {
+  pointer-events: none;
+}

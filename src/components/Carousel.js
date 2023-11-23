@@ -7,7 +7,12 @@ const ImageCarousel = ({ val, imgs = ["t_logo.jpg", "temp.jpg"] }) => {
   };
 
   return (
-    <Carousel style={carouselStyle} interval={3000} className="custom1" wrap>
+    <Carousel
+      style={carouselStyle}
+      interval={3000}
+      className="custom-carousel"
+      wrap
+    >
       {imgs.map((img, index) => (
         <Carousel.Item key={index}>
           <img

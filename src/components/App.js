@@ -47,7 +47,7 @@ function App() {
 
 export default App;
 
-// import ImageCarousel from "./Carousel";
+// import Carousel from "./Carousel";
 // import CoreTeam from "./CoreTeam";
 // import NavBar from "./NavBar";
 // import SocietyCards from "./SocietyCards";
@@ -58,7 +58,7 @@ export default App;
 //     <div className="app-container">
 //       <NavBar />
 //       <div className="section">
-//         <ImageCarousel />
+//         <Carousel />
 //       </div>
 //       <div className="section" id="societies">
 //         <h2 className="section-heading">Societies</h2>

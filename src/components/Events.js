@@ -30,7 +30,7 @@ const Events = () => {
                 <Card.Title>{event.title}</Card.Title>
                 <Card.Text>{event.description}</Card.Text>
                 <Card.Text>Date: {event.date}</Card.Text>
-                <Card.Text>Location: {event.location}</Card.Text>
+                {/* <Card.Text>Location: {event.location}</Card.Text> */}
                 <Button variant="primary">Learn More</Button>
               </Card.Body>
             </Card>

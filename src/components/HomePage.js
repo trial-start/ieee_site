@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import SocietyCards from "./SocietyCards";
 import Footer from "./Footer";
 import Events from "./Events";
+import TeamCarousel from "./TeamCarousel";
 export default function HomePage() {
   //   const [showWelcome, setShowWelcome] = useState(true);
 
@@ -51,7 +52,8 @@ export default function HomePage() {
         </div>
         <div className="section" id="coreteam">
           <h2 className="section-heading">Core Team</h2>
-          <CoreTeam num="5" />
+          {/* <CoreTeam num="5" /> */}
+          <TeamCarousel />
           <hr className="section-divider" />
         </div>
         <div className="section" id="events">
