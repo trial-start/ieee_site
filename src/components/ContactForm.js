@@ -26,7 +26,7 @@ const ContactForm = () => {
         setTimeout(() => {
           setAlert(null);
         }, 5000);
-      });
+  
       return;
     }
 
