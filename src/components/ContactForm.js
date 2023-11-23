@@ -19,7 +19,14 @@ const ContactForm = () => {
     e.preventDefault();
        // Check if the domain is allowed (Gmail or cbit.org.in)
     if (emailDomain !== 'gmail.com' && emailDomain !== 'cbit.org.in') {
-      alert('Only Gmail and cbit.org.in domains are allowed.');
+      setAlert({
+          variant: "danger",
+          message: "Failed to send email. Please try again later.",
+        });
+        setTimeout(() => {
+          setAlert(null);
+        }, 5000);
+      });
       return;
     }
 
