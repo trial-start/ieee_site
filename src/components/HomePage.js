@@ -32,6 +32,7 @@ export default function HomePage() {
         <p
           className="section-description section-divider"
           style={{ padding: "10px" }}
+          id="about"
         >
           <h1 style={{ textAlign: "center" }}>IEEE CBIT</h1>
           Sure. Here are small descriptions of the following societies which are

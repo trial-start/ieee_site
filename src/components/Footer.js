@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ContactForm from "./ContactForm";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -23,17 +24,20 @@ const Footer = () => {
           </Col>
           <Col sm={4}>
             <h3>IEEE CBIT</h3>
-            <a href="#about" className="footer-link">
+            <a href="/#about" className="footer-link">
               About
             </a>
             <br />
-            <a href="team.html" className="footer-link">
+            {/* <a href="/#coreteam" className="footer-link">
               Team
-            </a>
+            </a> */}
+            <Link to="/#coreteams" className="footer-link">
+              team
+            </Link>
             <br />
-            <a href="#Events" className="footer-link">
+            <Link to="/#events" className="footer-link">
               Events
-            </a>
+            </Link>
           </Col>
           <Col sm={4}>
             <h3>GET IN TOUCH</h3>

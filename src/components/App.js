@@ -9,6 +9,7 @@ import RoboticsAutomationSociety from "./RoboticsAutomationSociety";
 import WomenEngineeringSociety from "./WomenEngineeringSociety";
 import EducationSociety from "./EducationSociety";
 import PowerEnergySociety from "./PowerEnergySociety";
+import EventsPage from "./EventsPage";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         />
         <Route path="education-society" element={<EducationSociety />} />
         <Route path="power-energy-society" element={<PowerEnergySociety />} />
+        <Route path="events/:id" element={<EventsPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

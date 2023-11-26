@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import events from "../static/event_details"; // Import events data from JSON file
 // import eventImage1 from "./event-image-1.jpg"; // Import your event images
 // import eventImage2 from "./event-image-2.jpg";
@@ -9,10 +10,38 @@ const imgs = ["temp.jpg"];
 const Events = () => {
   const initialEventsToShow = 4;
   const [eventsToShow, setEventsToShow] = useState(initialEventsToShow);
+  const [showFullDescription, setShowFullDescription] = useState(
+    Array(events.length).fill(false)
+  );
 
   const handleViewMore = () => {
     if (eventsToShow === initialEventsToShow) setEventsToShow(events.length);
     else setEventsToShow(initialEventsToShow);
+  };
+
+  const navigate = useNavigate();
+
+  const handleClick = (index) => {
+    navigate(`/events/${index}`);
+  };
+
+  const handleToggleDescription = (index) => {
+    setShowFullDescription((prevShowFull) => {
+      const newShowFull = [...prevShowFull];
+      newShowFull[index] = !newShowFull[index];
+      return newShowFull;
+    });
+  };
+
+  const truncateDescription = (description, wordLimit, index) => {
+    if (showFullDescription[index]) {
+      return description;
+    }
+    const words = description.split(" ");
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(" ") + " .....";
+    }
+    return description;
   };
 
   return (
@@ -28,10 +57,21 @@ const Events = () => {
               />
               <Card.Body>
                 <Card.Title>{event.title}</Card.Title>
-                <Card.Text>{event.description}</Card.Text>
+                <Card.Text onClick={() => handleToggleDescription(index)}>
+                  {truncateDescription(event.description, 15, index)}
+                </Card.Text>
                 <Card.Text>Date: {event.date}</Card.Text>
-                {/* <Card.Text>Location: {event.location}</Card.Text> */}
-                <Button variant="primary">Learn More</Button>
+                <Button variant="primary" onClick={() => handleClick(index)}>
+                  Learn More
+                </Button>
+                {showFullDescription[index] && (
+                  <Button
+                    className="event_margin"
+                    onClick={() => handleToggleDescription(index)}
+                  >
+                    Show Less
+                  </Button>
+                )}
               </Card.Body>
             </Card>
           </Col>

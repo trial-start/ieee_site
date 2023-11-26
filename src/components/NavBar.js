@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ itemId, itemName, teamType }) => {
+const NavBar = ({ itemId, itemName, teamType, val }) => {
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
@@ -60,9 +60,11 @@ const NavBar = ({ itemId, itemName, teamType }) => {
           <Nav.Link href="#coreteam" className="custom-margin">
             {teamType}
           </Nav.Link>
-          <Nav.Link href="#events" className="custom-margin">
-            Events
-          </Nav.Link>
+          {val !== "x" && (
+            <Nav.Link href="#events" className="custom-margin">
+              Events
+            </Nav.Link>
+          )}
           <Nav.Link href="#contact1" className="custom-margin">
             Contact
           </Nav.Link>
