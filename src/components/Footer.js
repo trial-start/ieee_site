@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ContactForm from "./ContactForm";
 import { Link } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
 
 const Footer = () => {
+  const [isContactFormVisible, setContactFormVisible] = useState(false);
+
+  const toggleContactForm = () => {
+    setContactFormVisible((prevVisible) => !prevVisible);
+  };
   return (
     <footer className="footer_parent" id="contact1">
       <Container>
@@ -71,7 +77,28 @@ const Footer = () => {
               <i className="fab fa-twitter"></i> Twitter
             </a>
           </Col>
-          <ContactForm />
+          <Col sm={12} className="text-center mt-3">
+            <h3
+              onClick={toggleContactForm}
+              // className="contact-form-toggle"
+              // data-tip="Click to fill the form"
+              data-tooltip-id="my-tooltip"
+              // data-tooltip-content="Hello world!"
+            >
+              Contact Form
+            </h3>
+            <Tooltip id="my-tooltip">
+              {isContactFormVisible
+                ? "Click to close the form"
+                : "Click to fill the form"}
+            </Tooltip>
+
+            {/* {isHovered && (
+              <Tooltip id="my-tooltip">Click to fill the form</Tooltip>
+            )} */}
+            {isContactFormVisible && <ContactForm />}
+          </Col>
+          {/* <ContactForm /> */}
         </Row>
       </Container>
     </footer>

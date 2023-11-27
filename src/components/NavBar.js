@@ -45,7 +45,7 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
       <Navbar.Brand>
         <Link to="/">
           <img
-            src="images/logo_n.jpg"
+            src={`${process.env.PUBLIC_URL}/images/logo_n.jpg`}
             alt="IEEE Logo"
             style={{ width: "170px", height: "60px", marginLeft: "15px" }}
           />{" "}

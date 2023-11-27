@@ -17,7 +17,7 @@ const ImageCarousel = ({ val, imgs = ["t_logo.jpg", "temp.jpg"] }) => {
         <Carousel.Item key={index}>
           <img
             className="d-block w-100"
-            src={`images/${img}`}
+            src={`${process.env.PUBLIC_URL}/images/${img}`}
             alt={`Slide ${index + 1}`}
           />
           <Carousel.Caption>

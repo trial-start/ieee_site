@@ -16,10 +16,9 @@ const EventsPage = () => {
         <NavBar itemName="Event" teamType="Highlights" val="x" />
         <div className="section" id="home">
           {/* <ImageCarousel /> */}
-          <Carousel val="x" imgs={["temp.jpg"]} />
+          <Carousel imgs={["robo_soc.jpg", "robo_soc.jpg"]} />
         </div>
         <hr className="section-divider" />
-
         <div className="section" id="event-details">
           <Container>
             <Row>
@@ -31,7 +30,6 @@ const EventsPage = () => {
           </Container>
         </div>
         <hr className="section-divider" />
-
         <div className="section" id="event-date">
           <Container>
             <Row>
@@ -43,7 +41,6 @@ const EventsPage = () => {
           </Container>
         </div>
         <hr className="section-divider" />
-
         <div className="section" id="event-highlights">
           <Container>
             <Row>
@@ -60,7 +57,6 @@ const EventsPage = () => {
           </Container>
         </div>
         <hr className="section-divider" />
-
         <Footer />
       </>
     </div>

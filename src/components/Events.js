@@ -64,14 +64,14 @@ const Events = () => {
                 <Button variant="primary" onClick={() => handleClick(index)}>
                   Learn More
                 </Button>
-                {showFullDescription[index] && (
+                {/* {showFullDescription[index] && (
                   <Button
                     className="event_margin"
                     onClick={() => handleToggleDescription(index)}
                   >
                     Show Less
                   </Button>
-                )}
+                )} */}
               </Card.Body>
             </Card>
           </Col>

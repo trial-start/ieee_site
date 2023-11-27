@@ -5,17 +5,22 @@ const teamMembers = [
   {
     name: "John Doe",
     role: "Co-Founder",
-    image: "president1.png",
+    image: "tech-team/2.png",
   },
   {
     name: "Jane Smith",
     role: "Lead Developer",
-    image: "president1.png",
+    image: "design-team/3.png",
   },
   {
     name: "Bob Johnson",
     role: "Marketing Director",
-    image: "president1.png",
+    image: "documentation-team/4.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "sm&pr-team/5.png",
   },
   // Add more team members as needed
 ];
@@ -28,7 +33,7 @@ const TeamCarousel = () => {
           <Carousel.Item key={index}>
             <img
               className="d-block w-100"
-              src={`images/tech-team/${member.image}`}
+              src={`images/${member.image}`}
               alt={`Team member ${index + 1}`}
             />
             <Carousel.Caption>
