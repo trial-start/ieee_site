@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import emailjs from "emailjs-com";
-
+// import Verifier from "email-verifier";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,21 +15,45 @@ const ContactForm = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-       // Check if the domain is allowed (Gmail or cbit.org.in)
-     const emailDomain = formData.email.split('@')[1];
-    if (emailDomain !== 'gmail.com' && emailDomain !== 'cbit.org.in') {
+    // Check if the domain is allowed (Gmail or cbit.org.in)
+    const emailDomain = formData.email.split("@")[1];
+    if (emailDomain !== "gmail.com" && emailDomain !== "cbit.org.in") {
       setAlert({
-          variant: "danger",
-          message: "Failed to send email. Please try again later.",
-        });
-        setTimeout(() => {
-          setAlert(null);
-        }, 5000);
-  
+        variant: "danger",
+        message: "Provide an email with gmail.com or cbit.org.in domains",
+      });
+      setTimeout(() => {
+        setAlert(null);
+      }, 5000);
+
       return;
     }
+
+    // Check email existence (simplified example)
+    // let verifier = new Verifier("your_email_verification_api_key");
+    // verifier.verify("r@rdegges.com", (err, data) => {
+    //   if (err) throw err;
+    //   console.log(data);
+    // });
+
+    // const verifier = new Verifier("at_2UWtXClUPlx0FJnUngT97kLV4thFS"); // Replace with a valid API key
+    // const result = await verifier.verify(formData.email);
+
+    // if (!result.formatCheck || !result.mxCheck || !result.smtpCheck) {
+    //   // Invalid email or doesn't exist
+    //   setAlert({
+    //     variant: "danger",
+    //     message:
+    //       "Invalid email address or email doesn't exist. Please provide a valid email.",
+    //   });
+    //   setTimeout(() => {
+    //     setAlert(null);
+    //   }, 5000);
+
+    //   return;
+    // }
 
     // Use your own Email.js template and service IDs
     const templateParams = {

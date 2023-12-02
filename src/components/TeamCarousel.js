@@ -3,6 +3,26 @@ import { Carousel, Container } from "react-bootstrap";
 // import teamMembers from "./teamMembers"; // Import array of team members
 const teamMembers = [
   {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "core-team/pres.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "core-team/v-pres.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "core-team/secret.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "core-team/j-secret.png",
+  },
+  {
     name: "John Doe",
     role: "Co-Founder",
     image: "tech-team/2.png",
@@ -25,10 +45,15 @@ const teamMembers = [
   // Add more team members as needed
 ];
 
-const TeamCarousel = () => {
+const TeamCarousel = ({ onSlideChange }) => {
   return (
     <Container className="mt-3">
-      <Carousel interval={3000} pause={false} className="custom-carousel">
+      <Carousel
+        interval={3000}
+        pause={true}
+        className="custom-carousel"
+        onSlide={onSlideChange}
+      >
         {teamMembers.map((member, index) => (
           <Carousel.Item key={index}>
             <img
