@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
+import Events from "./Events";
 
 const ComputerSociety = ({ imgs, num }) => {
   return (
@@ -30,6 +31,11 @@ const ComputerSociety = ({ imgs, num }) => {
           Meet the dedicated members of our Computer Society's Team.
         </p>
         <CoreTeam num={num} />
+      </section>
+      <section className="core-team-section" id="events">
+        <h2 className="section-heading">Events</h2>
+        <p className="section-description">Check out our past events.</p>
+        <Events />
       </section>
       <Footer />
     </div>

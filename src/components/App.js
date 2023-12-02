@@ -18,13 +18,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route
           path="computer-society"
-          element={
-            <ComputerSociety imgs={["tem.jpg", "image1.jpeg"]} num="9" />
-          }
+          element={<ComputerSociety imgs={["tem.jpg", "image1.jpeg"]} />}
         />
         <Route
           path="signal-processing-society"
-          element={<SignalProcessingSociety num="7" />}
+          element={<SignalProcessingSociety />}
         />
         <Route
           path="circuits-systems-society"
