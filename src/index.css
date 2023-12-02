@@ -245,6 +245,9 @@ h3 {
   .custom-margin {
     margin-left: 20px;
   }
+  .cust-ml {
+    margin-left: 200px !important;
+  }
 }
 
 a {
@@ -319,4 +322,11 @@ a:hover {
 
 .section-description {
   animation: slideIn 2s ease-in-out;
+}
+
+.custom-disp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
