@@ -47,7 +47,7 @@ const Footer = () => {
           </Col>
           <Col sm={4}>
             <h3>GET IN TOUCH</h3>
-            <a href="mailto:roboticscbit@gmail.com" className="footer-link">
+            <a href="mailto:cbit_ieee@gmail.com" className="footer-link">
               <i className="fas fa-envelope-square"></i> Email
             </a>
             <br />
@@ -66,7 +66,7 @@ const Footer = () => {
               <i className="fab fa-instagram"></i> Instagram
             </a>
             <br />
-            <a href="https://github.com/roboticscbit" className="footer-link">
+            <a href="https://github.com/ieee_cbit" className="footer-link">
               <i className="fab fa-github"></i> GitHub
             </a>
             <br />
