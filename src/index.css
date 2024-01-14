@@ -326,7 +326,8 @@ a:hover {
 
 .custom-disp {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }

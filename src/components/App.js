@@ -10,7 +10,7 @@ import WomenEngineeringSociety from "./WomenEngineeringSociety";
 import EducationSociety from "./EducationSociety";
 import PowerEnergySociety from "./PowerEnergySociety";
 import EventsPage from "./EventsPage";
-
+import Spinner from "./Spinner";
 function App() {
   return (
     <BrowserRouter>

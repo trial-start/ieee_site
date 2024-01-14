@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import events from "../static/event_details"; // Import events data from JSON file
+import allEvents from "../static/event_details"; // Import events data from JSON file
 // import eventImage1 from "./event-image-1.jpg"; // Import your event images
 // import eventImage2 from "./event-image-2.jpg";
 // import "./Events.css"; // Import custom CSS file for styling
 const imgs = ["temp.jpg"];
 
-const Events = () => {
+const Events = ({ by = "" }) => {
+  const events =
+    by === ""
+      ? allEvents
+      : allEvents.filter((event) => event.conductedBy === by);
+  console.log(events);
   const initialEventsToShow = 4;
   const [eventsToShow, setEventsToShow] = useState(initialEventsToShow);
   const [showFullDescription, setShowFullDescription] = useState(
@@ -61,6 +66,7 @@ const Events = () => {
                   {truncateDescription(event.description, 15, index)}
                 </Card.Text>
                 <Card.Text>Date: {event.date}</Card.Text>
+                <Card.Text>Conducted By : {event.conductedBy}</Card.Text>
                 <Button variant="primary" onClick={() => handleClick(index)}>
                   Learn More
                 </Button>
@@ -78,11 +84,13 @@ const Events = () => {
         ))}
       </Row>
 
-      <div className="text-center mt-3">
-        <Button onClick={handleViewMore} variant="outline-primary">
-          {eventsToShow === initialEventsToShow ? "View More" : "View Less"}
-        </Button>
-      </div>
+      {events.length > 1 && (
+        <div className="text-center mt-3">
+          <Button onClick={handleViewMore} variant="outline-primary">
+            {eventsToShow === initialEventsToShow ? "View More" : "View Less"}
+          </Button>
+        </div>
+      )}
     </>
   );
 };

@@ -39,6 +39,16 @@ const EventsPage = () => {
               </Col>
             </Row>
           </Container>
+          <hr className="section-divider" />
+
+          <Container>
+            <Row>
+              <Col>
+                <h2>Conducted By</h2>
+                <p>{selectedEvent.conductedBy}</p>
+              </Col>
+            </Row>
+          </Container>
         </div>
         <hr className="section-divider" />
         <div className="section" id="event-highlights">

@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import Events from "./Events";
 import TeamCarousel from "./TeamCarousel";
 import { useState } from "react";
+// import { useNavigation } from "react-router-dom";
+// import Spinner from "./Spinner";
 export default function HomePage() {
   //   const [showWelcome, setShowWelcome] = useState(true);
 
@@ -18,6 +20,8 @@ export default function HomePage() {
   //     return () => clearTimeout(timer); // Clear the timer on component unmount
   //   }, []);
   const [slideIndex, setSlideIndex] = useState(0);
+  // const navigation = useNavigation();
+  // const isLoading = navigation.state === "loading";
 
   return (
     <div className="app-container">
