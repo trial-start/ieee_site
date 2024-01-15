@@ -10,6 +10,8 @@ const imgs = ["temp.jpg"];
 const Events = ({ by = "" }) => {
   const { isLoading, events: allEvents } = useEvents();
 
+  allEvents ?? <div>Event not found</div>;
+
   // console.log(error);
   // console.log(events1);
   // console.log("sushanth");

@@ -2,13 +2,35 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "./Carousel";
 import NavBar from "./NavBar";
-import events from "../static/event_details";
-import { useParams } from "react-router-dom";
+// import events from "../static/event_details";
+// import { useParams } from "react-router-dom";
 import Footer from "./Footer";
+import { useEvent } from "../features/events/useEvent";
+import Spinner from "./Spinner";
+import styled from "styled-components";
+
+const Fullpage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
 
 const EventsPage = () => {
-  const { id } = useParams();
-  const selectedEvent = events[id];
+  // console.log(id);
+  const { event: selectedEvent, isLoading } = useEvent();
+  console.log(selectedEvent);
+
+  selectedEvent ?? <div>Event not found</div>;
+
+  if (isLoading)
+    return (
+      <Fullpage>
+        <Spinner />
+      </Fullpage>
+    );
+
+  // const selectedEvent = events[id];
 
   return (
     <div className="app-container">
@@ -36,6 +58,16 @@ const EventsPage = () => {
               <Col>
                 <h2>Date</h2>
                 <p>{selectedEvent.date}</p>
+              </Col>
+            </Row>
+          </Container>
+          <hr className="section-divider" />
+
+          <Container>
+            <Row>
+              <Col>
+                <h2>Location</h2>
+                <p>{selectedEvent.location}</p>
               </Col>
             </Row>
           </Container>
@@ -73,4 +105,4 @@ const EventsPage = () => {
   );
 };
 
-export default EventsPage;
+export default React.memo(EventsPage);
