@@ -10,37 +10,50 @@ import WomenEngineeringSociety from "./WomenEngineeringSociety";
 import EducationSociety from "./EducationSociety";
 import PowerEnergySociety from "./PowerEnergySociety";
 import EventsPage from "./EventsPage";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // staleTime: 60 * 1000,
+      staleTime: 0,
+    },
+  },
+});
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="computer-society"
-          element={<ComputerSociety imgs={["tem.jpg", "image1.jpeg"]} />}
-        />
-        <Route
-          path="signal-processing-society"
-          element={<SignalProcessingSociety />}
-        />
-        <Route
-          path="circuits-systems-society"
-          element={<CircuitsAndSystemsSociety />}
-        />
-        <Route
-          path="robotics-automation-society"
-          element={<RoboticsAutomationSociety />}
-        />
-        <Route
-          path="women-engineering-society"
-          element={<WomenEngineeringSociety />}
-        />
-        <Route path="education-society" element={<EducationSociety />} />
-        <Route path="power-energy-society" element={<PowerEnergySociety />} />
-        <Route path="events/:id" element={<EventsPage />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="computer-society"
+            element={<ComputerSociety imgs={["tem.jpg", "image1.jpeg"]} />}
+          />
+          <Route
+            path="signal-processing-society"
+            element={<SignalProcessingSociety />}
+          />
+          <Route
+            path="circuits-systems-society"
+            element={<CircuitsAndSystemsSociety />}
+          />
+          <Route
+            path="robotics-automation-society"
+            element={<RoboticsAutomationSociety />}
+          />
+          <Route
+            path="women-engineering-society"
+            element={<WomenEngineeringSociety />}
+          />
+          <Route path="education-society" element={<EducationSociety />} />
+          <Route path="power-energy-society" element={<PowerEnergySociety />} />
+          <Route path="events/:id" element={<EventsPage />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import allEvents from "../static/event_details"; // Import events data from JSON file
-// import eventImage1 from "./event-image-1.jpg"; // Import your event images
-// import eventImage2 from "./event-image-2.jpg";
-// import "./Events.css"; // Import custom CSS file for styling
+// import allEvents from "../static/event_details";
+import { useEvents } from "../features/events/useEvents";
+import Spinner from "./Spinner";
+
 const imgs = ["temp.jpg"];
 
 const Events = ({ by = "" }) => {
+  const { isLoading, events: allEvents } = useEvents();
+
+  // console.log(error);
+  // console.log(events1);
+  // console.log("sushanth");
   const events =
     by === ""
       ? allEvents
-      : allEvents.filter((event) => event.conductedBy === by);
-  console.log(events);
-  const initialEventsToShow = 4;
+      : allEvents?.filter((event) => event.conductedBy === by);
+
+  const initialEventsToShow = 3;
   const [eventsToShow, setEventsToShow] = useState(initialEventsToShow);
   const [showFullDescription, setShowFullDescription] = useState(
-    Array(events.length).fill(false)
+    Array(events?.length).fill(false)
   );
 
   const handleViewMore = () => {
@@ -44,10 +49,12 @@ const Events = ({ by = "" }) => {
     }
     const words = description.split(" ");
     if (words.length > wordLimit) {
-      return words.slice(0, wordLimit).join(" ") + " .....";
+      return words?.slice(0, wordLimit).join(" ") + " .....";
     }
     return description;
   };
+
+  if (isLoading) return <Spinner />;
 
   return (
     <>
@@ -67,7 +74,7 @@ const Events = ({ by = "" }) => {
                 </Card.Text>
                 <Card.Text>Date: {event.date}</Card.Text>
                 <Card.Text>Conducted By : {event.conductedBy}</Card.Text>
-                <Button variant="primary" onClick={() => handleClick(index)}>
+                <Button variant="primary" onClick={() => handleClick(event.id)}>
                   Learn More
                 </Button>
                 {/* {showFullDescription[index] && (
@@ -84,7 +91,7 @@ const Events = ({ by = "" }) => {
         ))}
       </Row>
 
-      {events.length > 1 && (
+      {events.length > 3 && (
         <div className="text-center mt-3">
           <Button onClick={handleViewMore} variant="outline-primary">
             {eventsToShow === initialEventsToShow ? "View More" : "View Less"}
@@ -95,4 +102,4 @@ const Events = ({ by = "" }) => {
   );
 };
 
-export default Events;
+export default React.memo(Events);
