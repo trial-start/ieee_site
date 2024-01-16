@@ -130,9 +130,23 @@ const CreateEventForm = () => {
                   onChange={(e) => setConductedBy(e.target.value)}
                 >
                   <option value="">Select conducted by</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
+                  <option value="robotics and automation society">
+                    robotics and automation society
+                  </option>
+                  <option value="power and energy society">
+                    power and energy society
+                  </option>
+                  <option value="women in engineering society">
+                    women in engineering society
+                  </option>
+                  <option value="signal processing society">
+                    signal processing society
+                  </option>
+                  <option value="computer society">computer society</option>
+                  <option value="circuits and systems society">
+                    circuits and systems society
+                  </option>
+                  <option value="education society">education society</option>
                 </Form.Control>
               </Form.Group>
 
