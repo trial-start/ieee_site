@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 // import allEvents from "../static/event_details";
+import { HiTrash } from "react-icons/hi2";
 import { useEvents } from "../features/events/useEvents";
 import Spinner from "./Spinner";
+import EventButtonIcon from "./EventButtonIcon";
+import { useUser } from "../features/authentication/useUser";
+import { useDeleteEvent } from "../features/events/useDeleteEvent";
 
 const imgs = ["temp.jpg"];
 
 const Events = ({ by = "" }) => {
   const { isLoading, events: allEvents } = useEvents();
+  const { isAuthenticated } = useUser();
+  const { isDeleting, deleteEvent } = useDeleteEvent();
 
   allEvents ?? <div>Event not found</div>;
 
@@ -29,6 +35,10 @@ const Events = ({ by = "" }) => {
   const handleViewMore = () => {
     if (eventsToShow === initialEventsToShow) setEventsToShow(events.length);
     else setEventsToShow(initialEventsToShow);
+  };
+
+  const handleDelete = (id) => {
+    deleteEvent(id);
   };
 
   const navigate = useNavigate();
@@ -56,7 +66,7 @@ const Events = ({ by = "" }) => {
     return description;
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading || isDeleting) return <Spinner />;
 
   return (
     <>
@@ -76,9 +86,22 @@ const Events = ({ by = "" }) => {
                 </Card.Text>
                 <Card.Text>Date: {event.date}</Card.Text>
                 <Card.Text>Conducted By : {event.conductedBy}</Card.Text>
-                <Button variant="primary" onClick={() => handleClick(event.id)}>
-                  Learn More
-                </Button>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Button
+                    variant="primary"
+                    onClick={() => handleClick(event.id)}
+                  >
+                    Learn More
+                  </Button>
+
+                  {isAuthenticated && (
+                    <EventButtonIcon onClick={() => handleDelete(event.id)}>
+                      <HiTrash />
+                    </EventButtonIcon>
+                  )}
+                </div>
                 {/* {showFullDescription[index] && (
                   <Button
                     className="event_margin"
