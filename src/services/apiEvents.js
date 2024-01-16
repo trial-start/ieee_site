@@ -21,3 +21,17 @@ export async function getEvent(id) {
 
   return data;
 }
+
+export async function createEvent(event) {
+  const { data, error } = await supabase
+    .from("events")
+    .insert([event])
+    .select();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Event cannot be created");
+  }
+
+  return data;
+}

@@ -19,7 +19,7 @@ const Fullpage = styled.div`
 const EventsPage = () => {
   // console.log(id);
   const { event: selectedEvent, isLoading } = useEvent();
-  console.log(selectedEvent);
+  // console.log(selectedEvent);
 
   selectedEvent ?? <div>Event not found</div>;
 

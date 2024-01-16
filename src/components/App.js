@@ -10,8 +10,12 @@ import WomenEngineeringSociety from "./WomenEngineeringSociety";
 import EducationSociety from "./EducationSociety";
 import PowerEnergySociety from "./PowerEnergySociety";
 import EventsPage from "./EventsPage";
+import { Toaster } from "react-hot-toast";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import CreateEventForm from "../features/events/CreateEventForm";
+import LoginForm from "../features/authentication/loginForm";
+import ProtectedRoute from "./ProtectedRoute";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -48,11 +52,40 @@ function App() {
             element={<WomenEngineeringSociety />}
           />
           <Route path="education-society" element={<EducationSociety />} />
+          <Route path="login" element={<LoginForm />} />
           <Route path="power-energy-society" element={<PowerEnergySociety />} />
           <Route path="events/:id" element={<EventsPage />} />
+          <Route
+            path="add-event"
+            element={
+              <ProtectedRoute>
+                <CreateEventForm />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastoptions={{
+          success: {
+            duration: 3000,
+          },
+          error: {
+            duration: 5000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "500px",
+            padding: "16px 24px",
+            backgroundColor: "var(--color-grey-0)",
+            color: "var(--color-grey-700)",
+          },
+        }}
+      />
     </QueryClientProvider>
   );
 }

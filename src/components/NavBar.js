@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useUser } from "../features/authentication/useUser";
+import Logout from "../features/authentication/Logout";
 
 const NavBar = ({ itemId, itemName, teamType, val }) => {
   const [expanded, setExpanded] = useState(false);
+  const { isAuthenticated } = useUser();
 
   useEffect(() => {
     let prevScrollPos = window.pageYOffset;
@@ -68,6 +71,38 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
           <Nav.Link href="#contact1" className="custom-margin">
             Contact
           </Nav.Link>
+          {isAuthenticated && (
+            // <Nav.Link>
+            //   <NavLink
+            //     // className="m-2 custom-margin"
+            //     to="/add-event"
+            //     // style={{ textDecoration: "none", color: "grey" }}
+            //     // onMouseOver={(e) => (e.target.style.color = "white")}
+            //     // onMouseOut={(e) => (e.target.style.color = "gray")}
+            //   >
+            //     add event
+            //   </NavLink>
+            // </Nav.Link>
+            <Nav.Link as={NavLink} to="/add-event" className="custom-margin">
+              add event
+            </Nav.Link>
+          )}
+          {isAuthenticated ? (
+            <Logout />
+          ) : (
+            <Nav.Link as={NavLink} to="/login" className="custom-margin">
+              login
+            </Nav.Link>
+            // <NavLink
+            //   className="m-2 custom-margin"
+            //   style={{ textDecoration: "none", color: "grey" }}
+            //   onMouseOver={(e) => (e.target.style.color = "white")}
+            //   onMouseOut={(e) => (e.target.style.color = "gray")}
+            //   to="/login"
+            // >
+            //   login
+            // </NavLink>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
