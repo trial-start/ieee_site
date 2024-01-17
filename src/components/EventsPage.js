@@ -22,7 +22,7 @@ const EventsPage = () => {
   const { event: selectedEvent, isLoading } = useEvent();
   // console.log(selectedEvent);
 
-  if (!selectedEvent) return <EventNotFound />;
+  if (!isLoading && !selectedEvent) return <EventNotFound />;
 
   if (isLoading)
     return (
