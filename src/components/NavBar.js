@@ -1,8 +1,11 @@
+// NavBar.js
+
 import React, { useState, useEffect } from "react";
 import { Navbar as NB, Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { useUser } from "../features/authentication/useUser";
 import Logout from "../features/authentication/Logout";
+import "../../src/NavBar.css";
 
 const NavBar = ({ itemId, itemName, teamType, val }) => {
   const [expanded, setExpanded] = useState(false);
@@ -38,6 +41,7 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
 
   return (
     <NB
+      className="custom-navbar" // Add the custom-navbar class
       bg="dark"
       variant="dark"
       fixed="top"
@@ -50,8 +54,8 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
           <img
             src={`${process.env.PUBLIC_URL}/images/logo_n.jpg`}
             alt="IEEE Logo"
-            style={{ width: "170px", height: "60px", marginLeft: "15px" }}
-          />{" "}
+            className="navbar-brand-logo" // Add the navbar-brand-logo class
+          />
         </Link>
       </NB.Brand>
       <NB.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
@@ -72,17 +76,6 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
             Contact
           </Nav.Link>
           {isAuthenticated && (
-            // <Nav.Link>
-            //   <NavLink
-            //     // className="m-2 custom-margin"
-            //     to="/add-event"
-            //     // style={{ textDecoration: "none", color: "grey" }}
-            //     // onMouseOver={(e) => (e.target.style.color = "white")}
-            //     // onMouseOut={(e) => (e.target.style.color = "gray")}
-            //   >
-            //     add event
-            //   </NavLink>
-            // </Nav.Link>
             <Nav.Link as={NavLink} to="/add-event" className="custom-margin">
               add event
             </Nav.Link>
@@ -93,15 +86,6 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
             <Nav.Link as={NavLink} to="/login" className="custom-margin">
               login
             </Nav.Link>
-            // <NavLink
-            //   className="m-2 custom-margin"
-            //   style={{ textDecoration: "none", color: "grey" }}
-            //   onMouseOver={(e) => (e.target.style.color = "white")}
-            //   onMouseOut={(e) => (e.target.style.color = "gray")}
-            //   to="/login"
-            // >
-            //   login
-            // </NavLink>
           )}
         </Nav>
       </NB.Collapse>
