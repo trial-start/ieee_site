@@ -23,14 +23,34 @@ export async function getEvent(id) {
 }
 
 export async function createEvent(event) {
+  //1. create a random image name and the image path
+  const imageName = `${Math.random()}-${event.image.name}`.replaceAll("/", "");
+
+  console.log(imageName);
+
+  const imagePath = `https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/${imageName}`;
+
   const { data, error } = await supabase
     .from("events")
-    .insert([event])
+    .insert([{ ...event, image: imagePath }])
     .select();
 
   if (error) {
     console.error(error);
     throw new Error("Event cannot be created");
+  }
+
+  //2 upload image into storage
+
+  const { error: StorageError } = await supabase.storage
+    .from("event-images")
+    .upload(imageName, event.image);
+
+  // 3.delete for unsuccesful uploads
+  if (StorageError) {
+    // await supabase.from("events").delete().eq("id", data.id);
+    console.error(StorageError);
+    throw new Error("Cabin image could not be uploaded");
   }
 
   return data;

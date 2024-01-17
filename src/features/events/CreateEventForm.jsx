@@ -19,8 +19,12 @@ const CreateEventForm = () => {
   const [date, setDate] = useState("04-01-2024");
   const [location, setLocation] = useState("hyderabad");
   const [conductedBy, setConductedBy] = useState("");
-
+  const [image, setImage] = useState();
   const { createEvent, isLoading } = useCreateEvent();
+
+  function handleFileUpload(e) {
+    setImage(e.target.files[0]);
+  }
 
   // if (isLoading)
   //   return (
@@ -35,6 +39,7 @@ const CreateEventForm = () => {
       title,
       description,
       date,
+      image,
       location,
       conductedBy,
     };
@@ -62,7 +67,7 @@ const CreateEventForm = () => {
       }}
     >
       <Container className="mt-5">
-        <NavBar itemId="societies" itemName="Socities" teamType="CoreTeam" />
+        <NavBar />
         <Row className="justify-content-md-center">
           <Col xs={12} md={8}>
             <Form onSubmit={handleSubmit}>
@@ -90,6 +95,18 @@ const CreateEventForm = () => {
                   value={description}
                   disabled={isLoading}
                   onChange={(e) => setDescription(e.target.value)}
+                />
+              </Form.Group>
+
+              <Form.Group controlId="image">
+                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                  Event Image
+                </Form.Label>
+                <Form.Control
+                  type="file"
+                  placeholder="Enter image url"
+                  disabled={isLoading}
+                  onChange={handleFileUpload}
                 />
               </Form.Group>
 

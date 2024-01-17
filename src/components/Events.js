@@ -76,7 +76,8 @@ const Events = ({ by = "" }) => {
             <Card className="event-card">
               <Card.Img
                 variant="top"
-                src={`images/${imgs[0]}`}
+                // src={`images/${imgs[0]}`}
+                src={event.image || `images/${imgs[0]}`}
                 alt={`Event ${index + 1}`}
               />
               <Card.Body>
