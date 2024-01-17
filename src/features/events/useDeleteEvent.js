@@ -14,6 +14,5 @@ export function useDeleteEvent() {
     onError: (err) => toast.error(err.message),
   });
 
-  console.log(isDeleting);
   return { isDeleting, deleteEvent };
 }

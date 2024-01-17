@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "./Carousel";
 import NavBar from "./NavBar";
+import EventNotFound from "./EventNotFound";
 // import events from "../static/event_details";
 // import { useParams } from "react-router-dom";
 import Footer from "./Footer";
@@ -21,7 +22,7 @@ const EventsPage = () => {
   const { event: selectedEvent, isLoading } = useEvent();
   // console.log(selectedEvent);
 
-  selectedEvent ?? <div>Event not found</div>;
+  if (!selectedEvent) return <EventNotFound />;
 
   if (isLoading)
     return (

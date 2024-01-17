@@ -43,7 +43,7 @@ const CreateEventForm = () => {
       location,
       conductedBy,
     };
-    if (title && description && date && location && conductedBy) {
+    if (title && description && date && location && conductedBy && image) {
       createEvent(newEvent);
       console.log(newEvent);
       setTitle("");
