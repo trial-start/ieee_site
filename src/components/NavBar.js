@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar as NB, Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { useUser } from "../features/authentication/useUser";
 import Logout from "../features/authentication/Logout";
@@ -37,7 +37,7 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
   };
 
   return (
-    <Navbar
+    <NB
       bg="dark"
       variant="dark"
       fixed="top"
@@ -45,7 +45,7 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
       expanded={expanded}
       style={{ transition: "top 0.7s" }}
     >
-      <Navbar.Brand>
+      <NB.Brand>
         <Link to="/">
           <img
             src={`${process.env.PUBLIC_URL}/images/logo_n.jpg`}
@@ -53,9 +53,9 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
             style={{ width: "170px", height: "60px", marginLeft: "15px" }}
           />{" "}
         </Link>
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
-      <Navbar.Collapse id="basic-navbar-nav">
+      </NB.Brand>
+      <NB.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
+      <NB.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto custom-nav">
           <Nav.Link href={`#${itemId}`} className="custom-margin">
             {itemName}
@@ -104,8 +104,8 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
             // </NavLink>
           )}
         </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+      </NB.Collapse>
+    </NB>
   );
 };
 

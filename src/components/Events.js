@@ -8,6 +8,7 @@ import Spinner from "./Spinner";
 import EventButtonIcon from "./EventButtonIcon";
 import { useUser } from "../features/authentication/useUser";
 import { useDeleteEvent } from "../features/events/useDeleteEvent";
+import EventNotFound from "../components/EventNotFound";
 
 const imgs = ["temp.jpg"];
 
@@ -15,8 +16,6 @@ const Events = ({ by = "" }) => {
   const { isLoading, events: allEvents } = useEvents();
   const { isAuthenticated } = useUser();
   const { isDeleting, deleteEvent } = useDeleteEvent();
-
-  allEvents ?? <div>Event not found</div>;
 
   // console.log(error);
   // console.log(events1);
@@ -67,6 +66,8 @@ const Events = ({ by = "" }) => {
   };
 
   if (isLoading || isDeleting) return <Spinner />;
+  if (!isLoading && allEvents.length === 0)
+    return <EventNotFound check={false} />;
 
   return (
     <>

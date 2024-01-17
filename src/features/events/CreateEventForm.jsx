@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-// import Spinner from "../../components/Spinner";
 // import styled from "styled-components";
 import NavBar from "../../components/NavBar";
 import { useCreateEvent } from "./useCreateEvent";
@@ -45,7 +44,6 @@ const CreateEventForm = () => {
     };
     if (title && description && date && location && conductedBy && image) {
       createEvent(newEvent);
-      console.log(newEvent);
       setTitle("");
       setDescription("");
       setDate("");
@@ -66,7 +64,7 @@ const CreateEventForm = () => {
         marginTop: "100px",
       }}
     >
-      <Container className="mt-5">
+      <Container className="mt-4">
         <NavBar />
         <Row className="justify-content-md-center">
           <Col xs={12} md={8}>
@@ -183,4 +181,4 @@ const CreateEventForm = () => {
   );
 };
 
-export default CreateEventForm;
+export default React.memo(CreateEventForm);

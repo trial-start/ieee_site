@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Alert, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Assuming you are using React Router for navigation
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ check = true }) => {
   return (
     <Container
       fluid
@@ -11,18 +11,25 @@ const NotFoundPage = () => {
       <Row className="mb-4">
         <Col xs={12} className="text-center">
           <Alert variant="danger">
-            <h1 className="display-4">Event Not Found</h1>
-            <p className="lead">The requested event could not be found.</p>
+            <h1 className="display-4">
+              Event{`${check === false ? "s" : ""}`} Not Found
+            </h1>
+            <p className="lead">
+              The requested event{`${check === false ? "s" : ""}`} could not be
+              found.
+            </p>
           </Alert>
         </Col>
       </Row>
-      <Row>
-        <Col xs={12} className="text-center">
-          <Link to="/">
-            <Button variant="outline-primary">Go to Home</Button>
-          </Link>
-        </Col>
-      </Row>
+      {check && (
+        <Row>
+          <Col xs={12} className="text-center">
+            <Link to="/">
+              <Button variant="outline-primary">Go to Home</Button>
+            </Link>
+          </Col>
+        </Row>
+      )}
     </Container>
   );
 };
