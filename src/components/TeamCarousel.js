@@ -53,6 +53,7 @@ const TeamCarousel = ({ onSlideChange }) => {
         pause={true}
         className="custom-carousel"
         onSlide={onSlideChange}
+        controls={false}
       >
         {teamMembers.map((member, index) => (
           <Carousel.Item key={index}>

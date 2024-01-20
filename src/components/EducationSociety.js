@@ -35,7 +35,7 @@ const EducationSociety = ({ imgs, num }) => {
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events />
+        <Events by="education society" />
       </section>
       <Footer />
     </div>

@@ -58,7 +58,11 @@ code {
 /* Add this to your CSS file */
 
 .footer_parent {
-  background-color: gray; /* Set the background color of the footer */
+  background-color: rgb(
+    142,
+    135,
+    135
+  ); /* Set the background color of the footer */
   color: #fff; /* Set the text color */
   padding: 40px 0; /* Add padding to the top and bottom of the footer */
 }
@@ -263,6 +267,7 @@ a:hover {
 
 .cust_bg_color {
   background-color: #8d9c9b;
+  border-radius: 20px;
 }
 
 /* events */
@@ -336,3 +341,16 @@ a:hover {
 /* .custWidth {
   width: 100px !important;
 } */
+
+/* home page */
+@media (max-width: 768px) {
+  .section-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-description {
+    font-size: 14px;
+  }
+}

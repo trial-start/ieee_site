@@ -37,7 +37,13 @@ export default function HomePage() {
         </div>
         <p
           className="section-description section-divider"
-          style={{ padding: "10px", fontFamily: "Helvetica, sans-serif" }}
+          // style={{ padding: "10px", fontFamily: "Helvetica, sans-serif" }}
+          style={{
+            padding: "10px",
+            fontFamily: "Helvetica, sans-serif",
+            textAlign: "justify", // Center text on all screens
+            fontSize: "18px", // Default font size for larger screens
+          }}
           id="about"
         >
           <h1 style={{ textAlign: "center" }}>IEEE CBIT</h1>

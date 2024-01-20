@@ -1,11 +1,22 @@
 import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import ContactForm from "./ContactForm";
 import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
-
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaGithub,
+  FaTwitter,
+  FaUsers,
+  FaCalendarAlt,
+} from "react-icons/fa";
+import { FiInfo } from "react-icons/fi";
 const Footer = () => {
   const [isContactFormVisible, setContactFormVisible] = useState(false);
+
+  const sty = { marginRight: "10px", marginBottom: "3px" };
 
   const toggleContactForm = () => {
     setContactFormVisible((prevVisible) => !prevVisible);
@@ -31,6 +42,7 @@ const Footer = () => {
           <Col sm={4}>
             <h3>IEEE CBIT</h3>
             <a href="/#about" className="footer-link">
+              <FiInfo size={20} style={sty} />
               About
             </a>
             <br />
@@ -38,24 +50,26 @@ const Footer = () => {
               Team
             </a> */}
             <Link to="/#coreteams" className="footer-link">
+              <FaUsers size={20} style={sty} />
               team
             </Link>
             <br />
             <Link to="/#events" className="footer-link">
-              Events
+              <FaCalendarAlt size={20} style={sty} /> Events
             </Link>
           </Col>
           <Col sm={4}>
             <h3>GET IN TOUCH</h3>
             <a href="mailto:cbit_ieee@gmail.com" className="footer-link">
-              <i className="fas fa-envelope-square"></i> Email
+              <FaEnvelope size={20} style={sty} />
+              Email
             </a>
             <br />
             <a
               href="https://www.facebook.com/freaking.techies.cbit"
               className="footer-link"
             >
-              <i className="https://www.facebook.com/ieeecbit?mibextid=ZbWKwL"></i>{" "}
+              <FaFacebook size={20} style={sty} />
               Facebook
             </a>
             <br />
@@ -63,22 +77,37 @@ const Footer = () => {
               href="https://instagram.com/ieee_cbit?igshid=NzZlODBkYWE4Ng=="
               className="footer-link"
             >
-              <i className="fab fa-instagram"></i> Instagram
+              <FaInstagram size={20} style={sty} />
+              Instagram
             </a>
             <br />
             <a href="https://github.com/ieee_cbit" className="footer-link">
-              <i className="fab fa-github"></i> GitHub
+              <FaGithub size={20} style={sty} /> GitHub
             </a>
             <br />
             <a
               href="https://x.com/IeeeCbit?t=IERGxoAIdJ2X3SxuLZngGg&s=09"
               className="footer-link"
             >
-              <i className="fab fa-twitter"></i> Twitter
+              <FaTwitter size={20} style={sty} /> Twitter
             </a>
           </Col>
           <Col sm={12} className="text-center mt-3">
-            <h3
+            <Button
+              // style={{ marginBottom: "10px" }}
+              style={{
+                backgroundColor: "#3498db", // Example background color
+                color: "#fff", // Example text color
+                padding: "10px 20px",
+                borderRadius: "15px",
+                border: "none",
+                fontSize: "16px",
+                fontWeight: "bold",
+                cursor: "pointer",
+                marginBottom: "10px",
+
+                // Add more styles as needed
+              }}
               onClick={toggleContactForm}
               // className="contact-form-toggle"
               // data-tip="Click to fill the form"
@@ -86,7 +115,7 @@ const Footer = () => {
               // data-tooltip-content="Hello world!"
             >
               Contact Form
-            </h3>
+            </Button>
             <Tooltip id="my-tooltip">
               {isContactFormVisible
                 ? "Click to close the form"

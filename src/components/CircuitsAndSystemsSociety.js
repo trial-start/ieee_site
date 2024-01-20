@@ -35,7 +35,7 @@ const CircuitsAndSystems = ({ imgs, num }) => {
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events />
+        <Events by="circuits and systems society" />
       </section>
       <Footer />
     </div>

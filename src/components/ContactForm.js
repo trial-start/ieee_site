@@ -100,6 +100,8 @@ const ContactForm = () => {
     });
   };
 
+  const rstyle = { borderRadius: "18px" };
+
   return (
     <section
       id="contact"
@@ -123,6 +125,7 @@ const ContactForm = () => {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
+                style={rstyle}
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
@@ -134,6 +137,7 @@ const ContactForm = () => {
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
+                style={rstyle}
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
@@ -145,7 +149,8 @@ const ContactForm = () => {
               <Form.Label>Message</Form.Label>
               <Form.Control
                 as="textarea"
-                rows={4}
+                rows={3}
+                style={rstyle}
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}

@@ -47,7 +47,7 @@ const PowerEnergySociety = ({ imgs, num }) => {
         <Events by="power and energy society" />
       </section>
 
-      <Footer />
+      <Footer by="power and energy society" />
     </div>
   );
 };

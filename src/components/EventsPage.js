@@ -20,7 +20,6 @@ const Fullpage = styled.div`
 const EventsPage = () => {
   // console.log(id);
   const { event: selectedEvent, isLoading } = useEvent();
-  // console.log(selectedEvent);
 
   if (!isLoading && !selectedEvent) return <EventNotFound />;
 
@@ -39,7 +38,11 @@ const EventsPage = () => {
         <NavBar itemName="Event" teamType="Highlights" val="x" />
         <div className="section" id="home">
           {/* <ImageCarousel /> */}
-          <Carousel imgs={["robo_soc.jpg", "robo_soc.jpg"]} />
+          <Carousel
+            imgs={["robo_soc.jpg", "robo_soc.jpg"]}
+            event_img={selectedEvent.image}
+            ie="y"
+          />
         </div>
         <hr className="section-divider" />
         <div className="section" id="event-details">

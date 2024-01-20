@@ -77,6 +77,7 @@ const Events = ({ by = "" }) => {
             <Card className="event-card">
               <Card.Img
                 variant="top"
+                style={{ height: "35vh" }}
                 // src={`images/${imgs[0]}`}
                 src={event.image || `images/${imgs[0]}`}
                 alt={`Event ${index + 1}`}
@@ -84,7 +85,7 @@ const Events = ({ by = "" }) => {
               <Card.Body>
                 <Card.Title>{event.title}</Card.Title>
                 <Card.Text onClick={() => handleToggleDescription(index)}>
-                  {truncateDescription(event.description, 15, index)}
+                  {truncateDescription(event.description, 10, index)}
                 </Card.Text>
                 <Card.Text>Date: {event.date}</Card.Text>
                 <Card.Text>Conducted By : {event.conductedBy}</Card.Text>
