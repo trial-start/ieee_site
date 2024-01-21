@@ -21,3 +21,5 @@ const CoreTeam = ({ num = "2" }) => {
 };
 
 export default CoreTeam;
+
+

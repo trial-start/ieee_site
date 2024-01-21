@@ -1,4 +1,4 @@
-import ImageCarousel from "./Carousel";
+import ImageCarousel from "./Homecarousel";
 // import CoreTeam from "./CoreTeam";
 import NavBar from "./NavBar";
 import SocietyCards from "./SocietyCards";
@@ -20,6 +20,7 @@ export default function HomePage() {
   //     return () => clearTimeout(timer); // Clear the timer on component unmount
   //   }, []);
   const [slideIndex, setSlideIndex] = useState(0);
+
   // const navigation = useNavigation();
   // const isLoading = navigation.state === "loading";
 
@@ -31,35 +32,21 @@ export default function HomePage() {
         </div>
       ) : ( */}
       <>
-        <NavBar itemId="societies" itemName="Socities" teamType="CoreTeam" />
+        <NavBar itemId="societies" itemName="Societies" teamType="CoreTeam" />
         <div className="section" id="home">
           <ImageCarousel className="ImageCarousel" />
         </div>
         <p
           className="section-description section-divider"
-          style={{ padding: "10px", fontFamily: "Helvetica, sans-serif" }}
+          style={{ padding: "10px", fontFamily: "Helvetica, sans-serif", textAlign:"justify" }}
           id="about"
         >
           <h1 style={{ textAlign: "center" }}>IEEE CBIT</h1>
-          Computer Society Computer Society logoOpens in a new window
-          www.computer.org Computer Society logo The Computer Society (CS) is
-          the world's largest professional organization dedicated to advancing
-          technology for the benefit of humanity. It has over 100,000 members in
-          180 countries around the world. The CS provides resources and
-          opportunities for professionals in the computing field, including
-          conferences, publications, and educational programs. It also advocates
-          for the responsible use of technology and promotes diversity and
-          inclusion in the computing field. Sure. Here are small descriptions of
-          the following societies which are part of the IEEE club: Computer
-          Society Computer Society logoOpens in a new window www.computer.org
-          Computer Society logo The Computer Society (CS) is the world's largest
-          professional organization dedicated to advancing technology for the
-          benefit of humanity. It has over 100,000 members in 180 countries
-          around the world. The CS provides resources and opportunities for
-          professionals in the computing field, including conferences,
-          publications, and educational programs. It also advocates for the
-          responsible use of technology and promotes diversity and inclusion in
-          the computing field.
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to the IEEE CBIT Student Chapter, a pioneering club at Chaitanya Bharathi Institute of Technology (CBIT). As one of the oldest clubs at CBIT, the IEEE CBIT is a student branch affiliated with IEEE, providing a platform for students to engage with technology, conduct events, seminars, webinars and network with professionals. With a rich history, we annually host events like Robovanza during Sudhee, Master Classes, and other events engaging students in cutting-edge technologies. We also conduct Membership Drives every year to recruit dedicated students for being the part of IEEE CBIT Student Branch.<br></br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IEEE CBIT comprises seven specialized societies, each focused on specific areas of engineering and technology.
+          The seven societies within IEEE CBIT are:         
+          Computer Society, Robotics and Automation Society, Education Society, Circuits and Systems Society, Power and Energy Society, Signal Processing Society, and Women in Engineering Society.
+          Being part of this club allows students to consistently stay informed about the latest developments in their field and build valuable skills for their future careers.
         </p>
         <div className="section" id="societies">
           <h2 className="section-heading">Societies</h2>

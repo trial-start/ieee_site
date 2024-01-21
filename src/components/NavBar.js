@@ -84,7 +84,7 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
             <Logout />
           ) : (
             <Nav.Link as={NavLink} to="/login" className="custom-margin">
-              login
+              Login
             </Nav.Link>
           )}
         </Nav>
