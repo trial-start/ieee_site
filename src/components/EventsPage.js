@@ -39,9 +39,10 @@ const EventsPage = () => {
         <div className="section" id="home">
           {/* <ImageCarousel /> */}
           <Carousel
-            imgs={["robo_soc.jpg", "robo_soc.jpg"]}
+            // imgs={["robo_soc.jpg", "robo_soc.jpg"]}
             event_img={selectedEvent.image}
             ie="y"
+            num={1}
           />
         </div>
         <hr className="section-divider" />

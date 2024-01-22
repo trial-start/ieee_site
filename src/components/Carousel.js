@@ -1,12 +1,12 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 
-const ImageCarousel = ({ val, type = "sample", ie = "n", event_img }) => {
+const ImageCarousel = ({ val, type = "sample", ie = "n", event_img,num=4 }) => {
   const carouselStyle = {
     paddingTop: val === "x" ? "" : "65px",
   };
 
-  const numberOfImages = 4;
+  const numberOfImages = num;
   const imgs = Array.from({ length: numberOfImages }, (_, index) => index);
 
   return (
@@ -23,9 +23,9 @@ const ImageCarousel = ({ val, type = "sample", ie = "n", event_img }) => {
           <img
             className="d-block w-100"
             src={
-              index === 0 && ie === "y"
-                ? event_img
-                : `${process.env.PUBLIC_URL}/images/${type}/img${index}.png`
+              ( ie !== "y")
+                ?`${process.env.PUBLIC_URL}/images/${type}/img${index}.png`: event_img
+                 
             }
             // src={require(`../images/${type}/img${index}.jpg`)}
             alt={`Slide ${index + 1}`}
