@@ -13,16 +13,16 @@ const EducationSociety = ({ imgs, num }) => {
         <h2 className="section-heading">Education Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+        The IEEE Education Society is a specialized division within the Institute of Electrical and Electronics Engineers (IEEE) 
+        with a primary focus on advancing education and training in the fields of electrical and computer engineering, as well 
+        as computer science. Committed to fostering the exchange of knowledge and ideas among educators, researchers, and 
+        professionals, the society plays a vital role in shaping the landscape of engineering education. Through various 
+        publications, including journals and magazines, the IEEE Education Society disseminates research findings, 
+        case studies, and reviews to contribute to the ongoing dialogue in the realm of engineering education. 
+        Additionally, the society organizes conferences, workshops, and events, serving as platforms for professionals 
+        and researchers to showcase their work and engage in discussions. Active involvement in the development and maintenance 
+        of educational standards and offering membership opportunities further solidify the IEEE Education Society's role in 
+        shaping the future of electrical and computer engineering education.
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
@@ -35,7 +35,7 @@ const EducationSociety = ({ imgs, num }) => {
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="education society" />
+        <Events by="education society"/>
       </section>
       <Footer />
     </div>
