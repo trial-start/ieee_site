@@ -25,13 +25,13 @@ const SocietyCards = () => {
       />
       <Cards
         img="images/robo_soc.jpg"
-        societyName="Robotics and Automation Society"
+        societyName="Robotics And Automation Society"
         description="Description of Society"
         link="robotics-automation-society"
       />
       <Cards
         img="images/won_soc.jpg"
-        societyName="women in engineering Society"
+        societyName="Women In Engineering Society"
         description="Description of Society"
         link="women-engineering-society"
       />
@@ -39,12 +39,12 @@ const SocietyCards = () => {
       <Cards
         img="images/edu_soc.jpg"
         societyName="Education Society"
-        description="Description of Society"
+        description="Education Society shapes engineering education through knowledge exchange, publications, events, and active involvement in educational standards."
         link='education-society'
       />
       <Cards
         img="images/pow_soc.jpg"
-        societyName="Power and Energy Society"
+        societyName="Power And Energy Society"
         description="Description of Society"
         link='power-energy-society'
       />

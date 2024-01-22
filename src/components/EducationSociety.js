@@ -4,14 +4,22 @@ import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 import Events from "./Events";
-
 const EducationSociety = ({ imgs, num }) => {
+  const team=[{
+    name:"N. Puneeth Sarma",
+    img:"images/es_chair.jpg",
+    position:"Chairperson"},
+  {
+    name:"Manav Damani",
+    img:"images/es_vice.jpg",
+    position:"Vice Chair"
+  }]
   return (
     <div>
       <NavBar itemId="about" itemName="About" teamType="Team" />
       <section className="society-section" id="about">
         <h2 className="section-heading">Education Society</h2>
-        <Carousel val="x" imgs={imgs} />
+        <Carousel val="x" type="es"  ie="n" num={1} />
         <p className="section-description">
         The IEEE Education Society is a specialized division within the Institute of Electrical and Electronics Engineers (IEEE) 
         with a primary focus on advancing education and training in the fields of electrical and computer engineering, as well 
@@ -30,7 +38,7 @@ const EducationSociety = ({ imgs, num }) => {
         <p className="section-description">
           Meet the dedicated members of our Education Society's Team.
         </p>
-        <CoreTeam num={num} />
+        <CoreTeam members={team} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
