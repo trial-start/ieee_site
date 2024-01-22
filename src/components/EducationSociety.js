@@ -6,7 +6,7 @@ import Carousel from "./Carousel";
 import Events from "./Events";
 const EducationSociety = ({ imgs, num }) => {
   const team=[{
-    name:"N. Puneeth Sarma",
+    name:"Nimmaraju Puneeth Sarma",
     img:"images/es_chair.jpg",
     position:"Chairperson"},
   {
