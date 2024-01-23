@@ -22,7 +22,14 @@ const CreateEventForm = () => {
   const { createEvent, isLoading } = useCreateEvent();
 
   function handleFileUpload(e) {
-    setImage(e.target.files[0]);
+    // setImage(e.target.files[0]);
+    // console.log(e.target.files);
+    const imgArr = [];
+    for (let i = 0; i < e.target.files.length; i++) {
+      imgArr.push(e.target.files[i]);
+    }
+    setImage(imgArr);
+    // console.log(imgArr);
   }
 
   // if (isLoading)
@@ -104,9 +111,24 @@ const CreateEventForm = () => {
                   type="file"
                   placeholder="Enter image url"
                   disabled={isLoading}
+                  accept="image/*"
                   onChange={handleFileUpload}
+                  multiple
+                  name="images[]"
                 />
               </Form.Group>
+
+              {/* <Form.Group controlId="image">
+                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                  Event Image
+                </Form.Label>
+                <Form.Control
+                  type="file"
+                  placeholder="Enter image url"
+                  disabled={isLoading}
+                  onChange={handleFileUpload}
+                />
+              </Form.Group> */}
 
               <Form.Group controlId="date">
                 <Form.Label style={{ fontWeight: "bold" }} className="mt-2">

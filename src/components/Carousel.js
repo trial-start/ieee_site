@@ -6,8 +6,9 @@ const ImageCarousel = ({ val, type = "sample", ie = "n", event_img }) => {
     paddingTop: val === "x" ? "" : "65px",
   };
 
-  const numberOfImages = 4;
-  const imgs = Array.from({ length: numberOfImages }, (_, index) => index);
+  // console.log(event_img);
+  // const numberOfImages = 4;
+  // const imgs = Array.from({ length: numberOfImages }, (_, index) => index);
 
   return (
     <Carousel
@@ -18,7 +19,13 @@ const ImageCarousel = ({ val, type = "sample", ie = "n", event_img }) => {
       pause={true}
       wrap
     >
-      {imgs.map((index) => (
+      {event_img?.split("--").map((img, index) => (
+        <Carousel.Item key={index}>
+          <img className="d-block w-100" src={img} alt={`Slide ${index + 1}`} />
+        </Carousel.Item>
+      ))}
+
+      {/* {imgs.map((index) => (
         <Carousel.Item key={index}>
           <img
             className="d-block w-100"
@@ -27,15 +34,10 @@ const ImageCarousel = ({ val, type = "sample", ie = "n", event_img }) => {
                 ? event_img
                 : `${process.env.PUBLIC_URL}/images/${type}/img${index}.png`
             }
-            // src={require(`../images/${type}/img${index}.jpg`)}
             alt={`Slide ${index + 1}`}
           />
-          {/* <Carousel.Caption>
-            <h3>{`Slide ${index + 1}`}</h3>
-            <p>{`Description for Slide ${index + 1}`}</p>
-          </Carousel.Caption> */}
         </Carousel.Item>
-      ))}
+      ))} */}
     </Carousel>
   );
 };
