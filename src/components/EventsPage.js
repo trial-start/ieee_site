@@ -21,6 +21,9 @@ const EventsPage = () => {
   // console.log(id);
   const { event: selectedEvent, isLoading } = useEvent();
 
+  // console.log(selectedEvent.image);
+  // console.log(selectedEvent);
+
   if (!isLoading && !selectedEvent) return <EventNotFound />;
 
   if (isLoading)

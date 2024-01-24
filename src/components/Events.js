@@ -19,7 +19,11 @@ const Events = ({ by = "" }) => {
 
   // console.log(error);
   // console.log(events1);
-  // console.log("sushanth");
+
+  // console.log(allEvents);
+  // const a = allEvents[4].image;
+  // console.log(a.split("--"));
+
   const events =
     by === ""
       ? allEvents
@@ -79,7 +83,7 @@ const Events = ({ by = "" }) => {
                 variant="top"
                 style={{ height: "35vh" }}
                 // src={`images/${imgs[0]}`}
-                src={event.image || `images/${imgs[0]}`}
+                src={event.image.split("--")[0] || `images/${imgs[0]}`}
                 alt={`Event ${index + 1}`}
               />
               <Card.Body>
