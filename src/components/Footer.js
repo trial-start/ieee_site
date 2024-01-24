@@ -46,22 +46,17 @@ const Footer = () => {
               About
             </a>
             <br />
-            <a href="/#coreteam" className="footer-link">
-            <FaUsers size={20} style={sty} />
+            {/* <a href="/#coreteam" className="footer-link">
               Team
-            </a> 
-            {/*<Link to="/#coreteams" className="footer-link">
+            </a> */}
+            <Link to="/#coreteams" className="footer-link">
               <FaUsers size={20} style={sty} />
               team
-            </Link>*/}
+            </Link>
             <br />
-            <a href="/#events" className="footer-link">
-            <FaCalendarAlt size={20} style={sty} />
-              Events
-            </a> 
-            {/*<Link to="/#events" className="footer-link">
+            <Link to="/#events" className="footer-link">
               <FaCalendarAlt size={20} style={sty} /> Events
-          </Link>*/}
+            </Link>
           </Col>
           <Col sm={4}>
             <h3>GET IN TOUCH</h3>
