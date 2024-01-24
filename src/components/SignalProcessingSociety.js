@@ -13,16 +13,11 @@ const SignalProcessingSociety = ({ imgs, num }) => {
         <h2 className="section-heading">Signal Processing Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+          Founded as IEEE’s first society in 1948, the Signal Processing Society is the world’s premier association for signal processing engineers and industry professionals. Engineers around the world look to the Society for information on the latest developments in the signal processing field. Its deeply rooted history spans 75 years, featuring a membership base of more than 20,000 deeply interested and involved signal processing engineers, academics, industry professionals and students who are all part of a dynamic global community – spanning 120 countries worldwide.
+
+The Society organizes numerous conferences around the world every year, focusing on the innovations shaping the future of signal processing and the future of our world.
+
+Members have opportunities to be involved in boards and committees, and at the local level members are actively immersed in regional chapters, working on issues and projects that shape what’s next in signal processing. The Society also oversees publication of numerous periodicals, including the IEEE Signal Processing Magazine and the Inside Signal Processing eNewsletter.
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
