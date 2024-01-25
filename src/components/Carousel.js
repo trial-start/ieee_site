@@ -1,7 +1,12 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 
-const ImageCarousel = ({ val, type = "sample", ie = "n", event_img }) => {
+const ImageCarousel = ({
+  val,
+  type = "sample",
+  ie = "n",
+  imgs = "https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/secret.png--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/v-pres.png",
+}) => {
   const carouselStyle = {
     paddingTop: val === "x" ? "" : "65px",
   };
@@ -19,7 +24,7 @@ const ImageCarousel = ({ val, type = "sample", ie = "n", event_img }) => {
       pause={true}
       wrap
     >
-      {event_img?.split("--").map((img, index) => (
+      {imgs?.split("--").map((img, index) => (
         <Carousel.Item key={index}>
           <img className="d-block w-100" src={img} alt={`Slide ${index + 1}`} />
         </Carousel.Item>
