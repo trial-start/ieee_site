@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ContactForm from "./ContactForm";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import {
   FaEnvelope,
@@ -46,17 +46,22 @@ const Footer = () => {
               About
             </a>
             <br />
-            {/* <a href="/#coreteam" className="footer-link">
+            <a href="/#coreteam" className="footer-link">
+            <FaUsers size={20} style={sty} />
               Team
-            </a> */}
-            <Link to="/#coreteams" className="footer-link">
+            </a> 
+            {/*<Link to="/#coreteams" className="footer-link">
               <FaUsers size={20} style={sty} />
               team
-            </Link>
+            </Link>*/}
             <br />
-            <Link to="/#events" className="footer-link">
+            <a href="/#events" className="footer-link">
+            <FaCalendarAlt size={20} style={sty} />
+              Events
+            </a> 
+            {/*<Link to="/#events" className="footer-link">
               <FaCalendarAlt size={20} style={sty} /> Events
-            </Link>
+          </Link>*/}
           </Col>
           <Col sm={4}>
             <h3>GET IN TOUCH</h3>
