@@ -13,16 +13,23 @@ const EducationSociety = ({ imgs, num }) => {
         <h2 className="section-heading">Education Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+          Fuel your passion for education and empower the next generation of
+          engineers and computer scientists with the CBIT IEEE's Education
+          Society branch! Aligned with the world-renowned IEEE EdSoc, we provide
+          a dynamic platform for educators to connect, collaborate, and grow.
+          Immerse yourself in a vibrant community of passionate educators,
+          researchers, and industry professionals. Sharpen your skills through
+          workshops, webinars, and summer institutes, exploring innovative
+          teaching methodologies and accessing a wealth of resources designed to
+          boost student engagement and learning outcomes. Don't just develop
+          your own skills, be part of shaping the future! Collaborate with
+          fellow educators, share best practices, and contribute to
+          groundbreaking advancements in STEM education. The EdSoc actively
+          advocates for strong STEM education policies, and you can join us in
+          raising awareness about the importance of robust engineering and
+          computer science programs. Together, let's ensure students are
+          equipped with the knowledge and skills necessary to thrive in the
+          ever-evolving world
         </p>
       </section>
       <section className="core-team-section" id="coreteam">

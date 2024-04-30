@@ -12,12 +12,12 @@ export default function HomePage() {
   //   const [showWelcome, setShowWelcome] = useState(true);
 
   //   useEffect(() => {
-  //     // Set a timer to hide the welcome message after a certain duration
+  //
   //     const timer = setTimeout(() => {
   //       setShowWelcome(false);
   //     }, 500); // Adjust the duration as needed
 
-  //     return () => clearTimeout(timer); // Clear the timer on component unmount
+  //     return () => clearTimeout(timer);
   //   }, []);
   const [slideIndex, setSlideIndex] = useState(0);
   // const navigation = useNavigation();
@@ -41,31 +41,24 @@ export default function HomePage() {
           style={{
             padding: "10px",
             fontFamily: "Helvetica, sans-serif",
-            textAlign: "justify", // Center text on all screens
-            fontSize: "18px", // Default font size for larger screens
+            textAlign: "justify",
+            fontSize: "18px",
           }}
           id="about"
         >
           <h1 style={{ textAlign: "center" }}>IEEE CBIT</h1>
-          Computer Society Computer Society logoOpens in a new window
-          www.computer.org Computer Society logo The Computer Society (CS) is
-          the world's largest professional organization dedicated to advancing
-          technology for the benefit of humanity. It has over 100,000 members in
-          180 countries around the world. The CS provides resources and
-          opportunities for professionals in the computing field, including
-          conferences, publications, and educational programs. It also advocates
-          for the responsible use of technology and promotes diversity and
-          inclusion in the computing field. Sure. Here are small descriptions of
-          the following societies which are part of the IEEE club: Computer
-          Society Computer Society logoOpens in a new window www.computer.org
-          Computer Society logo The Computer Society (CS) is the world's largest
-          professional organization dedicated to advancing technology for the
-          benefit of humanity. It has over 100,000 members in 180 countries
-          around the world. The CS provides resources and opportunities for
-          professionals in the computing field, including conferences,
-          publications, and educational programs. It also advocates for the
-          responsible use of technology and promotes diversity and inclusion in
-          the computing field.
+          The CBIT Institute of Electrical and Electronics Engineers (IEEE)
+          Student Chapter is a vibrant community empowering your engineering
+          journey. Affiliated with the world's largest professional technology
+          organization, we provide a platform to deepen knowledge through
+          workshops and guest lectures, sharpen skills with hands-on
+          experiences, network and collaborate with industry professionals,
+          prepare for the future with career guidance, and compete on a broader
+          stage. Membership unlocks exclusive benefits, workshops, hackathons,
+          networking events, scholarships, and leadership opportunities. Led by
+          a passionate student team and supported by faculty advisors, we offer
+          a stimulating environment to explore interests, hone skills, and
+          prepare for a successful tech career
         </p>
         <div className="section" id="societies">
           <h2 className="section-heading">Societies</h2>

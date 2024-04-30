@@ -53,7 +53,7 @@ const EventsPage = () => {
             <Row>
               <Col>
                 <h1 style={{ textAlign: "center" }}>{selectedEvent.title}</h1>
-                <p>{selectedEvent.description}</p>
+                <p style={{ fontSize: "17px" }}>{selectedEvent.description}</p>
               </Col>
             </Row>
           </Container>
@@ -63,7 +63,7 @@ const EventsPage = () => {
           <Container>
             <Row>
               <Col>
-                <h2>Date</h2>
+                <h2 style={{ fontSize: "25px" }}>Date</h2>
                 <p>{selectedEvent.date}</p>
               </Col>
             </Row>
@@ -73,7 +73,7 @@ const EventsPage = () => {
           <Container>
             <Row>
               <Col>
-                <h2>Location</h2>
+                <h2 style={{ fontSize: "25px" }}>Location</h2>
                 <p>{selectedEvent.location}</p>
               </Col>
             </Row>
@@ -83,29 +83,17 @@ const EventsPage = () => {
           <Container>
             <Row>
               <Col>
-                <h2>Conducted By</h2>
-                <p>{selectedEvent.conductedBy}</p>
+                <h2 style={{ fontSize: "25px" }}>Conducted by</h2>
+                <p style={{ fontStyle: "italic", fontSize: "20px" }}>
+                  {selectedEvent.conductedBy}
+                </p>
               </Col>
             </Row>
           </Container>
         </div>
         <hr className="section-divider" />
-        <div className="section" id="event-highlights">
-          <Container>
-            <Row>
-              <Col>
-                <h2>Highlights</h2>
-                {/* Add your highlights content here */}
-                <ul>
-                  <li>Highlight 1</li>
-                  <li>Highlight 2</li>
-                  {/* Add more highlights as needed */}
-                </ul>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <hr className="section-divider" />
+
+        {/* <hr className="section-divider" /> */}
         <Footer />
       </>
     </div>

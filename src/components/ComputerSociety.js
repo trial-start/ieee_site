@@ -13,16 +13,14 @@ const ComputerSociety = ({ imgs, num }) => {
         <h2 className="section-heading">Computer Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+          Aligned with the world's leading IEEE Computer Society, the CBIT
+          IEEE's CS branch empowers your exploration of computing. Delve into a
+          vast array of topics, from fundamentals to cutting-edge AI and Machine
+          Learning. Access valuable IEEE CS publications, network with
+          professionals, and participate in workshops and hackathons. Gain
+          career guidance, mentorship, and leadership opportunities. Join our
+          passionate community and embark on a transformative journey in
+          computing!
         </p>
       </section>
       <section className="core-team-section" id="coreteam">

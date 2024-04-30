@@ -13,16 +13,18 @@ const CircuitsAndSystems = ({ imgs, num }) => {
         <h2 className="section-heading">Circuits and Systems Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+          Dive deeper into the building blocks of technology with the CBIT IEEE
+          Circuits and Systems (CAS) branch! Aligned with the world-renowned
+          IEEE CAS society, we offer a comprehensive exploration of this dynamic
+          field. From the fundamentals of analog and digital circuits to
+          cutting-edge applications in integrated circuits, signal processing,
+          communication systems, and even neural networks, you'll gain access to
+          valuable resources, connect with experts, and participate in workshops
+          and conferences. Sharpen your skills through mentorship, potentially
+          contribute to groundbreaking research, and collaborate with industry
+          professionals to bridge the gap between theory and real-world
+          applications. Join our vibrant community and embark on a rewarding
+          journey into the world of circuits and systems!
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
@@ -30,7 +32,7 @@ const CircuitsAndSystems = ({ imgs, num }) => {
         <p className="section-description">
           Meet the dedicated members of our Circuits and Systems Society's Team.
         </p>
-        <CoreTeam num={num} />
+        <CoreTeam num={num} folder="ckts" names={[" Rajeshwar reddy", ""]} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>

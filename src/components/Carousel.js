@@ -5,7 +5,7 @@ const ImageCarousel = ({
   val,
   type = "sample",
   ie = "n",
-  imgs = "https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/secret.png--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/v-pres.png",
+  imgs = "https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/master_class_1.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/udbhava.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/pes_event.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/cs_event.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/css_event.jpg",
 }) => {
   const carouselStyle = {
     paddingTop: val === "x" ? "" : "65px",
@@ -24,7 +24,7 @@ const ImageCarousel = ({
       pause={true}
       wrap
     >
-      {imgs?.split("--").map((img, index) => (
+      {imgs?.split("--")?.map((img, index) => (
         <Carousel.Item key={index}>
           <img className="d-block w-100" src={img} alt={`Slide ${index + 1}`} />
         </Carousel.Item>

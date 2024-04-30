@@ -31,7 +31,13 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
           Meet the dedicated members of our Robotics and Automation Society's
           Team.
         </p>
-        <CoreTeam num={num} />
+        {/* <CoreTeam num={num} folder="ckts" names={[" Rajeshwar reddy", ""]} /> */}
+
+        <CoreTeam
+          num={num}
+          folder="ras"
+          names={["Dharani Sevireddy", "Uday Krishna Reddy"]}
+        />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>

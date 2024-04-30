@@ -13,16 +13,19 @@ const WomenEngineering = ({ imgs, num }) => {
         <h2 className="section-heading">Women in Engineering Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+          The CBIT IEEE Women in Engineering (WIE) branch, a vibrant extension
+          of the global IEEE WIE initiative, empowers you to excel in
+          engineering and technology. Here, you'll find a network of supportive
+          peers and industry professionals, ready to connect and collaborate.
+          Gain access to valuable resources and participate in workshops,
+          conferences, and professional development events designed to hone your
+          skills and propel you towards your career goals. Benefit from
+          insightful mentorship opportunities, fostering your leadership
+          potential. Don't just excel yourself, but become a role model!
+          Participate in WIE's outreach programs, inspiring young girls to
+          pursue STEM careers and contributing to a more diverse and inclusive
+          engineering landscape for the future. Join the CBIT IEEE WIE and be a
+          part of something bigge
         </p>
       </section>
       <section className="core-team-section" id="coreteam">

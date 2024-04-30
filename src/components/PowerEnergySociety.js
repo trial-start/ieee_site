@@ -13,25 +13,16 @@ const PowerEnergySociety = ({ imgs, num }) => {
         <h2 className="section-heading">Power and Energy Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Computer Society Computer Society logoOpens in a new window
-          www.computer.org Computer Society logo The Computer Society (CS) is
-          the world's largest professional organization dedicated to advancing
-          technology for the benefit of humanity. It has over 100,000 members in
-          180 countries around the world. The CS provides resources and
-          opportunities for professionals in the computing field, including
-          conferences, publications, and educational programs. It also advocates
-          for the responsible use of technology and promotes diversity and
-          inclusion in the computing field. Sure. Here are small descriptions of
-          the following societies which are part of the IEEE club: Computer
-          Society Computer Society logoOpens in a new window www.computer.org
-          Computer Society logo The Computer Society (CS) is the world's largest
-          professional organization dedicated to advancing technology for the
-          benefit of humanity. It has over 100,000 members in 180 countries
-          around the world. The CS provides resources and opportunities for
-          professionals in the computing field, including conferences,
-          publications, and educational programs. It also advocates for the
-          responsible use of technology and promotes diversity and inclusion in
-          the computing field.
+          The CBIT IEEE Student Chapter's Power & Energy Society (PES) branch
+          ignites your passion for the world that energizes our lives. Aligned
+          with the esteemed IEEE PES, we delve into the intricacies of electric
+          power and energy. Explore a vast spectrum of topics, from power system
+          planning and control to the future of renewable energy sources like
+          solar and wind. Gain access to valuable publications, connect with
+          industry professionals, and participate in workshops and conferences.
+          Sharpen your skills through mentorship and potentially contribute to
+          shaping sustainable energy solutions. Join our dynamic community and
+          become a part of the revolution in power and energy!
         </p>
       </section>
       <section className="core-team-section" id="coreteam">

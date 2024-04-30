@@ -13,16 +13,17 @@ const SignalProcessingSociety = ({ imgs, num }) => {
         <h2 className="section-heading">Signal Processing Society</h2>
         <Carousel val="x" imgs={imgs} />
         <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+          The CBIT IEEE Student Chapter's Signal Processing Society (SPS) branch
+          fuels your passion for analyzing, interpreting, and manipulating
+          signals - the building blocks of audio, speech, images, and more.
+          Aligned with the world's leading IEEE SPS, we offer a comprehensive
+          exploration of this dynamic field. From core signal and image
+          processing to cutting-edge applications in speech, audio, multimedia,
+          and communication, you'll gain access to valuable resources, connect
+          with experts, and participate in workshops and conferences. Sharpen
+          your skills, gain insights through mentorship, and potentially
+          contribute to groundbreaking research. Join our vibrant community and
+          embark on a rewarding journey into the world of signals!
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
