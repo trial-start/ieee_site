@@ -1,5 +1,4 @@
 import { Col, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
 export default function Member({ img, name, description = "fejg" }) {
   console.log(img.slice(1, img.length));
   return (

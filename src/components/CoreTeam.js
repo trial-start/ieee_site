@@ -1,7 +1,6 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import Member from "./Member";
-import { NavLink } from "react-router-dom";
 
 const CoreTeam = ({ num = "2", folder = "empty", names = ["", ""] }) => {
   const members = Array.from({ length: num }, (_, index) => index + 1);
