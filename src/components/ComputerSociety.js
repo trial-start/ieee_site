@@ -28,7 +28,11 @@ const ComputerSociety = ({ imgs, num }) => {
         <p className="section-description">
           Meet the dedicated members of our Computer Society's Team.
         </p>
-        <CoreTeam num={num} folder="cs" names={["", "Saiteja Veldoj"]} />
+        <CoreTeam
+          num={num}
+          folder="cs"
+          names={["P.Abhiram", "Saiteja Veldoj"]}
+        />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>

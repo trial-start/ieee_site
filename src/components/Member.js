@@ -1,6 +1,7 @@
 import { Col, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 export default function Member({ img, name, description = "fejg" }) {
-  console.log(img);
+  console.log(img.slice(1, img.length));
   return (
     <Col
       md={4}
@@ -8,11 +9,14 @@ export default function Member({ img, name, description = "fejg" }) {
       style={{ display: "flex", justifyContent: "space-evenly" }}
     >
       <div style={{ textAlign: "center" }}>
-        <Image
-          src={img}
-          roundedCircle
-          style={{ float: "left", height: "18vh", width: "18vh" }}
-        />
+        {console.log(img)}
+        <a href={img.slice(1, img.length)}>
+          <Image
+            src={img}
+            roundedCircle
+            style={{ float: "left", height: "18vh", width: "18vh" }}
+          />
+        </a>
       </div>
       <div
         style={{

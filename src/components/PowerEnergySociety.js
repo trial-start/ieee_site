@@ -30,7 +30,7 @@ const PowerEnergySociety = ({ imgs, num }) => {
         <p className="section-description">
           Meet the dedicated members of our Power and Energy Society's Team.
         </p>
-        <CoreTeam num={num} folder="pes" names={["", ""]} />
+        <CoreTeam num={num} folder="pes" names={["Saiteja", "pallavi"]} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
