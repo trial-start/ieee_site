@@ -31,7 +31,7 @@ const SignalProcessingSociety = ({ imgs, num }) => {
         <p className="section-description">
           Meet the dedicated members of our Signal Processing Society's Team.
         </p>
-        <CoreTeam num={num} />
+        <CoreTeam num={num} folder="sps" names={["Bhagath", "P.Ajay reddy"]} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>

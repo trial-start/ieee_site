@@ -33,7 +33,11 @@ const WomenEngineering = ({ imgs, num }) => {
         <p className="section-description">
           Meet the dedicated members of our Women in Engineering Society's Team.
         </p>
-        <CoreTeam num={num} />
+        <CoreTeam
+          num={num}
+          folder="wie"
+          names={["Saphalya Peta", "Vineela Singam"]}
+        />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>

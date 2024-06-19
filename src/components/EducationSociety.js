@@ -37,7 +37,11 @@ const EducationSociety = ({ imgs, num }) => {
         <p className="section-description">
           Meet the dedicated members of our Education Society's Team.
         </p>
-        <CoreTeam num={num} />
+        <CoreTeam
+          num={num}
+          folder="es"
+          names={["N.Puneeth Sarma", "Manav Damani"]}
+        />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
