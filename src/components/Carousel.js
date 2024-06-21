@@ -5,7 +5,7 @@ const ImageCarousel = ({
   val,
   type = "sample",
   ie = "n",
-  imgs = "https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/master_class_1.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/udbhava.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/pes_event.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/cs_event.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/css_event.jpg",
+  imgs = "https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/carousel-1.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/master_class_1.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/udbhava.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/pes_event.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/cs_event.jpg--https://guhpbznkeeoorjrobehr.supabase.co/storage/v1/object/public/event-images/css_event.jpg",
 }) => {
   const carouselStyle = {
     paddingTop: val === "x" ? "" : "65px",
