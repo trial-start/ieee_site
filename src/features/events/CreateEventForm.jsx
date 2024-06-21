@@ -1,43 +1,26 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-// import styled from "styled-components";
 import NavBar from "../../components/NavBar";
 import { useCreateEvent } from "./useCreateEvent";
 import toast from "react-hot-toast";
 
-// const FullPage = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100vh;
-// `;
-
 const CreateEventForm = () => {
-  const [title, setTitle] = useState("ewfwe");
-  const [description, setDescription] = useState("dqewfewfefe");
-  const [date, setDate] = useState("04-01-2024");
-  const [location, setLocation] = useState("hyderabad");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [location, setLocation] = useState("");
   const [conductedBy, setConductedBy] = useState("");
+  const [customConductedBy, setCustomConductedBy] = useState("");
   const [image, setImage] = useState();
   const { createEvent, isLoading } = useCreateEvent();
 
   function handleFileUpload(e) {
-    // setImage(e.target.files[0]);
-    // console.log(e.target.files);
     const imgArr = [];
     for (let i = 0; i < e.target.files.length; i++) {
       imgArr.push(e.target.files[i]);
     }
     setImage(imgArr);
-    // console.log(imgArr);
   }
-
-  // if (isLoading)
-  //   return (
-  //     <FullPage>
-  //       <Spinner />
-  //     </FullPage>
-  //   );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,30 +30,23 @@ const CreateEventForm = () => {
       date,
       image,
       location,
-      conductedBy,
+      conductedBy: conductedBy === "other" ? customConductedBy : conductedBy,
     };
-    if (title && description && date && location && conductedBy && image) {
+    if (title && description && date && location && (conductedBy || customConductedBy) && image) {
       createEvent(newEvent);
       setTitle("");
       setDescription("");
       setDate("");
       setLocation("");
       setConductedBy("");
+      setCustomConductedBy("");
     } else {
       toast.error("Please fill all the fields");
     }
-    // Handle form submission logic here
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        alignContent: "center",
-        marginTop: "100px",
-      }}
-    >
+    <div style={{ display: "flex", alignItems: "center", alignContent: "center", marginTop: "100px" }}>
       <Container className="mt-4">
         <NavBar />
         <Row className="justify-content-md-center">
@@ -90,7 +66,7 @@ const CreateEventForm = () => {
               </Form.Group>
 
               <Form.Group controlId="description">
-                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                <Form.Label style={{ fontWeight: "bold", textAlign: 'justify'}} className="mt-2">
                   Description
                 </Form.Label>
                 <Form.Control
@@ -117,18 +93,6 @@ const CreateEventForm = () => {
                   name="images[]"
                 />
               </Form.Group>
-
-              {/* <Form.Group controlId="image">
-                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
-                  Event Image
-                </Form.Label>
-                <Form.Control
-                  type="file"
-                  placeholder="Enter image url"
-                  disabled={isLoading}
-                  onChange={handleFileUpload}
-                />
-              </Form.Group> */}
 
               <Form.Group controlId="date">
                 <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
@@ -167,32 +131,33 @@ const CreateEventForm = () => {
                   onChange={(e) => setConductedBy(e.target.value)}
                 >
                   <option value="">Select conducted by</option>
-                  <option value="robotics and automation society">
-                    robotics and automation society
-                  </option>
-                  <option value="power and energy society">
-                    power and energy society
-                  </option>
-                  <option value="women in engineering society">
-                    women in engineering society
-                  </option>
-                  <option value="signal processing society">
-                    signal processing society
-                  </option>
-                  <option value="computer society">computer society</option>
-                  <option value="circuits and systems society">
-                    circuits and systems society
-                  </option>
-                  <option value="education society">education society</option>
+                  <option value="Robotics and Automation Society">Robotics and Automation Society</option>
+                  <option value="Power and Energy Society">Power and Energy Society</option>
+                  <option value="Women in Engineering Society">Women in Engineering Society</option>
+                  <option value="Signal Processing Society">Signal Processing Society</option>
+                  <option value="Computer Society">Computer Society</option>
+                  <option value="Circuits and Systems Society">Circuits and Systems Society</option>
+                  <option value="Education Society">Education Society</option>
+                  <option value="Other">Other</option>
                 </Form.Control>
               </Form.Group>
 
-              <Button
-                className="mt-3 "
-                variant="primary"
-                disabled={isLoading}
-                type="submit"
-              >
+              {conductedBy === "other" && (
+                <Form.Group controlId="customConductedBy">
+                  <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                    Please specify
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter who conducted the event"
+                    value={customConductedBy}
+                    disabled={isLoading}
+                    onChange={(e) => setCustomConductedBy(e.target.value)}
+                  />
+                </Form.Group>
+              )}
+
+              <Button className="mt-3" variant="primary" disabled={isLoading} type="submit">
                 Create Event
               </Button>
             </Form>
@@ -204,3 +169,10 @@ const CreateEventForm = () => {
 };
 
 export default React.memo(CreateEventForm);
+
+
+
+
+
+
+

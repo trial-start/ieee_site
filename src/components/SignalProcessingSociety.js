@@ -4,8 +4,19 @@ import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 import Events from "./Events";
+import TeamMembers from "./TeamMembers";
 
 const SignalProcessingSociety = ({ imgs, num }) => {
+  const teamMembers = [
+    { name: "Mythri", position: "Documentation" },
+    { name: "Sruthi", position: "Documentation" },
+    { name: "Shankar Narayana", position: "Tech" },
+    { name: "Samhitha", position: "Tech" },
+    { name: "Chaitanyya", position: "Tech" },
+    { name: "Manikanta", position: "Design" },
+    { name: "Srilekha", position: "Design" },
+    { name: "Yashasvi", position: "SM & PR" }
+  ];
   return (
     <div>
       <NavBar itemId="about" itemName="About" teamType="Team" />
@@ -27,11 +38,13 @@ const SignalProcessingSociety = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading">Team</h2>
-        <p className="section-description">
-          Meet the dedicated members of our Signal Processing Society's Team.
+        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
+        <p className="section-description" style={{textAlign: 'center'}}>
+          Meet the dedicated members of our Signal Processing Society's Team
         </p>
         <CoreTeam num={num} folder="sps" names={["Bhagath", "P.Ajay reddy"]} />
+        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>

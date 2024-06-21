@@ -31,7 +31,7 @@ export default function HomePage() {
         </div>
       ) : ( */}
       <>
-        <NavBar itemId="societies" itemName="Socities" teamType="CoreTeam" />
+        <NavBar itemId="societies" itemName="Societies" teamType="CoreTeam" />
         <div className="section" id="home">
           <ImageCarousel className="ImageCarousel" />
         </div>
@@ -47,18 +47,8 @@ export default function HomePage() {
           id="about"
         >
           <h1 style={{ textAlign: "center" }}>IEEE CBIT</h1>
-          The CBIT Institute of Electrical and Electronics Engineers (IEEE)
-          Student Chapter is a vibrant community empowering your engineering
-          journey. Affiliated with the world's largest professional technology
-          organization, we provide a platform to deepen knowledge through
-          workshops and guest lectures, sharpen skills with hands-on
-          experiences, network and collaborate with industry professionals,
-          prepare for the future with career guidance, and compete on a broader
-          stage. Membership unlocks exclusive benefits, workshops, hackathons,
-          networking events, scholarships, and leadership opportunities. Led by
-          a passionate student team and supported by faculty advisors, we offer
-          a stimulating environment to explore interests, hone skills, and
-          prepare for a successful tech career
+          The IEEE CBIT Student Chapter at Chaitanya Bharathi Institute of Technology is a pioneering club and student branch affiliated with IEEE. It provides a platform for students to engage with technology, conducts events, seminars, and webinars, and network with professionals. The club hosts events like Robovanza, Masterclasses, Membership Drives and many more every year. Being part of this club allows students to stay updated on the latest developments in the technical and research fields. Led by a passionate student team and supported by faculty advisors, we offer a stimulating environment to explore interests, hone skills, and prepare for a successful tech career.<br/> 
+          IEEE CBIT comprises seven specialized societies, each focused on specific areas of engineering and technology, including the Computer Society, Robotics and Automation Society, Education Society, Circuits and Systems Society, Power and Energy Society, Signal Processing Society, and Women in Engineering Society. 
         </p>
         <div className="section" id="societies">
           <h2 className="section-heading">Societies</h2>
@@ -72,7 +62,7 @@ export default function HomePage() {
         </div> */}
         <div className="section" id="coreteam">
           <h2 className="section-heading">
-            {slideIndex < 4 ? "Core Team" : "Executive Board"}
+            {slideIndex < 5 ? "Core Team" : "Executive Board"}
           </h2>
           <TeamCarousel onSlideChange={setSlideIndex} />
           <hr className="section-divider" />

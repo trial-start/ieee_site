@@ -4,8 +4,20 @@ import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 import Events from "./Events";
+import TeamMembers from "./TeamMembers";
 
 const CircuitsAndSystems = ({ imgs, num }) => {
+  const teamMembers = [
+    { name: "Malay", position: "Documentation" },
+    { name: "Surya Prakash", position: "Documentation" },
+    { name: "Samith", position: "Documentation" },
+    { name: "Haindavi", position: "Documentation" },
+    { name: "Vinyaswi", position: "Tech" },
+    { name: "Varshini", position: "Design" },
+    { name: "Swarzina", position: "SM & PR" },
+    { name: "Gayatri", position: "SM & PR" },
+    { name: "Charan", position: "SM & PR" }
+  ];
   return (
     <div>
       <NavBar itemId="about" itemName="About" teamType="Team" />
@@ -28,11 +40,13 @@ const CircuitsAndSystems = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading">Team</h2>
-        <p className="section-description">
-          Meet the dedicated members of our Circuits and Systems Society's Team.
+        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
+        <p className="section-description" style={{textAlign: 'center'}}>
+          Meet the dedicated members of our Circuits and Systems Society's Team
         </p>
-        <CoreTeam num={num} folder="ckts" names={[" Rajeshwar reddy", ""]} />
+        <CoreTeam num={num} folder="ckts" names={["Rajeshwar reddy", "Vaishnavi Sanugommula"]} />
+        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
