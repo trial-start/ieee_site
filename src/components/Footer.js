@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ContactForm from "./ContactForm";
-import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
+// import { Link } from "react-router-dom";
 import {
+  FaLink,
   FaEnvelope,
-  FaFacebook,
+  FaLinkedin,
   FaInstagram,
-  FaGithub,
   FaTwitter,
   FaUsers,
   FaCalendarAlt,
@@ -34,9 +34,9 @@ const Footer = () => {
               allowFullScreen
               title="Google Maps"
             ></iframe>
+      
             <a href="https://www.cbit.ac.in/" className="cbit_contact">
-              <p>Chaitanya Bharathi Institute Of Technology</p>
-              <p>Gandipet, Hyderabad</p>
+              <p>Chaitanya Bharathi Institute Of Technology <br/> Gandipet, Hyderabad</p>
             </a>
           </Col>
           <Col sm={4}>
@@ -46,17 +46,19 @@ const Footer = () => {
               About
             </a>
             <br />
-            {/* <a href="/#coreteam" className="footer-link">
-              Team
-            </a> */}
-            <Link to="/#coreteams" className="footer-link">
+            <a href="/#coreteam" className="footer-link">
               <FaUsers size={20} style={sty} />
-              team
-            </Link>
+              Team
+            </a>
+            {/* <Link to="/#coreteam" className="footer-link">
+              <FaUsers size={20} style={sty} />
+              Team
+            </Link> */}
             <br />
-            <Link to="/#events" className="footer-link">
-              <FaCalendarAlt size={20} style={sty} /> Events
-            </Link>
+            <a href="/#events" className="footer-link">
+              <FaCalendarAlt size={20} style={sty} /> 
+              Events
+            </a>
           </Col>
           <Col sm={4}>
             <h3>GET IN TOUCH</h3>
@@ -66,11 +68,11 @@ const Footer = () => {
             </a>
             <br />
             <a
-              href="https://www.facebook.com/freaking.techies.cbit"
+              href="https://www.linkedin.com/company/ieee-cbit/mycompany/"
               className="footer-link"
             >
-              <FaFacebook size={20} style={sty} />
-              Facebook
+              <FaLinkedin size={20} style={sty} />
+              LinkedIn
             </a>
             <br />
             <a
@@ -81,10 +83,18 @@ const Footer = () => {
               Instagram
             </a>
             <br />
-            <a href="https://github.com/ieee_cbit" className="footer-link">
-              <FaGithub size={20} style={sty} /> GitHub
+            <a
+              href="https://linktr.ee/ieee_cbitsb?fbclid=PAZXh0bgNhZW0CMTEAAaZXoXCD077Uo20aZ1Eqw16P3p41riLOMhUsLlLFj7FpZv89GyHWKMXiLNc_aem_ZmFrZWR1bW15MTZieXRlcw"
+              className="footer-link"
+            >
+              <FaLink size={20} style={sty} />
+              Linktree
             </a>
             <br />
+            {/* <a href="https://github.com/ieee_cbit" className="footer-link">
+              <FaGithub size={20} style={sty} /> GitHub
+            </a> */}
+            {/* <br /> */}
             <a
               href="https://x.com/IeeeCbit?t=IERGxoAIdJ2X3SxuLZngGg&s=09"
               className="footer-link"
@@ -101,7 +111,7 @@ const Footer = () => {
                 padding: "10px 20px",
                 borderRadius: "15px",
                 border: "none",
-                fontSize: "16px",
+                fontSize: "20px",
                 fontWeight: "bold",
                 cursor: "pointer",
                 marginBottom: "10px",

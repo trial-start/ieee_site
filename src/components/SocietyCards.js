@@ -31,8 +31,8 @@ const SocietyCards = () => {
       />
       <Cards
         img="images/won_soc.jpg"
-        societyName="women in engineering Society"
-        description="Empowering women to engineer the future"
+        societyName="Women in Engineering Society"
+        description="Empowering Women to engineer the future"
         link="women-engineering-society"
       />
 
