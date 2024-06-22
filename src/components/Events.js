@@ -27,7 +27,20 @@ const Events = ({ by = "" }) => {
   const events =
     by === ""
       ? allEvents
-      : allEvents?.filter((event) => event.conductedBy === by);
+      : allEvents?.filter((event) => {
+          console.log(event.conductedBy, "gremgerkgkrmgk", by);
+          return event.conductedBy.includes(by);
+        });
+
+  // const events =
+  //   by === ""
+  //     ? allEvents
+  //     : allEvents?.filter((event) => {
+  //         console.log(event.conductedBy, "gremgerkgkrmgk", by);
+  //         return event.conductedBy === by;
+  //       });
+
+  // console.log(events);
 
   const initialEventsToShow = 3;
   const [eventsToShow, setEventsToShow] = useState(initialEventsToShow);

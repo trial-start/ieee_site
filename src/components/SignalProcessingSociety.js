@@ -15,7 +15,7 @@ const SignalProcessingSociety = ({ imgs, num }) => {
     { name: "Chaitanyya", position: "Tech" },
     { name: "Manikanta", position: "Design" },
     { name: "Srilekha", position: "Design" },
-    { name: "Yashasvi", position: "SM & PR" }
+    { name: "Yashasvi", position: "SM & PR" },
   ];
   return (
     <div>
@@ -38,18 +38,20 @@ const SignalProcessingSociety = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
-        <p className="section-description" style={{textAlign: 'center'}}>
+        <h2 className="section-heading" style={{ textAlign: "center" }}>
+          Team
+        </h2>
+        <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Signal Processing Society's Team
         </p>
         <CoreTeam num={num} folder="sps" names={["Bhagath", "P.Ajay reddy"]} />
-        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="signal processing society" />
+        <Events by="Signal Processing Society" />
       </section>
       <Footer />
     </div>

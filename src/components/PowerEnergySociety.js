@@ -13,7 +13,7 @@ const PowerEnergySociety = ({ imgs, num }) => {
     { name: "Vamsi Krishna", position: "Design" },
     { name: "Fatema", position: "Design" },
     { name: "Bhavana", position: "SM & PR" },
-    { name: "Surya Teja", position: "SM & PR" }
+    { name: "Surya Teja", position: "SM & PR" },
   ];
   return (
     <div>
@@ -35,18 +35,20 @@ const PowerEnergySociety = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
-        <p className="section-description" style={{textAlign: 'center'}}>
+        <h2 className="section-heading" style={{ textAlign: "center" }}>
+          Team
+        </h2>
+        <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Power and Energy Society's Team
         </p>
         <CoreTeam num={num} folder="pes" names={["Saiteja", "Pallavi"]} />
-        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="power and energy society" />
+        <Events by="Power and Energy Society" />
       </section>
 
       <Footer by="power and energy society" />

@@ -15,7 +15,7 @@ const EducationSociety = ({ imgs, num }) => {
     { name: "Akhila", position: "Tech" },
     { name: "Bhavya Shree", position: "SM & PR" },
     { name: "Aashritha", position: "SM & PR" },
-    { name: "Sowmya Nihitha", position: "SM & PR" }
+    { name: "Sowmya Nihitha", position: "SM & PR" },
   ];
   return (
     <div>
@@ -44,8 +44,10 @@ const EducationSociety = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
-        <p className="section-description" style={{textAlign: 'center'}}>
+        <h2 className="section-heading" style={{ textAlign: "center" }}>
+          Team
+        </h2>
+        <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Education Society's Team
         </p>
         <CoreTeam
@@ -53,13 +55,13 @@ const EducationSociety = ({ imgs, num }) => {
           folder="es"
           names={["N.Puneeth Sarma", "Manav Damani"]}
         />
-        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="education society" />
+        <Events by="Education Society" />
       </section>
       <Footer />
     </div>

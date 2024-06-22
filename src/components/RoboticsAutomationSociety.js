@@ -15,7 +15,7 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
     { name: "Akshara", position: "Tech" },
     { name: "Yashwanth", position: "Tech" },
     { name: "Seema", position: "Design" },
-    { name: "Disha", position: "SM & PR" }
+    { name: "Disha", position: "SM & PR" },
   ];
   return (
     <div>
@@ -37,8 +37,10 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
-        <p className="section-description" style={{textAlign: 'center'}}>
+        <h2 className="section-heading" style={{ textAlign: "center" }}>
+          Team
+        </h2>
+        <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Robotics and Automation Society's
           Team
         </p>
@@ -49,13 +51,13 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
           folder="ras"
           names={["Uday Krishna Reddy", "Dharani Sevireddy"]}
         />
-        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="robotics and automation society" />
+        <Events by="Robotics and Automation Society" />
       </section>
       <Footer />
     </div>

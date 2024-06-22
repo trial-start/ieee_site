@@ -1,9 +1,18 @@
 import supabase from "./supabase";
 
+// export async function getEvents() {
+//   let { data: events, error } = await supabase.from("events").select("*");
+//   if (error) throw new Error(error.message);
+//   //   console.log(events);
+//   return events;
+// }
+
 export async function getEvents() {
-  let { data: events, error } = await supabase.from("events").select("*");
+  let { data: events, error } = await supabase
+    .from("events")
+    .select("*")
+    .order("date", { ascending: false });
   if (error) throw new Error(error.message);
-  //   console.log(events);
   return events;
 }
 

@@ -16,7 +16,7 @@ const CircuitsAndSystems = ({ imgs, num }) => {
     { name: "Varshini", position: "Design" },
     { name: "Swarzina", position: "SM & PR" },
     { name: "Gayatri", position: "SM & PR" },
-    { name: "Charan", position: "SM & PR" }
+    { name: "Charan", position: "SM & PR" },
   ];
   return (
     <div>
@@ -40,18 +40,24 @@ const CircuitsAndSystems = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
-        <p className="section-description" style={{textAlign: 'center'}}>
+        <h2 className="section-heading" style={{ textAlign: "center" }}>
+          Team
+        </h2>
+        <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Circuits and Systems Society's Team
         </p>
-        <CoreTeam num={num} folder="ckts" names={["Rajeshwar reddy", "Vaishnavi Sanugommula"]} />
-        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <CoreTeam
+          num={num}
+          folder="ckts"
+          names={["Rajeshwar reddy", "Vaishnavi Sanugommula"]}
+        />
+        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="circuits and systems society" />
+        <Events by="Circuits and Systems Society" />
       </section>
       <Footer />
     </div>

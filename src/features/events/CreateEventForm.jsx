@@ -11,7 +11,7 @@ const CreateEventForm = () => {
   const [location, setLocation] = useState("");
   const [conductedBy, setConductedBy] = useState("");
   const [customConductedBy, setCustomConductedBy] = useState("");
-  const [image, setImage] = useState();
+  const [image, setImage] = useState([]);
   const { createEvent, isLoading } = useCreateEvent();
 
   function handleFileUpload(e) {
@@ -30,9 +30,16 @@ const CreateEventForm = () => {
       date,
       image,
       location,
-      conductedBy: conductedBy === "other" ? customConductedBy : conductedBy,
+      conductedBy: conductedBy === "Other" ? customConductedBy : conductedBy,
     };
-    if (title && description && date && location && (conductedBy || customConductedBy) && image) {
+    if (
+      title &&
+      description &&
+      date &&
+      location &&
+      (conductedBy || customConductedBy) &&
+      image.length > 0
+    ) {
       createEvent(newEvent);
       setTitle("");
       setDescription("");
@@ -40,13 +47,21 @@ const CreateEventForm = () => {
       setLocation("");
       setConductedBy("");
       setCustomConductedBy("");
+      setImage([]);
     } else {
       toast.error("Please fill all the fields");
     }
   };
 
   return (
-    <div style={{ display: "flex", alignItems: "center", alignContent: "center", marginTop: "100px" }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        alignContent: "center",
+        marginTop: "100px",
+      }}
+    >
       <Container className="mt-4">
         <NavBar />
         <Row className="justify-content-md-center">
@@ -66,7 +81,10 @@ const CreateEventForm = () => {
               </Form.Group>
 
               <Form.Group controlId="description">
-                <Form.Label style={{ fontWeight: "bold", textAlign: 'justify'}} className="mt-2">
+                <Form.Label
+                  style={{ fontWeight: "bold", textAlign: "justify" }}
+                  className="mt-2"
+                >
                   Description
                 </Form.Label>
                 <Form.Control
@@ -131,18 +149,28 @@ const CreateEventForm = () => {
                   onChange={(e) => setConductedBy(e.target.value)}
                 >
                   <option value="">Select conducted by</option>
-                  <option value="Robotics and Automation Society">Robotics and Automation Society</option>
-                  <option value="Power and Energy Society">Power and Energy Society</option>
-                  <option value="Women in Engineering Society">Women in Engineering Society</option>
-                  <option value="Signal Processing Society">Signal Processing Society</option>
+                  <option value="Robotics and Automation Society">
+                    Robotics and Automation Society
+                  </option>
+                  <option value="Power and Energy Society">
+                    Power and Energy Society
+                  </option>
+                  <option value="Women in Engineering Society">
+                    Women in Engineering Society
+                  </option>
+                  <option value="Signal Processing Society">
+                    Signal Processing Society
+                  </option>
                   <option value="Computer Society">Computer Society</option>
-                  <option value="Circuits and Systems Society">Circuits and Systems Society</option>
+                  <option value="Circuits and Systems Society">
+                    Circuits and Systems Society
+                  </option>
                   <option value="Education Society">Education Society</option>
                   <option value="Other">Other</option>
                 </Form.Control>
               </Form.Group>
 
-              {conductedBy === "other" && (
+              {conductedBy === "Other" && (
                 <Form.Group controlId="customConductedBy">
                   <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
                     Please specify
@@ -157,7 +185,12 @@ const CreateEventForm = () => {
                 </Form.Group>
               )}
 
-              <Button className="mt-3" variant="primary" disabled={isLoading} type="submit">
+              <Button
+                className="mt-3"
+                variant="primary"
+                disabled={isLoading}
+                type="submit"
+              >
                 Create Event
               </Button>
             </Form>
@@ -169,10 +202,3 @@ const CreateEventForm = () => {
 };
 
 export default React.memo(CreateEventForm);
-
-
-
-
-
-
-

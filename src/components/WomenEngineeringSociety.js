@@ -12,7 +12,7 @@ const WomenEngineering = ({ imgs, num }) => {
     { name: "Harshitha", position: "Design" },
     { name: "Amruthavalli", position: "Tech" },
     { name: "Chandana", position: "SM & PR" },
-    { name: "Srinitha", position: "SM & PR" }
+    { name: "Srinitha", position: "SM & PR" },
   ];
   return (
     <div>
@@ -37,8 +37,10 @@ const WomenEngineering = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
-        <p className="section-description" style={{textAlign: 'center'}}>
+        <h2 className="section-heading" style={{ textAlign: "center" }}>
+          Team
+        </h2>
+        <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Women in Engineering Society's Team
         </p>
         <CoreTeam
@@ -46,13 +48,13 @@ const WomenEngineering = ({ imgs, num }) => {
           folder="wie"
           names={["Saphalya Peta", "Vineela Singam"]}
         />
-        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="women in engineering society" />
+        <Events by="Women in Engineering Society" />
       </section>
       <Footer />
     </div>

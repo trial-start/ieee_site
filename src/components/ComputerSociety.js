@@ -16,7 +16,7 @@ const ComputerSociety = ({ imgs, num }) => {
     { name: "Parnita", position: "Design" },
     { name: "Chinmayee", position: "Design" },
     { name: "Koushik", position: "SM & PR" },
-    { name: "Snikitha", position: "SM & PR" }
+    { name: "Snikitha", position: "SM & PR" },
   ];
 
   return (
@@ -37,8 +37,10 @@ const ComputerSociety = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{textAlign: 'center'}}>Team</h2>
-        <p className="section-description" style={{textAlign: 'center'}}>
+        <h2 className="section-heading" style={{ textAlign: "center" }}>
+          Team
+        </h2>
+        <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Computer Society's Team
         </p>
         <CoreTeam
@@ -46,13 +48,13 @@ const ComputerSociety = ({ imgs, num }) => {
           folder="cs"
           names={["P.Abhiram", "Saiteja Veldoj"]}
         />
-        <h4 style={{textAlign: 'center'}}>Junior EB</h4>
+        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
-        <Events by="computer society" />
+        <Events by="Computer Society" />
       </section>
       <Footer />
     </div>
@@ -60,7 +62,6 @@ const ComputerSociety = ({ imgs, num }) => {
 };
 
 export default ComputerSociety;
-
 
 // import React from "react";
 // import NavBar from "./NavBar";
