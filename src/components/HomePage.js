@@ -33,7 +33,7 @@ export default function HomePage() {
       <>
         <NavBar itemId="societies" itemName="Societies" teamType="CoreTeam" />
         <div className="section" id="home">
-          <ImageCarousel className="ImageCarousel" />
+          <ImageCarousel className="ImageCarousel" slideIndex={slideIndex} />
         </div>
         <p
           className="section-description section-divider"
