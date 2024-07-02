@@ -5,7 +5,7 @@ import SpinnerMini from "../../components/SpinnerMini";
 import { Link } from "react-router-dom";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState(");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, isLoading } = useLogin();
 
