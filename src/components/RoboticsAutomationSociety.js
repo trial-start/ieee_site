@@ -18,27 +18,18 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
     { name: "Disha", position: "SM & PR" },
   ];
   return (
-    <div>
+    <div style={{ backgroundColor: '#ffc0c0', minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about">
+      <section className="society-section" id="about" style={{ textAlign: 'center',backgroundColor: '#ffc0c0', minHeight: '100vh' }}>
         <h2 className="section-heading">Robotics and Automation Society</h2>
         <Carousel val="x" imgs={imgs} />
-        <p className="section-description">
-          Sure. Here are small descriptions of the following societies which are
-          part of the IEEE club: Computer Society Computer Society logoOpens in
-          a new window www.computer.org Computer Society logo The Computer
-          Society (CS) is the world's largest professional organization
-          dedicated to advancing technology for the benefit of humanity. It has
-          over 100,000 members in 180 countries around the world. The CS
-          provides resources and opportunities for professionals in the
-          computing field, including conferences, publications, and educational
-          programs. It also advocates for the responsible use of technology and
-          promotes diversity and inclusion in the computing field.
+        <p className="section-description" style={{textAlign: 'justify'}}>
+        The IEEE Robotics and Automation Society (IEEE RAS) is a global community dedicated to advancing innovation, education, and fundamental research in robotics and automation. IEEE RAS fosters the development and dissemination of scientific knowledge in these fields, supporting the professional growth of its members and promoting the impact of robotics and automation on society. Through conferences, publications, and technical activities, IEEE RAS connects professionals, researchers, and students, enabling collaboration and the exchange of ideas to drive technological advancements and address real-world challenges in robotics and automation. The society also provides resources for career development, including networking opportunities, technical workshops, and continuing education programs. IEEE RAS plays a pivotal role in shaping the future of robotics and automation, influencing industry standards and fostering the next generation of innovators and leaders in the field.
         </p>
       </section>
-      <section className="core-team-section" id="coreteam">
+      <section className="core-team-section" id="coreteam" style={{ backgroundColor: '#ffc0c0', minHeight: '100vh' }}>
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team
+          Team 2023-2024
         </h2>
         <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Robotics and Automation Society's
@@ -54,7 +45,7 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
         <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events">
+      <section className="core-team-section" id="events" style={{ backgroundColor: '#ffc0c0', minHeight: '100vh' }}>
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
         <Events by="Robotics and Automation Society" />

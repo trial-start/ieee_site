@@ -47,7 +47,78 @@ const teamMembers = [
     role: "Marketing Director",
     image: "sm&pr-team/5.png",
   },
-  // Add more team members as needed
+  // Society chairs and vice chairs
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/cas1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/cas2.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/cs1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/cs2.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/es1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/es2.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/pes1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/pes2.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/ras1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/ras2.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/sps1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/sps2.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/ws1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/ws2.png",
+  },
+  
 ];
 
 const TeamCarousel = ({ onSlideChange }) => {

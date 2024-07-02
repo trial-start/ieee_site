@@ -18,12 +18,12 @@ const SignalProcessingSociety = ({ imgs, num }) => {
     { name: "Yashasvi", position: "SM & PR" },
   ];
   return (
-    <div>
+    <div style={{ backgroundColor: '#9ccae9', minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about">
+      <section className="society-section" id="about" style={{ textAlign: 'center',backgroundColor: '#9ccae9', minHeight: '100vh' }}>
         <h2 className="section-heading">Signal Processing Society</h2>
         <Carousel val="x" imgs={imgs} />
-        <p className="section-description">
+        <p className="section-description" style={{textAlign: 'justify'}}>
           The CBIT IEEE Student Chapter's Signal Processing Society (SPS) branch
           fuels your passion for analyzing, interpreting, and manipulating
           signals - the building blocks of audio, speech, images, and more.
@@ -37,9 +37,9 @@ const SignalProcessingSociety = ({ imgs, num }) => {
           embark on a rewarding journey into the world of signals!
         </p>
       </section>
-      <section className="core-team-section" id="coreteam">
+      <section className="core-team-section" id="coreteam" style={{ backgroundColor: '#9ccae9', minHeight: '100vh' }}>
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team
+          Team 2023-2024
         </h2>
         <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Signal Processing Society's Team
@@ -48,7 +48,7 @@ const SignalProcessingSociety = ({ imgs, num }) => {
         <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events">
+      <section className="core-team-section" id="events" style={{ backgroundColor: '#9ccae9', minHeight: '100vh' }}>
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
         <Events by="Signal Processing Society" />

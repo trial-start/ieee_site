@@ -18,12 +18,12 @@ const EducationSociety = ({ imgs, num }) => {
     { name: "Sowmya Nihitha", position: "SM & PR" },
   ];
   return (
-    <div>
+    <div style={{ backgroundColor: 'rgb(227, 193, 175)', minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about">
+      <section className="society-section" id="about" style={{ textAlign: 'center',backgroundColor: 'rgb(227, 193, 175)', minHeight: '100vh' }}>
         <h2 className="section-heading">Education Society</h2>
         <Carousel val="x" imgs={imgs} />
-        <p className="section-description">
+        <p className="section-description" style={{textAlign: 'justify'}}>
           Fuel your passion for education and empower the next generation of
           engineers and computer scientists with the CBIT IEEE's Education
           Society branch! Aligned with the world-renowned IEEE EdSoc, we provide
@@ -43,9 +43,9 @@ const EducationSociety = ({ imgs, num }) => {
           ever-evolving world
         </p>
       </section>
-      <section className="core-team-section" id="coreteam">
+      <section className="core-team-section" id="coreteam" style={{ backgroundColor: 'rgb(227, 193, 175)', minHeight: '100vh' }}>
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team
+          Team 2023-2024
         </h2>
         <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Education Society's Team
@@ -58,7 +58,7 @@ const EducationSociety = ({ imgs, num }) => {
         <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events">
+      <section className="core-team-section" id="events" style={{ backgroundColor: 'rgb(227, 193, 175)', minHeight: '100vh' }}>
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
         <Events by="Education Society" />

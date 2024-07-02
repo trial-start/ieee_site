@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import allEvents from "../static/event_details";
 import { HiTrash } from "react-icons/hi2";
 import { useEvents } from "../features/events/useEvents";
 import Spinner from "./Spinner";
@@ -17,30 +16,12 @@ const Events = ({ by = "" }) => {
   const { isAuthenticated } = useUser();
   const { isDeleting, deleteEvent } = useDeleteEvent();
 
-  // console.log(error);
-  // console.log(events1);
-
-  // console.log(allEvents);
-  // const a = allEvents[4].image;
-  // console.log(a.split("--"));
-
   const events =
     by === ""
       ? allEvents
       : allEvents?.filter((event) => {
-          console.log(event.conductedBy, "gremgerkgkrmgk", by);
           return event.conductedBy.includes(by);
         });
-
-  // const events =
-  //   by === ""
-  //     ? allEvents
-  //     : allEvents?.filter((event) => {
-  //         console.log(event.conductedBy, "gremgerkgkrmgk", by);
-  //         return event.conductedBy === by;
-  //       });
-
-  // console.log(events);
 
   const initialEventsToShow = 3;
   const [eventsToShow, setEventsToShow] = useState(initialEventsToShow);
@@ -91,11 +72,10 @@ const Events = ({ by = "" }) => {
       <Row className="events-container">
         {events.slice(0, eventsToShow).map((event, index) => (
           <Col key={index} md={4} className="mb-4">
-            <Card className="event-card">
+            <Card className="event-card card-hover">
               <Card.Img
                 variant="top"
                 style={{ height: "35vh" }}
-                // src={`images/${imgs[0]}`}
                 src={event.image.split("--")[0] || `images/${imgs[0]}`}
                 alt={`Event ${index + 1}`}
               />
@@ -122,14 +102,6 @@ const Events = ({ by = "" }) => {
                     </EventButtonIcon>
                   )}
                 </div>
-                {/* {showFullDescription[index] && (
-                  <Button
-                    className="event_margin"
-                    onClick={() => handleToggleDescription(index)}
-                  >
-                    Show Less
-                  </Button>
-                )} */}
               </Card.Body>
             </Card>
           </Col>
