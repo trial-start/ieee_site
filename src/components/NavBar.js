@@ -65,7 +65,8 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
             {itemName}
           </Nav.Link>
           <Nav.Link href="#coreteam" className="custom-margin">
-            {teamType}
+            {/* {teamType} */}
+            Core Team
           </Nav.Link>
           {val !== "x" && (
             <Nav.Link href="#events" className="custom-margin">
@@ -73,11 +74,11 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
             </Nav.Link>
           )}
           <Nav.Link href="#contact1" className="custom-margin">
-            Contact
+            Contact Us
           </Nav.Link>
           {isAuthenticated && (
             <Nav.Link as={NavLink} to="/add-event" className="custom-margin">
-              add event
+              Add Event
             </Nav.Link>
           )}
           {isAuthenticated ? (

@@ -22,9 +22,9 @@ const Footer = () => {
     setContactFormVisible((prevVisible) => !prevVisible);
   };
   return (
-    <footer className="footer_parent" id="contact1">
-      <Container>
-        <Row>
+    <footer className="footer_parent" id="contact1" >
+      <Container >
+        <Row >
           <Col sm={4} className="cbit_map_parent">
             <iframe
               className="cbit_map"
@@ -41,13 +41,13 @@ const Footer = () => {
           </Col>
           <Col sm={4}>
             <h3>IEEE CBIT</h3>
-            <a href="/#about" className="footer-link">
-              <FiInfo size={20} style={sty} />
+            <a href="/#about" className="footer-link" >
+              <FiInfo size={30} style={sty} />
               About
             </a>
             <br />
-            <a href="/#coreteam" className="footer-link">
-              <FaUsers size={20} style={sty} />
+            <a href="/#coreteam" className="footer-link" >
+              <FaUsers size={30} style={sty} />
               Team
             </a>
             {/* <Link to="/#coreteam" className="footer-link">
@@ -55,15 +55,15 @@ const Footer = () => {
               Team
             </Link> */}
             <br />
-            <a href="/#events" className="footer-link">
-              <FaCalendarAlt size={20} style={sty} /> 
+            <a href="/#events" className="footer-link" >
+              <FaCalendarAlt size={30} style={sty} /> 
               Events
             </a>
           </Col>
           <Col sm={4}>
             <h3>GET IN TOUCH</h3>
-            <a href="mailto:cbit_ieee@gmail.com" className="footer-link">
-              <FaEnvelope size={20} style={sty} />
+            <a href="mailto:cbit_ieee@gmail.com" className="footer-link" >
+              <FaEnvelope size={30} style={sty} />
               Email
             </a>
             <br />
@@ -71,7 +71,7 @@ const Footer = () => {
               href="https://www.linkedin.com/company/ieee-cbit/mycompany/"
               className="footer-link"
             >
-              <FaLinkedin size={20} style={sty} />
+              <FaLinkedin size={30} style={sty} />
               LinkedIn
             </a>
             <br />
@@ -79,7 +79,7 @@ const Footer = () => {
               href="https://instagram.com/ieee_cbit?igshid=NzZlODBkYWE4Ng=="
               className="footer-link"
             >
-              <FaInstagram size={20} style={sty} />
+              <FaInstagram size={30} style={sty} />
               Instagram
             </a>
             <br />
@@ -87,7 +87,7 @@ const Footer = () => {
               href="https://linktr.ee/ieee_cbitsb?fbclid=PAZXh0bgNhZW0CMTEAAaZXoXCD077Uo20aZ1Eqw16P3p41riLOMhUsLlLFj7FpZv89GyHWKMXiLNc_aem_ZmFrZWR1bW15MTZieXRlcw"
               className="footer-link"
             >
-              <FaLink size={20} style={sty} />
+              <FaLink size={30} style={sty} />
               Linktree
             </a>
             <br />
@@ -99,7 +99,7 @@ const Footer = () => {
               href="https://x.com/IeeeCbit?t=IERGxoAIdJ2X3SxuLZngGg&s=09"
               className="footer-link"
             >
-              <FaTwitter size={20} style={sty} /> Twitter
+              <FaTwitter size={30} style={sty} /> Twitter
             </a>
           </Col>
           <Col sm={12} className="text-center mt-3">
@@ -145,3 +145,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+

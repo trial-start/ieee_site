@@ -19,12 +19,12 @@ const CircuitsAndSystems = ({ imgs, num }) => {
     { name: "Charan", position: "SM & PR" },
   ];
   return (
-    <div>
+    <div style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about">
+      <section className="society-section" id="about" style={{ textAlign: "center", backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
         <h2 className="section-heading">Circuits and Systems Society</h2>
         <Carousel val="x" imgs={imgs} />
-        <p className="section-description">
+        <p className="section-description" style={{textAlign: 'justify'}}>
           Dive deeper into the building blocks of technology with the CBIT IEEE
           Circuits and Systems (CAS) branch! Aligned with the world-renowned
           IEEE CAS society, we offer a comprehensive exploration of this dynamic
@@ -39,9 +39,9 @@ const CircuitsAndSystems = ({ imgs, num }) => {
           journey into the world of circuits and systems!
         </p>
       </section>
-      <section className="core-team-section" id="coreteam">
+      <section className="core-team-section" id="coreteam" style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team
+          Team 2023-2024
         </h2>
         <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Circuits and Systems Society's Team
@@ -54,7 +54,7 @@ const CircuitsAndSystems = ({ imgs, num }) => {
         <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events">
+      <section className="core-team-section" id="events" style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
         <Events by="Circuits and Systems Society" />

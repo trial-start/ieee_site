@@ -15,12 +15,12 @@ const WomenEngineering = ({ imgs, num }) => {
     { name: "Srinitha", position: "SM & PR" },
   ];
   return (
-    <div>
+    <div style={{ backgroundColor: '#f3e4f8', minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about">
+      <section className="society-section" id="about" style={{ textAlign: 'center',backgroundColor: '#f3e4f8', minHeight: '100vh' }}>
         <h2 className="section-heading">Women in Engineering Society</h2>
         <Carousel val="x" imgs={imgs} />
-        <p className="section-description">
+        <p className="section-description" style={{textAlign: 'justify'}}>
           The CBIT IEEE Women in Engineering (WIE) branch, a vibrant extension
           of the global IEEE WIE initiative, empowers you to excel in
           engineering and technology. Here, you'll find a network of supportive
@@ -33,12 +33,12 @@ const WomenEngineering = ({ imgs, num }) => {
           Participate in WIE's outreach programs, inspiring young girls to
           pursue STEM careers and contributing to a more diverse and inclusive
           engineering landscape for the future. Join the CBIT IEEE WIE and be a
-          part of something bigge
+          part of something bigger.
         </p>
       </section>
-      <section className="core-team-section" id="coreteam">
+      <section className="core-team-section" id="coreteam" style={{ backgroundColor: '#f3e4f8', minHeight: '100vh' }}>
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team
+          Team 2023-2024
         </h2>
         <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Women in Engineering Society's Team
@@ -51,7 +51,7 @@ const WomenEngineering = ({ imgs, num }) => {
         <h4 style={{ textAlign: "center" }}>Junior EB</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events">
+      <section className="core-team-section" id="events" style={{ backgroundColor: '#f3e4f8', minHeight: '100vh' }}>
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
         <Events by="Women in Engineering Society" />

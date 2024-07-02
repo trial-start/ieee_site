@@ -22,6 +22,7 @@ code {
 
 .app-container {
   padding: 20px;
+  background-color: #dff4f7;
 }
 
 .section {
@@ -83,6 +84,8 @@ code {
   text-decoration: none; /* Remove the default underline */
   transition: color 0.3s ease; /* Add a smooth transition effect for color changes */
 }
+
+
 
 .footer-link:hover {
   color: lightblue; /* Set the text color for links on hover */
@@ -363,3 +366,16 @@ a:hover {
   margin: 5px 0;
   font-size: 16px;
 } */
+.cs {
+  background-color: #0118ab;
+}
+
+.card-hover {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
