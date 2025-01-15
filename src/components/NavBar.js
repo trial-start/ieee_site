@@ -66,7 +66,7 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
           </Nav.Link>
           <Nav.Link href="#coreteam" className="custom-margin">
             {/* {teamType} */}
-            Core Team
+            Core 
           </Nav.Link>
           {val !== "x" && (
             <Nav.Link href="#events" className="custom-margin">
