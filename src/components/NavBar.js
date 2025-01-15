@@ -64,9 +64,9 @@ const NavBar = ({ itemId, itemName, teamType, val }) => {
           <Nav.Link href={`#${itemId}`} className="custom-margin">
             {itemName}
           </Nav.Link>
-          <Nav.Link href="#corrteam" className="custom-margin">
+          <Nav.Link href="#coreteam" className="custom-margin">
             {/* {teamType} */}
-            Core Team
+            Corr Team
           </Nav.Link>
           {val !== "x" && (
             <Nav.Link href="#events" className="custom-margin">
