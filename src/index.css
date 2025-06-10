@@ -182,18 +182,97 @@ h3 {
   color: #fff;
 }
 
-/* Update Carousel styling */
-.carousel {
-  border: 1px solid #ddd;
-  border-radius: 5px;
+/* Carousel wrapper */
+.carousel-wrapper { 
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Carousel container with fixed height */
+.carousel-container {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
+}
+
+/* Carousel fixed height */
+.styled-carousel .carousel-item {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.styled-carousel {
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
-.carousel img {
+/* Image container - removes the max constraints */
+.carousel-image-container {
   width: 100%;
-  height: 85vh;
-  /* height: auto; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* overflow: visible; <-- Add this if necessary */
 }
+
+
+/* Updated image styling for 100% display without fitting */
+.carousel-img {
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a smooth shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Alternative: If you want the full image visible but potentially stretched */
+.carousel-img-full {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* This stretches the image to fill container exactly */
+  display: block;
+  border-radius: 10px;
+}
+
+/* Alternative: If you want original size images (might overflow) */
+.carousel-img-original {
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: none; /* Shows image at original size */
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .styled-carousel .carousel-item {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .styled-carousel .carousel-item {
+    height: 35vh;
+  }
+}
+
+
 
 /* Update CoreTeam styling */
 .core-team {
@@ -303,8 +382,6 @@ a:hover {
 .event_margin {
   margin-left: 20px;
 }
-
-/* Add this to your CSS file */
 
 @keyframes fadeIn {
   from {
