@@ -22,7 +22,7 @@ code {
 
 .app-container {
   padding: 20px;
-  background-color: #dff4f7;
+  background-color: transparent;
 }
 
 .section {
@@ -46,7 +46,7 @@ code {
 .welcome-message {
   text-align: center;
   padding: 50px;
-  background-color: #f8f8f8;
+  background-color: transparent;
   transition: opacity 0.5s ease; /* Add a transition effect */
 }
 
