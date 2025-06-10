@@ -18,6 +18,11 @@ import CreateEventForm from "../features/events/CreateEventForm";
 import LoginForm from "../features/authentication/loginForm";
 import ProtectedRoute from "./ProtectedRoute";
 
+
+import BackgroundVideo from './BackgroundVideo';
+
+
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -28,9 +33,12 @@ const queryClient = new QueryClient({
 });
 function App() {
   return (
+    
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <BrowserRouter>
+         <BackgroundVideo />
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="computer-society" element={<ComputerSociety />} />

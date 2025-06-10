@@ -1,149 +1,180 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import ContactForm from "./ContactForm";
-import { Tooltip } from "react-tooltip";
-// import { Link } from "react-router-dom";
-import {
-  FaLink,
-  FaEnvelope,
-  FaLinkedin,
-  FaInstagram,
-  FaTwitter,
-  FaUsers,
-  FaCalendarAlt,
-} from "react-icons/fa";
-import { FiInfo } from "react-icons/fi";
-const Footer = () => {
-  const [isContactFormVisible, setContactFormVisible] = useState(false);
+  import React, { useState } from "react";
+  import { Container, Row, Col, Button } from "react-bootstrap";
+  import ContactForm from "./ContactForm";
+  import { Tooltip } from "react-tooltip";
+  import {
+    FaLink,
+    FaEnvelope,
+    FaLinkedin,
+    FaInstagram,
+    FaTwitter,
+    FaUsers,
+    FaCalendarAlt,
+  } from "react-icons/fa";
+  import { FiInfo } from "react-icons/fi";
+  import "./Footer.css"; // We'll create this file for custom styles and animations
 
-  const sty = { marginRight: "10px", marginBottom: "3px" };
+  const Footer = () => {
+    const [isContactFormVisible, setContactFormVisible] = useState(false);
 
-  const toggleContactForm = () => {
-    setContactFormVisible((prevVisible) => !prevVisible);
+    const toggleContactForm = () => {
+      setContactFormVisible((prevVisible) => !prevVisible);
+    };
+
+    return (
+      <footer className="footer_parent" id="contact1">
+        <Container>
+          <Row className="justify-content-center text-center text-md-start">
+            {/* Location and Map */}
+            <Col md={4} className="mb-4 mb-md-0 cbit_map_parent">
+              <h3 className="footer-heading">Visit Us</h3>
+              <div className="map-container">
+                <iframe
+                  className="cbit_map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.914286701549!2d78.31880437430537!3d17.4116045018671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbef229b43e8d7%3A0xb304b4d6b6d6f51f!2sChaitanya%20Bharathi%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" // Replaced with a real Google Maps embed URL
+                  width="100%"
+                  height="250"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps - CBIT"
+                ></iframe>
+              </div>
+              <a
+                href="https://www.cbit.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cbit_contact footer-link mt-3 d-block"
+              >
+                <p>
+                  Chaitanya Bharathi Institute Of Technology <br /> Gandipet,
+                  Hyderabad
+                </p>
+              </a>
+            </Col>
+
+            {/* IEEE CBIT Navigation */}
+            <Col md={4} className="mb-4 mb-md-0">
+              <h3 className="footer-heading">IEEE CBIT</h3>
+              <ul className="list-unstyled footer-links-list">
+                <li>
+                  <a href="/#about" className="footer-link">
+                    <FiInfo size={22} className="me-2 footer-icon" />
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="/#coreteam" className="footer-link">
+                    <FaUsers size={22} className="me-2 footer-icon" />
+                    Team
+                  </a>
+                </li>
+                <li>
+                  <a href="/#events" className="footer-link">
+                    <FaCalendarAlt size={22} className="me-2 footer-icon" />
+                    Events
+                  </a>
+                </li>
+              </ul>
+            </Col>
+
+            {/* Get In Touch */}
+            <Col md={4}>
+              <h3 className="footer-heading">Get In Touch</h3>
+              <ul className="list-unstyled footer-links-list">
+                <li>
+                  <a
+                    href="mailto:cbit_ieee@gmail.com"
+                    className="footer-link"
+                  >
+                    <FaEnvelope size={22} className="me-2 footer-icon" />
+                    Email
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/ieee-cbit/mycompany/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    <FaLinkedin size={22} className="me-2 footer-icon" />
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://instagram.com/ieee_cbit?igshid=NzZlODBkYWE4Ng=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    <FaInstagram size={22} className="me-2 footer-icon" />
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://linktr.ee/ieee_cbitsb?fbclid=PAZXh0bgNhZW0CMTEAAaZXoXCD077Uo20aZ1Eqw16P3p41riLOMhUsLlLFj7FpZv89GyHWKMXiLNc_aem_ZmFrZWR1bW15MTZieXRlcw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    <FaLink size={22} className="me-2 footer-icon" />
+                    Linktree
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/IeeeCbit?t=IERGxoAIdJ2X3SxuLZngGg&s=09"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    <FaTwitter size={22} className="me-2 footer-icon" />
+                    Twitter
+                  </a>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+
+          <hr className="footer-divider" />
+
+          {/* Contact Form Toggle */}
+          <Row>
+            <Col sm={12} className="text-center mt-3">
+              <Button
+                className="contact-form-toggle-btn"
+                onClick={toggleContactForm}
+                data-tooltip-id="contact-form-tooltip"
+              >
+                Contact Form
+              </Button>
+              <Tooltip id="contact-form-tooltip" place="top" effect="solid">
+                {isContactFormVisible
+                  ? "Click to close the form"
+                  : "Click to fill the form"}
+              </Tooltip>
+
+              {isContactFormVisible && (
+                <div className="contact-form-fade-in mt-4">
+                  <ContactForm />
+                </div>
+              )}
+            </Col>
+          </Row>
+
+          <Row>
+            <Col sm={12} className="text-center mt-4 pt-3">
+              <p className="copyright-text">
+                &copy; {new Date().getFullYear()} IEEE CBIT. All Rights Reserved.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
+    );
   };
-  return (
-    <footer className="footer_parent" id="contact1" >
-      <Container >
-        <Row >
-          <Col sm={4} className="cbit_map_parent">
-            <iframe
-              className="cbit_map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.410749434572!2d78.31734661433356!3d17.392064807249177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb94eba8ad7c87%3A0xb78f51ed556f7cc5!2sChaitanya+Bharathi+Institute+of+Technology!5e0!3m2!1sen!2sin!4v1565501761816!5m2!1sen!2sin"
-              width="250"
-              height="250"
-              allowFullScreen
-              title="Google Maps"
-            ></iframe>
-      
-            <a href="https://www.cbit.ac.in/" className="cbit_contact">
-              <p>Chaitanya Bharathi Institute Of Technology <br/> Gandipet, Hyderabad</p>
-            </a>
-          </Col>
-          <Col sm={4}>
-            <h3>IEEE CBIT</h3>
-            <a href="/#about" className="footer-link" >
-              <FiInfo size={30} style={sty} />
-              About
-            </a>
-            <br />
-            <a href="/#coreteam" className="footer-link" >
-              <FaUsers size={30} style={sty} />
-              Team
-            </a>
-            {/* <Link to="/#coreteam" className="footer-link">
-              <FaUsers size={20} style={sty} />
-              Team
-            </Link> */}
-            <br />
-            <a href="/#events" className="footer-link" >
-              <FaCalendarAlt size={30} style={sty} /> 
-              Events
-            </a>
-          </Col>
-          <Col sm={4}>
-            <h3>GET IN TOUCH</h3>
-            <a href="mailto:cbit_ieee@gmail.com" className="footer-link" >
-              <FaEnvelope size={30} style={sty} />
-              Email
-            </a>
-            <br />
-            <a
-              href="https://www.linkedin.com/company/ieee-cbit/mycompany/"
-              className="footer-link"
-            >
-              <FaLinkedin size={30} style={sty} />
-              LinkedIn
-            </a>
-            <br />
-            <a
-              href="https://instagram.com/ieee_cbit?igshid=NzZlODBkYWE4Ng=="
-              className="footer-link"
-            >
-              <FaInstagram size={30} style={sty} />
-              Instagram
-            </a>
-            <br />
-            <a
-              href="https://linktr.ee/ieee_cbitsb?fbclid=PAZXh0bgNhZW0CMTEAAaZXoXCD077Uo20aZ1Eqw16P3p41riLOMhUsLlLFj7FpZv89GyHWKMXiLNc_aem_ZmFrZWR1bW15MTZieXRlcw"
-              className="footer-link"
-            >
-              <FaLink size={30} style={sty} />
-              Linktree
-            </a>
-            <br />
-            {/* <a href="https://github.com/ieee_cbit" className="footer-link">
-              <FaGithub size={20} style={sty} /> GitHub
-            </a> */}
-            {/* <br /> */}
-            <a
-              href="https://x.com/IeeeCbit?t=IERGxoAIdJ2X3SxuLZngGg&s=09"
-              className="footer-link"
-            >
-              <FaTwitter size={30} style={sty} /> Twitter
-            </a>
-          </Col>
-          <Col sm={12} className="text-center mt-3">
-            <Button
-              // style={{ marginBottom: "10px" }}
-              style={{
-                backgroundColor: "#3498db", // Example background color
-                color: "#fff", // Example text color
-                padding: "10px 20px",
-                borderRadius: "15px",
-                border: "none",
-                fontSize: "20px",
-                fontWeight: "bold",
-                cursor: "pointer",
-                marginBottom: "10px",
 
-                // Add more styles as needed
-              }}
-              onClick={toggleContactForm}
-              // className="contact-form-toggle"
-              // data-tip="Click to fill the form"
-              data-tooltip-id="my-tooltip"
-              // data-tooltip-content="Hello world!"
-            >
-              Contact Form
-            </Button>
-            <Tooltip id="my-tooltip">
-              {isContactFormVisible
-                ? "Click to close the form"
-                : "Click to fill the form"}
-            </Tooltip>
-
-            {/* {isHovered && (
-              <Tooltip id="my-tooltip">Click to fill the form</Tooltip>
-            )} */}
-            {isContactFormVisible && <ContactForm />}
-          </Col>
-          {/* <ContactForm /> */}
-        </Row>
-      </Container>
-    </footer>
-  );
-};
-
-export default Footer;
-
-
+  export default Footer;
