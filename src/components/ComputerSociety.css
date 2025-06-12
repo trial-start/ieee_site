@@ -1,0 +1,185 @@
+/* ComputerSociety Page General Styling */
+
+.cs-page-container {
+  /* No background-color needed here, let the video shine through */
+  /* padding-top to avoid content hiding under the fixed Navbar */
+  padding-top: 80px; /* Adjust based on your Navbar's height */
+}
+
+/* Common Section Styles */
+.society-section,
+.core-team-section {
+  padding: 60px 20px; /* Consistent padding for sections */
+  margin-bottom: 0; /* Remove default margins between sections if any */
+  text-align: center; /* Keep text centered */
+
+  /* This is the background overlay for content sections, as requested */
+  background-color: rgba(0, 5, 20, 0.7); /* Adjust opacity as needed */
+  backdrop-filter: blur(3px); /* Slightly blur the background behind the section for depth */
+
+  /* Ensure content is positioned correctly relative to the video */
+  position: relative;
+  z-index: 2; /* Make sure sections are above the video layer */
+}
+
+/* Headings within Computer Society page */
+.section-heading {
+  font-size: 2.8rem; /* Larger, impactful heading */
+  font-weight: 700;
+  color: #ecf0f1; /* White/light grey for contrast - remains consistent */
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+}
+
+.section-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 80px; /* A bit wider underline */
+  height: 4px; /* A bit thicker underline */
+  background-color: #64b5f6; /* Your accent blue for the underline - remains consistent */
+  border-radius: 2px;
+}
+
+/* Description Text */
+.section-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(236, 240, 241, 0.9); /* Slightly more opaque light grey - remains consistent */
+  max-width: 800px; /* Constrain width for readability */
+  margin: 0 auto 40px auto; /* Center and add bottom margin */
+  padding: 0 15px; /* Add some horizontal padding */
+}
+
+/* Specific spacing for the Computer Society description below Carousel */
+.cs-description-spacing {
+  margin-top: 30px; /* Add space above this specific description */
+}
+
+/* Junior EB Heading */
+.junior-eb-heading {
+  font-size: 2rem;
+  color: #ecf0f1; /* White/light grey for contrast - remains consistent */
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+/* --- Professional Adjustments for Leadership Team Section (Images & Text) --- */
+
+.leadership-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.leadership-member {
+  text-align: center;
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.45); /* Slightly darker transparent background for more pop */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* More prominent shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible subtle white-ish border */
+  backdrop-filter: blur(5px); /* Professional frosted glass effect for each card */
+}
+
+.leadership-member:hover {
+  transform: translateY(-10px); /* Slightly more lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* More pronounced shadow on hover */
+}
+
+.leadership-img {
+  width: 160px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #64b5f6; /* Slightly thicker accent blue border for emphasis */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1), /* Subtle outer white glow */
+              0 5px 15px rgba(0, 0, 0, 0.4); /* Inner shadow for depth */
+}
+
+.leadership-member:hover .leadership-img {
+  transform: scale(1.08); /* More pronounced zoom on image hover */
+  border-color: #ecf0f1; /* Change border to white on hover for contrast */
+}
+
+.leadership-name {
+  font-size: 1.85rem; /* Slightly larger name font */
+  font-weight: 700;
+  color: #ecf0f1; /* White text - consistent */
+  margin-bottom: 8px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow for readability */
+}
+
+.leadership-position {
+  font-size: 1.25rem; /* Slightly larger position font */
+  font-weight: 500;
+  color: #ecf0f1; /* White text - consistent */
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+/* Responsive adjustments for Leadership Grid */
+@media (max-width: 768px) {
+  .leadership-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .leadership-member {
+    width: 85%; /* Adjust width for mobile, slightly wider */
+    max-width: 320px; /* Increased max-width for better look */
+    padding: 20px;
+  }
+
+  .leadership-img {
+    width: 120px;
+    height: 120px;
+    border-width: 4px; /* Slightly thinner border on mobile */
+  }
+
+  .leadership-name {
+    font-size: 1.6rem; /* Adjust name font size for mobile */
+  }
+
+  .leadership-position {
+    font-size: 1.1rem; /* Adjust position font size for mobile */
+  }
+}
+/* --- Styling for Junior EB Team Members List (TeamMembers.js) --- */
+
+
+
+
+
+.team-member:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+}
+
+/* Style for the concatenated Name and Position text */
+.team-member p {
+  font-size: 1.15rem; /* Slightly larger font size for readability */
+  
+  color: #ecf0f1; /* --- THIS MAKES THE TEXT WHITE --- */
+  line-height: 1.4; /* Improve line spacing */
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for professionalism */
+  margin: 0; /* Remove default paragraph margin */
+}
+
+
+
