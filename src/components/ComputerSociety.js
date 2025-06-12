@@ -8,15 +8,20 @@ import TeamMembers from "./TeamMembers";
 
 const ComputerSociety = ({ imgs, num }) => {
   const teamMembers = [
-    { name: "Swaroop", position: "Documentation" },
-    { name: "Saketh", position: "Tech" },
-    { name: "Akshitha", position: "Tech" },
-    { name: "Sreesha", position: "Tech" },
-    { name: "Sneha", position: "Design" },
-    { name: "Parnita", position: "Design" },
-    { name: "Chinmayee", position: "Design" },
-    { name: "Koushik", position: "SM & PR" },
-    { name: "Snikitha", position: "SM & PR" },
+    { name: "ANUMULA SRI HASINI", position: "Documentation" },
+    { name: "GUBBALA MANI VARSHA", position: "Tech" },
+    { name: "VENKATA SHASHANK", position: "Tech" },
+    { name: "SRIKAR ACHARYA", position: "Tech" },
+    { name: "HARSHA KUMAR", position: "Design" },
+    { name: "NIKHIL HAZARI", position: "Design" },
+    { name: "P.S.MAYOOR", position: "Tech" },
+    { name: "PRAGALLAPATI SAKETH", position: "Tech" },
+    { name: "PULLAYI THRISHA", position: "Tech" },
+    { name: "RUSHIL SARAPU", position: "SM & PR" },
+    { name: "SAKETH VEMULAPATI", position: "SM & PR" },
+    { name: "SHASHIDHAR NAGUNURI", position: "Tech" },
+    { name: "TEJASREE JILLA", position: "SM & PR" },
+    { name: "VISHNU VARDHAN", position: "SM & PR" },
   ];
 
   return (
@@ -38,7 +43,7 @@ const ComputerSociety = ({ imgs, num }) => {
       </section>
       <section className="core-team-section" id="coreteam" style={{ textAlign: "center", backgroundColor: 'rgb(243, 237, 177)' }}>
         <h2 className="section-heading" style={{ textAlign: "center", backgroundColor: 'rgb(243, 237, 177)' }}>
-          Team 2023-2024
+          Team 2024-2025
         </h2>
         <p className="section-description" style={{ textAlign: "center", backgroundColor: 'rgb(243, 237, 177)' }}>
           Meet the dedicated members of our Computer Society's Team
