@@ -20,11 +20,6 @@ const teamMembers = [
   {
     name: "Bob Johnson",
     role: "Marketing Director",
-    image: "core-team/j-secret.png",
-  },
-  {
-    name: "Bob Johnson",
-    role: "Marketing Director",
     image: "core-team/tress.png",
   },
   {
@@ -36,11 +31,6 @@ const teamMembers = [
     name: "Jane Smith",
     role: "Lead Developer",
     image: "design-team/3.png",
-  },
-  {
-    name: "Bob Johnson",
-    role: "Marketing Director",
-    image: "documentation-team/4.png",
   },
   {
     name: "Bob Johnson",
@@ -118,7 +108,16 @@ const teamMembers = [
     role: "Marketing Director",
     image: "soc/ws2.png",
   },
-  
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/vts1.png",
+  },
+  {
+    name: "Bob Johnson",
+    role: "Marketing Director",
+    image: "soc/vts2.png",
+  }
 ];
 
 const TeamCarousel = ({ onSlideChange }) => {
@@ -134,7 +133,7 @@ const TeamCarousel = ({ onSlideChange }) => {
         {teamMembers.map((member, index) => (
           <Carousel.Item key={index}>
             <img
-              className="d-block w-100"
+              className="team-carousel-img"
               src={`images/${member.image}`}
               alt={`Team member ${index + 1}`}
             />

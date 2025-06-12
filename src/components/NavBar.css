@@ -88,6 +88,13 @@
   padding-bottom: 0.5rem; /* Adjust padding for underline */
 }
 
+/* Center all nav links, including the login button */
+.nav-link-custom {
+  text-align: center;
+  display: block; /* Ensures proper alignment in the dropdown */
+  padding: 10px 15px; /* Adjust padding for better spacing */
+}
+
 /* Login Button Specific Style */
 .login-button {
   /* --- IMPORTANT CHANGES HERE --- */
@@ -101,6 +108,8 @@
   padding: 0.8rem 1.6rem; /* Slightly larger button padding */
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
+  text-align: center; /* Center the login button */
+  display: block; /* Ensures it behaves like other nav links */
 }
 
 .login-button:hover {

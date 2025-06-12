@@ -64,7 +64,7 @@ export default function HomePage() {
         </div> */}
         <div className="section" id="coreteam">
           <h2 style={{color:'white' }} className="section-heading">
-            {"IEEE Senior Executive Board 2023-2024"}
+            {"IEEE Senior Executive Board 2024-2025"}
           </h2>
           <TeamCarousel onSlideChange={setSlideIndex} />
           <hr className="section-divider" />

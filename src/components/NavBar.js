@@ -82,7 +82,12 @@ const NavBar = ({ itemId, itemName, val }) => {
             {isAuthenticated ? (
               <Logout className="ms-lg-3 logout-button" onClick={closeNav} />
             ) : (
-              <Nav.Link as={NavLink} to="/login" onClick={closeNav} className="nav-link-custom login-button">
+              <Nav.Link
+                as={NavLink}
+                to="/login"
+                onClick={closeNav}
+                className="nav-link-custom login-button"
+              >
                 Login
               </Nav.Link>
             )}

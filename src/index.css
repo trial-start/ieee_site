@@ -141,6 +141,12 @@ h3 {
   font-size: 18px;
   line-height: 1.6;
   margin-top: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: justify;
 }
 
 /* Add horizontal line style */
@@ -456,3 +462,44 @@ a:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.team-carousel-img {
+  max-width: 850px; /* Adjust width as needed */
+  max-height: 850px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures the image fits nicely */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  margin: 0 auto; /* Centers the image */
+  display: block; /* Ensures proper alignment */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+}
+
+@media (max-width: 768px) {
+  .team-carousel-img {
+    max-width: 600px; /* Adjust width for tablets */
+    max-height: 600px; /* Adjust height for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .team-carousel-img {
+    width: 400px; /* Full width for smaller screens */
+    height: 400px !important; /* Ensure height is applied */
+    border-radius: 10px !important; /* Ensure border-radius is applied */
+    overflow: hidden; /* Prevent content from overflowing the rounded corners */
+  }
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 48px !important; /* Slightly increase font size for medium screens */
+    text-align: center; /* Center align the text */
+  }
+}
+
+/* Responsive styles for mobiles */
+@media (max-width: 576px) {
+  .section-heading {
+    font-size: 48px !important; /* Slightly increase font size for smaller screens */
+    text-align: center; /* Center align the text */
+  }
+}

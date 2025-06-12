@@ -18,8 +18,8 @@ const Events = ({ by = "" }) => {
 
   const events =
     by === ""
-      ? allEvents
-      : allEvents?.filter((event) => {
+      ? allEvents || [] // Ensure events is an array even if allEvents is undefined
+      : (allEvents || []).filter((event) => {
           return event.conductedBy.includes(by);
         });
 
@@ -64,7 +64,7 @@ const Events = ({ by = "" }) => {
   };
 
   if (isLoading || isDeleting) return <Spinner />;
-  if (!isLoading && allEvents.length === 0)
+  if (!isLoading && events.length === 0)
     return <EventNotFound check={false} />;
 
   return (
