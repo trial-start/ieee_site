@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Events from "./Events";
 import TeamMembers from "./TeamMembers";
-import "./ComputerSociety.css"; // Import your 
+import "./ComputerSociety.css"; 
 
 // New component for displaying individual leadership members
 const LeadershipMember = ({ name, position, imageSrc }) => (
