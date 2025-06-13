@@ -1,8 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-// import CoreTeam from "./CoreTeam"; // We will not use CoreTeam for Chair/Vice Chair
 import Footer from "./Footer";
-import Carousel from "./Carousel";
 import Events from "./Events";
 import TeamMembers from "./TeamMembers";
 import "./ComputerSociety.css"; // Import your 
@@ -74,7 +72,8 @@ const ComputerSociety = ({ imgs, num }) => {
         <h2 className="section-heading">
           Leadership Team 2024-2025
         </h2>
-        <p className="section-description">
+        
+        <p className="section-description-text">
           Meet the dedicated leadership of our Computer Society's Team.
         </p>
         <div className="leadership-grid">
@@ -96,7 +95,7 @@ const ComputerSociety = ({ imgs, num }) => {
       {/* Events Section */}
       <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
-        <p className="section-description">Check out our past events.</p>
+        <p className="section-description-text">Check out our past events.</p>
         <Events by="Computer Society" />
       </section>
 
