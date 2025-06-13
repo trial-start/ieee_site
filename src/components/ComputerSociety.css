@@ -52,9 +52,8 @@
   font-size: 1.15rem;
   line-height: 1.8;
   color: rgba(236, 240, 241, 0.9); /* Slightly more opaque light grey - remains consistent */
-  max-width: 600px; /* Constrain width for readability */
   margin: 0 auto 40px auto; /* Center and add bottom margin */
-  padding: 0 15px; /* Add some horizontal padding */
+  padding: 15px; /* Add some horizontal padding */
 }
 
 /* Specific spacing for the Computer Society description below Carousel */

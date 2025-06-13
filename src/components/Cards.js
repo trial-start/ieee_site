@@ -1,6 +1,5 @@
 import { Col, Card } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
- // make sure to import your CSS file
 
 export default function Cards({ img, societyName, description, link }) {
   return (
