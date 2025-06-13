@@ -46,6 +46,12 @@ const SocietyCards = () => {
         description="Empowering Women to engineer the future"
         link="women-engineering-society"
       />
+      <Cards
+        img="images/won_soc.jpg"
+        societyName="Vehicular Technology Society"
+        description="Connecting the world through vehicular technology"
+        link="women-engineering-society"
+      />
     </Row>
   );
 };
