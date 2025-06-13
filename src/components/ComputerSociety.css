@@ -1,26 +1,37 @@
 /* ComputerSociety Page General Styling */
 
+/* ComputerSociety Page General Styling */
+
 .cs-page-container {
-  /* No background-color needed here, let the video shine through */
-  /* padding-top to avoid content hiding under the fixed Navbar */
-  padding-top: 80px; /* Adjust based on your Navbar's height */
+  padding-top: 10px;
+  /* --- IMPORTANT: REMOVE THIS LINE IF YOU WANT THE BACKGROUND VIDEO TO SHOW --- */
+  /* background: linear-gradient(rgba(0, 10, 30, 0.9), rgba(0, 20, 50, 0.9)); */
+  /* Keep it empty or just 'transparent' if you want video to show through */
 }
 
 /* Common Section Styles */
 .society-section,
 .core-team-section {
-  padding: 60px 20px; /* Consistent padding for sections */
-  margin-bottom: 0; /* Remove default margins between sections if any */
-  text-align: center; /* Keep text centered */
+  padding: 60px 20px;
+  margin-bottom: 0;
+  text-align: center;
 
-  /* This is the background overlay for content sections, as requested */
-  background-color: rgba(0, 5, 20, 0.7); /* Adjust opacity as needed */
-  backdrop-filter: blur(3px); /* Slightly blur the background behind the section for depth */
+  /* Adjust this background-color opacity (the last number: 0.7) */
+  /* Example: For slightly less transparent (more solid) */
+  background-color: rgba(1, 14, 53, 0.85); /* Increased opacity from 0.7 to 0.85 */
+  /* Example: For slightly more transparent */
+  /* background-color: rgba(1, 14, 53, 0.5); */
 
-  /* Ensure content is positioned correctly relative to the video */
+  backdrop-filter: blur(3px); /* Remains consistent */
   position: relative;
-  z-index: 2; /* Make sure sections are above the video layer */
+  z-index: 2;
 }
+
+/* All text colors (e.g., .section-heading, .section-description, .leadership-name, .leadership-position, .team-member p) */
+/* will retain their full opacity because their 'color' property is set to an opaque value like #ecf0f1 or rgba(236, 240, 241, 0.9) */
+/* You've already done this correctly, so no changes needed for text color itself. */
+
+/* ... (rest of your CSS remains the same) ... */
 
 /* Headings within Computer Society page */
 .section-heading {
@@ -44,6 +55,7 @@
   height: 4px; /* A bit thicker underline */
   background-color: #64b5f6; /* Your accent blue for the underline - remains consistent */
   border-radius: 2px;
+  
 }
 
 /* Description Text */
@@ -52,11 +64,19 @@
   font-size: 1.15rem;
   line-height: 1.8;
   color: rgba(236, 240, 241, 0.9); /* Slightly more opaque light grey - remains consistent */
+  max-width: 800px; /* Constrain width for readability */
+  margin: 0 auto 40px auto; /* Center and add bottom margin */
+  padding: 0 15px; /* Add some horizontal padding */
+}
+.section-description-text {
+  align-content: center;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(236, 240, 241, 0.9); /* Slightly more opaque light grey - remains consistent */
   max-width: 600px; /* Constrain width for readability */
   margin: 0 auto 40px auto; /* Center and add bottom margin */
   padding: 0 15px; /* Add some horizontal padding */
 }
-
 /* Specific spacing for the Computer Society description below Carousel */
 .cs-description-spacing {
   margin-top: 30px; /* Add space above this specific description */
@@ -87,9 +107,9 @@
   text-align: center;
   flex: 0 0 auto;
   width: 250px;
-  background-color: rgba(0, 0, 0, 0.45); /* Slightly darker transparent background for more pop */
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 5%; /* Slightly darker transparent background for more pop */
   padding: 25px;
-  
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* More prominent shadow for depth */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible subtle white-ish border */
@@ -103,8 +123,8 @@
 
 .leadership-img {
   width: 200px;
-  height: 240px;
-  
+  height: 200px;
+  border-radius: 100%;
   object-fit: cover;
   border: 5px solid #64b5f6; /* Slightly thicker accent blue border for emphasis */
   margin-bottom: 20px;
