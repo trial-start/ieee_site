@@ -56,7 +56,7 @@ const ComputerSociety = ({ imgs, num }) => {
       {/* About Section */}
       <section className="society-section" id="about">
         <h2 className="section-heading">Computer Society</h2>
-        <Carousel val="x" imgs={imgs} />
+        {/* <Carousel val="x" imgs={imgs} /> */}
         <p className="section-description cs-description-spacing">
           Aligned with the world's leading IEEE Computer Society, the CBIT
           IEEE's CS branch empowers your exploration of computing. Delve into a
@@ -89,7 +89,7 @@ const ComputerSociety = ({ imgs, num }) => {
         </div>
         
 
-        <h4 className="junior-eb-heading">Junior EB</h4>
+        <h4 className="junior-eb-heading">Junior Executive Board</h4>
         <TeamMembers members={teamMembers} />
       </section>
 
