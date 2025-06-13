@@ -5,19 +5,53 @@ import Footer from "./Footer";
 import Carousel from "./Carousel";
 import Events from "./Events";
 import TeamMembers from "./TeamMembers";
+import "./ComputerSociety.css";
 
+// New component for displaying individual leadership members
+const LeadershipMember = ({ name, position, imageSrc }) => (
+  <div className="leadership-member">
+    <img src={imageSrc} alt={`${name} - ${position}`} className="leadership-img" />
+    <h3 className="leadership-name">{name}</h3>
+    <p className="leadership-position">{position}</p>
+  </div>
+);
 const CircuitsAndSystems = ({ imgs, num }) => {
   const teamMembers = [
-    { name: "Malay", position: "Documentation" },
-    { name: "Surya Prakash", position: "Documentation" },
-    { name: "Samith", position: "Documentation" },
-    { name: "Haindavi", position: "Documentation" },
-    { name: "Vinyaswi", position: "Tech" },
-    { name: "Varshini", position: "Design" },
-    { name: "Swarzina", position: "SM & PR" },
-    { name: "Gayatri", position: "SM & PR" },
-    { name: "Charan", position: "SM & PR" },
+    { name: "LIKITA REDDY CHITTI", position: "Design" },
+    { name: "NM ADARSH", position: "Design" },
+    { name: "GAGANDEEP SAI", position: "Design" },
+    { name: "PRANAVI", position: "Documentation" },
+    { name: "ROHITH PATEL", position: "Documentation" },
+    { name: "VEERA BRAMENDRA", position: "Documentation" },
+    { name: "AZMEERA JAMPANNA", position: "Events & PR" },
+    { name: "GOPTHRI YELLAPRAGADA", position: "Events & PR" },
+    { name: "KORPOLE KRISHNA KARTHIK REDDY", position: "Events & PR" },
+    { name: "MALKA SAI HAMSINI", position: "Events & PR" },
+    { name: "RAMAKANTH P.S.K", position: "Events & PR" },
+    { name: "VEDAVRATH MANDALA", position: "Events & PR" },
+    { name: "VETURI BALA SAI DATTA", position: "Events & PR" },
+    { name: "KAVARTHAPU JAYA VENKATA RAJESH", position: "Events & PR" },
+    { name: "KAVARTHAPU JAYA VENKATA RAJESH", position: "Social Media" },
+    { name: "KRITHISHA VUPPALA", position: "Social Media" },
+    { name: "PRABHUGARI SRI KRUTHI", position: "Tech" },
+    
+    
   ];
+
+  // Define your Chair and Vice Chair data with direct image paths
+  const chairLeadership = [
+    {
+      name: "Sriya Kotagiriwar",
+      position: "Chair",
+      image: "../images/cs/img-1 2025.png", // <--- IMPORTANT: Update with actual filename
+    },
+    {
+      name: "Indu Priya",
+      position: "Vice Chair",
+      image: "../images/cs/img-2 2025.png", // <--- IMPORTANT: Update with actual filename
+    },
+  ];
+
   return (
     <div style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
@@ -41,7 +75,7 @@ const CircuitsAndSystems = ({ imgs, num }) => {
       </section>
       <section className="core-team-section" id="coreteam" style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team 2023-2024
+          Team 2024-2025
         </h2>
         <p className="section-description" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Circuits and Systems Society's Team
