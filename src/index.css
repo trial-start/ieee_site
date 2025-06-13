@@ -31,8 +31,9 @@ code {
 
 .section-heading {
   color: #333;
-  font-size: 36px;
+  font-size: 52px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .section-divider {
@@ -394,7 +395,7 @@ a:hover {
 }
 
 .section-description {
-  animation: slideIn 2s ease-in-out;
+  animation: slideIn 1s ease-in-out, bounceIn 1.5s ease-in-out;
 }
 
 .custom-disp {
@@ -484,4 +485,25 @@ a:hover {
     font-size: 48px !important; /* Slightly increase font size for smaller screens */
     text-align: center; /* Center align the text */
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-animate {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card-animate.visible {
+  animation: fadeInUp 0.8s ease forwards; /* Trigger animation */
 }

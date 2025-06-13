@@ -63,7 +63,7 @@ export default function HomePage() {
           <hr className="section-divider" />
         </div> */}
         <div className="section" id="coreteam">
-          <h2 style={{color:'white' }} className="section-heading">
+          <h2 style={{color:'white',fontSize: '52px' }} className="section-heading">
             {"IEEE Senior Executive Board 2024-2025"}
           </h2>
           <TeamCarousel onSlideChange={setSlideIndex} />

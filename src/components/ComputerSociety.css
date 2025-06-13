@@ -1,48 +1,27 @@
-/* ComputerSociety Page General Styling */
-
-/* ComputerSociety Page General Styling */
-
 .cs-page-container {
   padding-top: 10px;
-  /* --- IMPORTANT: REMOVE THIS LINE IF YOU WANT THE BACKGROUND VIDEO TO SHOW --- */
-  /* background: linear-gradient(rgba(0, 10, 30, 0.9), rgba(0, 20, 50, 0.9)); */
-  /* Keep it empty or just 'transparent' if you want video to show through */
 }
 
-/* Common Section Styles */
 .society-section,
 .core-team-section {
   padding: 60px 20px;
   margin-bottom: 0;
   text-align: center;
-
-  /* Adjust this background-color opacity (the last number: 0.7) */
-  /* Example: For slightly less transparent (more solid) */
-  background-color: rgba(1, 14, 53, 0.85); /* Increased opacity from 0.7 to 0.85 */
-  /* Example: For slightly more transparent */
-  /* background-color: rgba(1, 14, 53, 0.5); */
-
-  backdrop-filter: blur(3px); /* Remains consistent */
+  background-color: rgba(1, 14, 53, 0.3);
+  backdrop-filter: blur(3px);
   position: relative;
   z-index: 2;
 }
 
-/* All text colors (e.g., .section-heading, .section-description, .leadership-name, .leadership-position, .team-member p) */
-/* will retain their full opacity because their 'color' property is set to an opaque value like #ecf0f1 or rgba(236, 240, 241, 0.9) */
-/* You've already done this correctly, so no changes needed for text color itself. */
-
-/* ... (rest of your CSS remains the same) ... */
-
-/* Headings within Computer Society page */
 .section-heading {
-  font-size: 2.8rem; /* Larger, impactful heading */
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #ecf0f1; /* White/light grey for contrast - remains consistent */
+  color: #ecf0f1;
   margin-bottom: 25px;
   position: relative;
   padding-bottom: 15px;
   letter-spacing: 1px;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .section-heading::after {
@@ -51,47 +30,43 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  width: 80px; /* A bit wider underline */
-  height: 4px; /* A bit thicker underline */
-  background-color: #64b5f6; /* Your accent blue for the underline - remains consistent */
+  width: 80px;
+  height: 4px;
+  background-color: #64b5f6;
   border-radius: 2px;
-  
 }
 
-/* Description Text */
 .section-description {
   align-content: center;
   font-size: 1.15rem;
   line-height: 1.8;
-  color: rgba(236, 240, 241, 0.9); /* Slightly more opaque light grey - remains consistent */
-  max-width: 800px; /* Constrain width for readability */
-  margin: 0 auto 40px auto; /* Center and add bottom margin */
-  padding: 0 15px; /* Add some horizontal padding */
+  color: rgba(236, 240, 241, 0.9);
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  padding: 0 15px;
 }
+
 .section-description-text {
   align-content: center;
   font-size: 1.15rem;
   line-height: 1.8;
-  color: rgba(236, 240, 241, 0.9); /* Slightly more opaque light grey - remains consistent */
-  margin: 0 auto 40px auto; /* Center and add bottom margin */
-  padding: 15px; /* Add some horizontal padding */
-}
-/* Specific spacing for the Computer Society description below Carousel */
-.cs-description-spacing {
-  margin-top: 30px; /* Add space above this specific description */
+  color: rgba(236, 240, 241, 0.9);
+  margin: 0 auto 40px auto;
+  padding: 15px;
 }
 
-/* Junior EB Heading */
+.cs-description-spacing {
+  margin-top: 30px;
+}
+
 .junior-eb-heading {
   font-size: 2rem;
-  color: #ecf0f1; /* White/light grey for contrast - remains consistent */
+  color: #ecf0f1;
   margin-top: 40px;
   margin-bottom: 30px;
   font-weight: 600;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
-
-/* --- Professional Adjustments for Leadership Team Section (Images & Text) --- */
 
 .leadership-grid {
   display: flex;
@@ -107,17 +82,17 @@
   flex: 0 0 auto;
   width: 250px;
   background-color: rgba(0, 0, 0, 0.45);
-  border-radius: 5%; /* Slightly darker transparent background for more pop */
+  border-radius: 5%;
   padding: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* More prominent shadow for depth */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible subtle white-ish border */
-  backdrop-filter: blur(5px); /* Professional frosted glass effect for each card */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
 }
 
 .leadership-member:hover {
-  transform: translateY(-10px); /* Slightly more lift effect on hover */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* More pronounced shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
 
 .leadership-img {
@@ -125,34 +100,32 @@
   height: 200px;
   border-radius: 100%;
   object-fit: cover;
-  border: 5px solid #64b5f6; /* Slightly thicker accent blue border for emphasis */
+  border: 5px solid #64b5f6;
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
-  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1), /* Subtle outer white glow */
-              0 5px 15px rgba(0, 0, 0, 0.4); /* Inner shadow for depth */
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1), 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .leadership-member:hover .leadership-img {
-  transform: scale(1.08); /* More pronounced zoom on image hover */
-  border-color: #ecf0f1; /* Change border to white on hover for contrast */
+  transform: scale(1.08);
+  border-color: #ecf0f1;
 }
 
 .leadership-name {
-  font-size: 1.85rem; /* Slightly larger name font */
+  font-size: 1.85rem;
   font-weight: 700;
-  color: #ecf0f1; /* White text - consistent */
+  color: #ecf0f1;
   margin-bottom: 8px;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow for readability */
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .leadership-position {
-  font-size: 1.25rem; /* Slightly larger position font */
+  font-size: 1.25rem;
   font-weight: 500;
-  color: #ecf0f1; /* White text - consistent */
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+  color: #ecf0f1;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive adjustments for Leadership Grid */
 @media (max-width: 768px) {
   .leadership-grid {
     flex-direction: column;
@@ -161,32 +134,26 @@
   }
 
   .leadership-member {
-    width: 85%; /* Adjust width for mobile, slightly wider */
-    max-width: 320px; /* Increased max-width for better look */
+    width: 85%;
+    max-width: 320px;
     padding: 20px;
   }
 
   .leadership-img {
     width: 150px;
     height: 150px;
-    border-width: 4px; /* Slightly thinner border on mobile */
+    border-width: 4px;
   }
 
   .leadership-name {
-    font-size: 1.6rem; /* Adjust name font size for mobile */
+    font-size: 1.6rem;
   }
 
   .leadership-position {
-    font-size: 1.1rem; /* Adjust position font size for mobile */
+    font-size: 1.1rem;
   }
 }
-/* --- Styling for Junior EB Team Members List (TeamMembers.js) --- */
 
-
-
-
-
-/* Team Members Grid Layout */
 .team-members-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -217,11 +184,8 @@
   line-height: 1.4;
 }
 
-/* Responsive adjustment */
 @media (max-width: 768px) {
   .team-members-grid {
     grid-template-columns: 1fr;
   }
 }
-
-

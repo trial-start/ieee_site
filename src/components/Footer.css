@@ -96,28 +96,22 @@
 
 /* Contact Button */
 .contact-form-toggle-btn {
-  /* --- CONSIDER THIS FOR VISIBILITY --- */
-  /* Original: background-color: #3498db; (Solid vibrant blue) */
-  /* Option A: Make semi-transparent to let video show through */
-  background-color: rgba(52, 152, 219, 0.8); /* Vibrant blue with 80% opacity */
-
-  /* Option B: Use the dark blue-grey from footer_parent for a darker, semi-transparent button */
-  /* background-color: rgba(44, 62, 80, 0.8); */
-
-  color: #fff;
+  /* Updated to a different blue with adjusted RGBA values */
+  background-color: rgba(9, 103, 165, 0.85); /* Brighter blue with 85% opacity */
+  color: #ecf0f1; /* Light text color for better contrast */
   padding: 12px 30px;
-  border-radius: 25px;
-  border: none;
+  border-radius: 20px;
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form-toggle-btn:hover {
-  background-color: #2980b9;
+  background-color: rgba(31, 156, 240, 0.9); /* Slightly darker blue on hover */
+  border-color: rgba(58, 165, 236, 0.7); /* Update border color on hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -125,6 +119,7 @@
 .contact-form-toggle-btn:active {
   transform: translateY(0);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border-color: rgba(236, 240, 241, 0.9); /* Slightly more visible border on active */
 }
 
 /* Contact Form Animation */
