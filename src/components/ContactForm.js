@@ -356,11 +356,7 @@ const ContactForm = () => {
           </div>
 
           {/* Footer */}
-          <div style={styles.footer}>
-            <p>
-              We typically respond within 24 hours during business days.
-            </p>
-          </div>
+         
         </div>
       </div>
     </>
