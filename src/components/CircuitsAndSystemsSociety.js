@@ -41,24 +41,24 @@ const CircuitsAndSystems = ({ imgs, num }) => {
   // Define your Chair and Vice Chair data with direct image paths
   const chairLeadership = [
     {
-      name: "Sriya Kotagiriwar",
+      name: "Samith",
       position: "Chair",
-      image: "../images/cs/img-1 2025.png", // <--- IMPORTANT: Update with actual filename
+      image: "../images/ckts/img1-2025.png", // <--- IMPORTANT: Update with actual filename
     },
     {
-      name: "Indu Priya",
+      name: "T.Devi Sree Varshini",
       position: "Vice Chair",
-      image: "../images/cs/img-2 2025.png", // <--- IMPORTANT: Update with actual filename
+      image: "../images/ckts/img2-2025.png", // <--- IMPORTANT: Update with actual filename
     },
   ];
 
   return (
-    <div style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
+    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about" style={{ textAlign: "center", backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
+      <section className="society-section" id="about">
         <h2 className="section-heading">Circuits and Systems Society</h2>
-        <Carousel val="x" imgs={imgs} />
-        <p className="section-description" style={{textAlign: 'justify'}}>
+        {/* <Carousel val="x" imgs={imgs} /> */}
+        <p className="section-description cs-description-spacing">
           Dive deeper into the building blocks of technology with the CBIT IEEE
           Circuits and Systems (CAS) branch! Aligned with the world-renowned
           IEEE CAS society, we offer a comprehensive exploration of this dynamic
@@ -73,27 +73,32 @@ const CircuitsAndSystems = ({ imgs, num }) => {
           journey into the world of circuits and systems!
         </p>
       </section>
-      <section className="core-team-section" id="coreteam" style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
+      <section className="core-team-section" id="coreteam">
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team 2024-2025
+          Leadership Team 2024-2025
         </h2>
-        <p className="section-description" style={{ textAlign: "center" }}>
+        <p className="section-description-text" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Circuits and Systems Society's Team
         </p>
-        <CoreTeam
-          num={num}
-          folder="ckts"
-          names={["Rajeshwar reddy", "Vaishnavi Sanugommula"]}
-        />
-        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
+        
+        <div className="leadership-grid">
+          {chairLeadership.map((member, index) => (
+            <LeadershipMember
+              key={index}
+              name={member.name}
+              position={member.position}
+              imageSrc={member.image}
+            />
+          ))}
+        </div>
+        <h4 className="junior-eb-heading">Junior Executive Board</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events" style={{ backgroundColor: 'rgb(190, 240, 159)', minHeight: '100vh' }}>
+      <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
-        <p className="section-description">Check out our past events.</p>
+        <p className="section-description-text">Check out our past events.</p>
         <Events by="Circuits and Systems Society" />
       </section>
-      <Footer />
     </div>
   );
 };
