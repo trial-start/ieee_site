@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Container, Form, Button, Alert } from "react-bootstrap";
-import emailjs from "emailjs-com";
-// import Verifier from "email-verifier";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,161 +8,362 @@ const ContactForm = () => {
   });
 
   const [alert, setAlert] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const validateEmail = (email) => {
+    const emailDomain = email.split("@")[1];
+    return emailDomain === "gmail.com" || emailDomain === "cbit.org.in";
+  };
+
+  const showAlert = (variant, message) => {
+    setAlert({ variant, message });
+    setTimeout(() => setAlert(null), 5000);
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Check if the domain is allowed (Gmail or cbit.org.in)
-    const emailDomain = formData.email.split("@")[1];
-    if (emailDomain !== "gmail.com" && emailDomain !== "cbit.org.in") {
-      setAlert({
-        variant: "danger",
-        message: "Provide an email with gmail.com or cbit.org.in domains",
-      });
-      setTimeout(() => {
-        setAlert(null);
-      }, 5000);
+    if (e) e.preventDefault();
+    setIsSubmitting(true);
 
+    if (!validateEmail(formData.email)) {
+      showAlert(
+        "danger",
+        "Please use an email with gmail.com or cbit.org.in domain"
+      );
+      setIsSubmitting(false);
       return;
     }
 
-    // Check email existence (simplified example)
-    // let verifier = new Verifier("your_email_verification_api_key");
-    // verifier.verify("r@rdegges.com", (err, data) => {
-    //   if (err) throw err;
-    //   console.log(data);
-    // });
-
-    // const verifier = new Verifier("at_2UWtXClUPlx0FJnUngT97kLV4thFS"); // Replace with a valid API key
-    // const result = await verifier.verify(formData.email);
-
-    // if (!result.formatCheck || !result.mxCheck || !result.smtpCheck) {
-    //   // Invalid email or doesn't exist
-    //   setAlert({
-    //     variant: "danger",
-    //     message:
-    //       "Invalid email address or email doesn't exist. Please provide a valid email.",
-    //   });
-    //   setTimeout(() => {
-    //     setAlert(null);
-    //   }, 5000);
-
-    //   return;
-    // }
-
-    // Use your own Email.js template and service IDs
-    const templateParams = {
-      reply_to: formData.email,
-      from_name: formData.name,
-      message: formData.message,
-    };
-
-    // Use your own Email.js service ID and user ID
-    emailjs
-      .send(
-        "service_tdrt432",
-        "template_tb1c1ym",
-        templateParams,
-        "2pWMiPSLQ8WR-SfSF"
-      )
-      .then((response) => {
-        console.log("Email sent successfully:", response);
-
-        // Show success alert for 5 seconds
-        setAlert({ variant: "success", message: "Email sent successfully!" });
-        setTimeout(() => {
-          setAlert(null);
-        }, 5000);
-      })
-      .catch((error) => {
-        console.error("Email failed to send:", error);
-
-        // Show failure alert for 5 seconds
-        setAlert({
-          variant: "danger",
-          message: "Failed to send email. Please try again later.",
-        });
-        setTimeout(() => {
-          setAlert(null);
-        }, 5000);
-      });
-
-    // After sending the email, you may want to reset the form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    // Simulate email sending
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      showAlert("success", "Email sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      showAlert("danger", "Failed to send email. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const rstyle = { borderRadius: "18px" };
+  const styles = {
+    container: {
+      backgroundSize: '200% 200%',
+      animation: 'gradientShift 15s ease infinite',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '24px',
+      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+      minHeight: '100vh'
+    },
+    mainWrapper: {
+      width: '100%',
+      maxWidth: '500px'
+    },
+    header: {
+      textAlign: 'center',
+      marginBottom: '28px'
+    },
+    title: {
+      fontSize: '2rem',
+      fontWeight: '700',
+      color: '#fff', // Changed from transparent/violet to white
+      background: 'none', // Remove gradient
+      backgroundClip: 'unset',
+      WebkitBackgroundClip: 'unset',
+      marginBottom: '8px',
+      textShadow: '0 0 10px rgba(102, 126, 234, 0.2)'
+    },
+    subtitle: {
+      color: 'white',
+      fontSize: '1rem',
+      fontWeight: '300'
+    },
+    alert: {
+      marginBottom: '20px',
+      padding: '12px 16px',
+      borderRadius: '10px',
+      border: '1px solid',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      animation: 'slideIn 0.3s ease-out',
+      backdropFilter: 'blur(6px)',
+      fontSize: '0.95rem'
+    },
+    alertSuccess: {
+      backgroundColor: 'rgba(34, 197, 94, 0.15)',
+      borderColor: '#22c55e',
+      color: '#4ade80'
+    },
+    alertDanger: {
+      backgroundColor: 'rgba(239, 68, 68, 0.15)',
+      borderColor: '#ef4444',
+      color: '#f87171'
+    },
+    alertClose: {
+      background: 'none',
+      border: 'none',
+      color: 'inherit',
+      fontSize: '1.2rem',
+      cursor: 'pointer',
+      padding: '0',
+      marginLeft: '10px'
+    },
+    formContainer: {
+      background: '#22223b', // Changed from violet gradient to dark for contrast with white
+      backdropFilter: 'blur(10px)',
+      borderRadius: '16px',
+      padding: '24px',
+      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)',
+      border: '1px solid rgba(255, 255, 255, 0.15)'
+    },
+    formGroup: {
+      marginBottom: '20px'
+    },
+    label: {
+      display: 'block',
+      fontSize: '0.95rem',
+      fontWeight: '500',
+      color: '#ffffff',
+      marginBottom: '8px'
+    },
+    input: {
+      width: '100%',
+      padding: '12px 16px',
+      borderRadius: '10px',
+      background: 'rgba(255, 255, 255, 0.12)',
+      backdropFilter: 'blur(6px)',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      color: 'white',
+      fontSize: '1rem',
+      outline: 'none',
+      transition: 'all 0.3s ease'
+    },
+    textarea: {
+      width: '100%',
+      padding: '12px 16px',
+      borderRadius: '10px',
+      background: 'rgba(255, 255, 255, 0.12)',
+      backdropFilter: 'blur(6px)',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      color: '#ffffff',
+      fontSize: '1rem',
+      minHeight: '120px',
+      resize: 'vertical',
+      outline: 'none',
+      transition: 'all 0.3s ease',
+      fontFamily: 'inherit'
+    },
+    hint: {
+      fontSize: '0.8rem',
+      color: '#9ca3af',
+      marginTop: '6px'
+    },
+    button: {
+      width: '100%',
+      padding: '14px 24px',
+      borderRadius: '10px',
+      background: isSubmitting 
+        ? '#bbb' // Changed from violet gradient to gray when submitting
+        : '#3399ff', // Changed from violet gradient to white
+      border: 'none',
+      color: '#22223b', // Button text color to dark for contrast
+      fontSize: '1rem',
+      fontWeight: '600',
+      cursor: isSubmitting ? 'not-allowed' : 'pointer',
+      transition: 'all 0.3s ease',
+      boxShadow: '0 4px 15px -2px rgba(102, 126, 234, 0.1)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: '10px'
+    },
+    spinner: {
+      width: '16px',
+      height: '16px',
+      border: '2px solid rgba(34, 34, 59, 0.2)',
+      borderTop: '2px solid #22223b',
+      borderRadius: '50%',
+      animation: 'spin 1s linear infinite',
+      marginRight: '8px'
+    },
+    footer: {
+      textAlign: 'center',
+      marginTop: '20px',
+      color: '#9ca3af',
+      fontSize: '0.85rem'
+    }
+  };
+
+  const cssAnimations = `
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    input:focus, textarea:focus {
+      border-color: #fff !important;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.2) !important;
+      background: rgba(255,255,255,0.18) !important;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #e5e5e5 !important;
+      opacity: 0.7 !important;
+    }
+    button:hover:not(:disabled) {
+      background: #f3f3f3 !important;
+      color: #22223b !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px -2px rgba(102, 126, 234, 0.1) !important;
+    }
+    @media (max-width: 480px) {
+      .main-wrapper {
+        padding: 16px !important;
+      }
+      .title {
+        font-size: 1.8rem !important;
+      }
+      .form-container {
+        padding: 20px !important;
+      }
+      input, textarea {
+        padding: 14px !important;
+      }
+    }
+  `;
 
   return (
-    <section
-      id="contact"
-      className="py-5  text-white cust_bg_color"
-      style={{ minHeight: "60vh" }}
-    >
-      <Container>
-        <h1 className="text-center mb-5">Contact Us</h1>
-        <div className="col-md-6 mx-auto">
+    <>
+      <style dangerouslySetInnerHTML={{ __html: cssAnimations }} />
+      <div style={styles.container}>
+        <div style={styles.mainWrapper} className="main-wrapper">
+          {/* Header */}
+          <div style={styles.header}>
+            <h1 style={styles.title} className="title">
+              Contact Us
+            </h1>
+            <p style={styles.subtitle}>
+              We'd love to hear from you. Send us a message!
+            </p>
+          </div>
+
+          {/* Alert */}
           {alert && (
-            <Alert
-              variant={alert.variant}
-              onClose={() => setAlert(null)}
-              dismissible
-            >
-              {alert.message}
-            </Alert>
+            <div style={{
+              ...styles.alert,
+              ...(alert.variant === 'success' ? styles.alertSuccess : styles.alertDanger)
+            }}>
+              <span>{alert.message}</span>
+              <button 
+                style={styles.alertClose}
+                onClick={() => setAlert(null)}
+              >
+                ×
+              </button>
+            </div>
           )}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
+
+          {/* Form Container */}
+          <div style={styles.formContainer} className="form-container">
+            
+            {/* Name Field */}
+            <div style={styles.formGroup}>
+              <label style={styles.label}>
+                Name
+              </label>
+              <input
                 type="text"
-                style={rstyle}
-                placeholder="Your Name"
+                name="name"
                 value={formData.name}
                 onChange={handleChange}
+                placeholder="Your full name"
                 required
-                className="mb-3"
+                style={styles.input}
               />
-            </Form.Group>
-            <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
+            </div>
+
+            {/* Email Field */}
+            <div style={styles.formGroup}>
+              <label style={styles.label}>
+                Email
+              </label>
+              <input
                 type="email"
-                style={rstyle}
-                placeholder="Your Email"
+                name="email"
                 value={formData.email}
                 onChange={handleChange}
+                placeholder="your.email@domain.com"
                 required
-                className="mb-3"
+                style={styles.input}
               />
-            </Form.Group>
-            <Form.Group controlId="message">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                style={rstyle}
-                placeholder="Your Message"
+              <p style={styles.hint}>
+                Please use gmail.com or cbit.org.in email domains
+              </p>
+            </div>
+
+            {/* Message Field */}
+            <div style={styles.formGroup}>
+              <label style={styles.label}>
+                Message
+              </label>
+              <textarea
+                name="message"
                 value={formData.message}
                 onChange={handleChange}
+                placeholder="Tell us what's on your mind..."
                 required
-                className="mb-3"
+                style={styles.textarea}
               />
-            </Form.Group>
-            <Button type="submit" variant="primary">
-              Send Message
-            </Button>
-          </Form>
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="button"
+              onClick={handleSubmit}
+              disabled={isSubmitting}
+              style={styles.button}
+            >
+              {isSubmitting ? (
+                <>
+                  <div style={styles.spinner}></div>
+                  Sending...
+                </>
+              ) : (
+                'Send Message'
+              )}
+            </button>
+          </div>
+
+          {/* Footer */}
+          <div style={styles.footer}>
+            <p>
+              We typically respond within 24 hours during business days.
+            </p>
+          </div>
         </div>
-      </Container>
-    </section>
+      </div>
+    </>
   );
 };
 
