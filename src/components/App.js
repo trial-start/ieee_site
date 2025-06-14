@@ -21,7 +21,7 @@ import ProtectedRoute from "./ProtectedRoute";
 
 
 import BackgroundVideo from './BackgroundVideo';
-
+import ScrollToTop from "./ScrollToTop";
 
 
 const queryClient = new QueryClient({
@@ -39,7 +39,7 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} />
       <BrowserRouter>
          <BackgroundVideo />
-
+         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="computer-society" element={<ComputerSociety />} />
