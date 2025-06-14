@@ -28,6 +28,7 @@ const Events = ({ by = "" }) => {
   const [showFullDescription, setShowFullDescription] = useState(
     Array(events?.length).fill(false)
   );
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleViewMore = () => {
     if (eventsToShow === initialEventsToShow) setEventsToShow(events.length);
@@ -72,26 +73,80 @@ const Events = ({ by = "" }) => {
       <Row className="events-container">
         {events.slice(0, eventsToShow).map((event, index) => (
           <Col key={index} md={4} className="mb-4">
-            <Card className="event-card card-hover">
+            <Card
+              className={`shadow-sm border-0 h-100 card-animate card-hover ${
+                isHovered ? "visible" : ""
+              }`}
+              style={{
+                margin: "20px",
+                borderRadius: "20px",
+                overflow: "hidden",
+                backgroundColor: "#0d1117",
+                transform: isHovered ? "scale(1.05)" : "scale(1)",
+                transition: "transform 0.3s ease",
+              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(true)}
+            >
               <Card.Img
                 variant="top"
-                style={{ height: "35vh" }}
                 src={event.image.split("--")[0] || `images/${imgs[0]}`}
+                style={{
+                  width: "100%",
+                  height: "35vh",
+                }}
                 alt={`Event ${index + 1}`}
               />
-              <Card.Body>
-                <Card.Title>{event.title}</Card.Title>
-                <Card.Text onClick={() => handleToggleDescription(index)}>
+              <Card.Body
+                style={{
+                  backgroundColor: "rgba(29, 52, 229, 0.2)",
+                  color: "#ffffff",
+                  textAlign: "center",
+                }}
+              >
+                <Card.Title
+                  style={{
+                    fontWeight: "700",
+                    fontSize: "1.8rem",
+                    color: "#ffffff",
+                    marginTop: "1.1rem",
+                  }}
+                >
+                  {event.title}
+                </Card.Title>
+                <Card.Text
+                  style={{
+                    fontSize: "0.9rem",
+                    color: "white",
+                  }}
+                  onClick={() => handleToggleDescription(index)}
+                >
                   {truncateDescription(event.description, 10, index)}
                 </Card.Text>
                 <Card.Text>Date: {event.date}</Card.Text>
                 <Card.Text>Conducted By : {event.conductedBy}</Card.Text>
                 <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  style={{ display: "flex", justifyContent: "center" }}
                 >
                   <Button
                     variant="primary"
                     onClick={() => handleClick(event.id)}
+                    style={{
+                      backgroundColor: "#1e90ff", // Custom background color
+                      borderColor: "#1e90ff", // Custom border color
+                      color: "#ffffff", // Text color
+                      fontWeight: "bold", // Bold text
+                      borderRadius: "10px", // Rounded corners
+                      padding: "10px 20px", // Padding for better spacing
+                      transition: "background-color 0.3s ease", // Smooth hover effect
+                      marginTop: "20px"
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.target.style.backgroundColor = "#4682b4")
+                    } // Hover effect
+                    onMouseLeave={(e) =>
+                      (e.target.style.backgroundColor = "#1e90ff")
+                    } // Reset on hover out
                   >
                     Learn More
                   </Button>

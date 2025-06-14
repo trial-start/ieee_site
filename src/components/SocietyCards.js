@@ -50,7 +50,7 @@ const SocietyCards = () => {
         img="images/vts_soc.jpg"
         societyName="Vehicular Technology Society"
         description="Connecting the world through vehicular technology"
-        link="women-engineering-society"
+        link="vehicular-technology-society"
       />
     </Row>
   );

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "./Carousel";
 import NavBar from "./NavBar";
 import EventNotFound from "./EventNotFound";
 // import events from "../static/event_details";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 import { useEvent } from "../features/events/useEvent";
 import Spinner from "./Spinner";
@@ -18,11 +18,15 @@ const Fullpage = styled.div`
 `;
 
 const EventsPage = () => {
-  // console.log(id);
-  const { event: selectedEvent, isLoading } = useEvent();
+  const { id } = useParams();
+  const { event: selectedEvent, isLoading } = useEvent(id);
 
-  // console.log(selectedEvent.image);
-  // console.log(selectedEvent);
+  useEffect(() => {
+    const titleElement = document.getElementById("event-title");
+    if (titleElement) {
+      titleElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedEvent]);
 
   if (!isLoading && !selectedEvent) return <EventNotFound />;
 
@@ -33,12 +37,10 @@ const EventsPage = () => {
       </Fullpage>
     );
 
-  // const selectedEvent = events[id];
-
   return (
     <div className="app-container">
       <>
-        <NavBar itemName="Event" teamType="Highlights" val="x" />
+        <NavBar itemId="event-title" itemName="Event" val="x" hideCoreTeam={true} />
         <div className="section" id="home">
           {/* <ImageCarousel /> */}
           <Carousel
@@ -52,8 +54,12 @@ const EventsPage = () => {
           <Container>
             <Row>
               <Col>
-                <h1 style={{ textAlign: "center" }}>{selectedEvent.title}</h1>
-                <p style={{ fontSize: "17px" }}>{selectedEvent.description}</p>
+                <h1 id="event-title" style={{ textAlign: "center", color: "white" }}>
+                  {selectedEvent.title}
+                </h1>
+                <p style={{ fontSize: "17px", color: "white" }}>
+                  {selectedEvent.description}
+                </p>
               </Col>
             </Row>
           </Container>
@@ -63,8 +69,8 @@ const EventsPage = () => {
           <Container>
             <Row>
               <Col>
-                <h2 style={{ fontSize: "25px" }}>Date</h2>
-                <p>{selectedEvent.date}</p>
+                <h2 style={{ fontSize: "25px", color: "white" }}>Date</h2>
+                <p style={{ color: "white" }}>{selectedEvent.date}</p>
               </Col>
             </Row>
           </Container>
@@ -73,8 +79,8 @@ const EventsPage = () => {
           <Container>
             <Row>
               <Col>
-                <h2 style={{ fontSize: "25px" }}>Location</h2>
-                <p>{selectedEvent.location}</p>
+                <h2 style={{ fontSize: "25px", color: "white" }}>Location</h2>
+                <p style={{ color: "white" }}>{selectedEvent.location}</p>
               </Col>
             </Row>
           </Container>
@@ -83,8 +89,8 @@ const EventsPage = () => {
           <Container>
             <Row>
               <Col>
-                <h2 style={{ fontSize: "25px" }}>Conducted by</h2>
-                <p style={{ fontStyle: "italic", fontSize: "20px" }}>
+                <h2 style={{ fontSize: "25px", color: "white" }}>Conducted by</h2>
+                <p style={{ fontStyle: "italic", fontSize: "20px", color: "white" }}>
                   {selectedEvent.conductedBy}
                 </p>
               </Col>

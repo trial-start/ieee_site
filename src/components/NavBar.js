@@ -6,7 +6,7 @@ import { useUser } from '../features/authentication/useUser';
 import Logout from '../features/authentication/Logout';
 import './NavBar.css'; // Import the custom CSS file
 
-const NavBar = ({ itemId, itemName, val }) => {
+const NavBar = ({ itemId, itemName, val, hideCoreTeam }) => {
   const [expanded, setExpanded] = useState(false);
   const { isAuthenticated } = useUser();
 
@@ -63,9 +63,11 @@ const NavBar = ({ itemId, itemName, val }) => {
             <Nav.Link href={`#${itemId}`} onClick={closeNav} className="nav-link-custom">
               {itemName}
             </Nav.Link>
-            <Nav.Link href="#coreteam" onClick={closeNav} className="nav-link-custom">
-              Core Team
-            </Nav.Link>
+            {!hideCoreTeam && (
+              <Nav.Link href="#coreteam" onClick={closeNav} className="nav-link-custom">
+                Core Team
+              </Nav.Link>
+            )}
             {val !== 'x' && (
               <Nav.Link href="#events" onClick={closeNav} className="nav-link-custom">
                 Events

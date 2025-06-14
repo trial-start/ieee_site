@@ -9,6 +9,7 @@ import RoboticsAutomationSociety from "./RoboticsAutomationSociety";
 import WomenEngineeringSociety from "./WomenEngineeringSociety";
 import EducationSociety from "./EducationSociety";
 import PowerEnergySociety from "./PowerEnergySociety";
+import VehicularTechnologySociety from "./VehicularTechnologySociety"
 import EventsPage from "./EventsPage";
 import { Toaster } from "react-hot-toast";
 
@@ -58,6 +59,10 @@ function App() {
             path="women-engineering-society"
             element={<WomenEngineeringSociety />}
           />
+          <Route
+            path="vehicular-technology-society"
+            element={<VehicularTechnologySociety />}
+          />
           <Route path="education-society" element={<EducationSociety />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="power-energy-society" element={<PowerEnergySociety />} />
@@ -98,32 +103,3 @@ function App() {
 }
 
 export default App;
-
-// import Carousel from "./Carousel";
-// import CoreTeam from "./CoreTeam";
-// import NavBar from "./NavBar";
-// import SocietyCards from "./SocietyCards";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// function App() {
-//   return (
-//     <div className="app-container">
-//       <NavBar />
-//       <div className="section">
-//         <Carousel />
-//       </div>
-//       <div className="section" id="societies">
-//         <h2 className="section-heading">Societies</h2>
-//         <SocietyCards />
-//         <hr className="section-divider" />
-//       </div>
-//       <div className="section" id="coreteam">
-//         <h2 className="section-heading">Core Team</h2>
-//         <CoreTeam />
-//         <hr className="section-divider" />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
