@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function Cards({ img, societyName, description, link }) {
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,7 +30,7 @@ export default function Cards({ img, societyName, description, link }) {
       <NavLink to={`/${link}`} style={{ textDecoration: "none" }}>
         <Card
           ref={cardRef}
-          className={`shadow-sm border-0 h-100 card-hover card-animate ${
+          className={`shadow-sm border-0 h-100 card-animate ${
             isVisible ? "visible" : ""
           }`}
           style={{
@@ -37,7 +38,11 @@ export default function Cards({ img, societyName, description, link }) {
             borderRadius: "20px",
             overflow: "hidden",
             backgroundColor: "#0d1117",
+            transform: isHovered ? "scale(1.05)" : "scale(1)",
+            transition: "transform 0.3s ease",
           }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <Card.Img
             variant="top"

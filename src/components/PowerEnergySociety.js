@@ -2,26 +2,53 @@ import React from "react";
 import NavBar from "./NavBar";
 import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
-import Carousel from "./Carousel";
 import Events from "./Events";
 import TeamMembers from "./TeamMembers";
+import "./ComputerSociety.css";
+
+// New component for displaying individual leadership members
+const LeadershipMember = ({ name, position, imageSrc }) => (
+  <div className="leadership-member">
+    <img src={imageSrc} alt={`${name} - ${position}`} className="leadership-img" />
+    <h3 className="leadership-name">{name}</h3>
+    <p className="leadership-position">{position}</p>
+  </div>
+);
 
 const PowerEnergySociety = ({ imgs, num }) => {
   const teamMembers = [
-    { name: "Osman", position: "Documentation" },
-    { name: "Maruthi", position: "Design" },
-    { name: "Vamsi Krishna", position: "Design" },
-    { name: "Fatema", position: "Design" },
-    { name: "Bhavana", position: "SM & PR" },
-    { name: "Surya Teja", position: "SM & PR" },
+    { name: "RS VAIBHAV", position: "Design" },
+    { name: "ANNAREDDY VISHNU VARDHAN REDDY", position: "Documentation" },
+    { name: "PAVAN HANEESH MATTIGUNTA", position: "Documentation" },
+    { name: "VULLI SAI VAIBHAV", position: "Documentation" },
+    { name: "ABHINAV ADITYA KORIKANA", position: "Events & PR" },
+    { name: "RAGHAVENDRA BADRI VISHAL BANDRI", position: "Events & PR" },
+    { name: "RIYA KUMARI", position: "Events & PR" },
+    { name: "VASU BHUKYA", position: "Events & PR" },
+    { name: "TRIVARDHAN RACHAKONDA", position: "Social Media" },
+    { name: "VELIDANDI SAKETH REDDY", position: "Technical" },
   ];
+
+  // Define Chair and Vice Chair data (images can be added later)
+  const chairLeadership = [
+    {
+      name: "Fatema Sihorwala",
+      position: "Chair",
+      image: "../images/pes/img0.jpg", // Placeholder for Chair image
+    },
+    {
+      name: "Osman Pasha",
+      position: "Vice Chair",
+      image: "../images/pes/img1.jpg", // Placeholder for Vice Chair image
+    },
+  ];
+
   return (
-    <div style={{ backgroundColor: '#a4eb85', minHeight: '100vh' }}>
+    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about" style={{textAlign: "center", backgroundColor: '#a4eb85', minHeight: '100vh' }}>
+      <section className="society-section" id="about">
         <h2 className="section-heading">Power and Energy Society</h2>
-        <Carousel val="x" imgs={imgs} />
-        <p className="section-description" style={{textAlign: 'justify'}}>
+        <p className="section-description cs-description-spacing">
           The CBIT IEEE Student Chapter's Power & Energy Society (PES) branch
           ignites your passion for the world that energizes our lives. Aligned
           with the esteemed IEEE PES, we delve into the intricacies of electric
@@ -34,20 +61,30 @@ const PowerEnergySociety = ({ imgs, num }) => {
           become a part of the revolution in power and energy!
         </p>
       </section>
-      <section className="core-team-section" id="coreteam" style={{backgroundColor: '#a4eb85', minHeight: '100vh' }}>
+      <section className="core-team-section" id="coreteam">
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team 2023-2024
+          Leadership Team 2024-2025
         </h2>
-        <p className="section-description" style={{ textAlign: "center" }}>
+        <p className="section-description-text" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Power and Energy Society's Team
         </p>
-        <CoreTeam num={num} folder="pes" names={["Saiteja", "Pallavi"]} />
-        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
+        
+        <div className="leadership-grid">
+          {chairLeadership.map((member, index) => (
+            <LeadershipMember
+              key={index}
+              name={member.name}
+              position={member.position}
+              imageSrc={member.image}
+            />
+          ))}
+        </div>
+        <h4 className="junior-eb-heading">Junior Executive Board</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events" style={{ backgroundColor: '#a4eb85', minHeight: '100vh' }}>
+      <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
-        <p className="section-description">Check out our past events.</p>
+        <p className="section-description-text">Check out our past events.</p>
         <Events by="Power and Energy Society" />
       </section>
 
