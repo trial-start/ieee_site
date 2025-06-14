@@ -126,25 +126,28 @@ const TeamCarousel = ({ onSlideChange }) => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
+    const ref = carouselRef.current; 
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !startCarousel) {
           setStartCarousel(true);
         }
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 0.1 }
     );
 
-    if (carouselRef.current) {
-      observer.observe(carouselRef.current);
+    if (ref) {
+      observer.observe(ref);
     }
 
     return () => {
-      if (carouselRef.current) {
-        observer.unobserve(carouselRef.current);
+      if (ref) {
+        observer.unobserve(ref);
       }
     };
   }, [startCarousel]);
+
 
   return (
     <Container className="mt-3" ref={carouselRef}>
