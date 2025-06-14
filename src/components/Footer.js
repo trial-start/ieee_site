@@ -12,7 +12,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import { FiInfo } from "react-icons/fi";
-import "./Footer.css"; // We'll create this file for custom styles and animations
+import "./Footer.css";
 
 const Footer = () => {
   const [isContactFormVisible, setContactFormVisible] = useState(false);
@@ -24,37 +24,29 @@ const Footer = () => {
   return (
     <footer className="footer_parent" id="contact1">
       <Container>
-        <Row className="justify-content-center text-center text-md-start">
-          {/* Location and Map */}
-          <Col md={4} className="mb-4 mb-md-0 cbit_map_parent">
+        {/* Map Section */}
+        <Row className="justify-content-center text-center">
+          <Col md={8} className="mb-4">
             <h3 className="footer-heading">Visit Us</h3>
             <div className="map-container">
               <iframe
                 className="cbit_map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.914286701549!2d78.31880437430537!3d17.4116045018671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbef229b43e8d7%3A0xb304b4d6b6d6f51f!2sChaitanya%20Bharathi%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" // Replaced with a real Google Maps embed URL
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.412650300959!2d78.31686187516509!3d17.391973483495942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb94eba8ad7c87%3A0xb78f51ed556f7cc5!2sChaitanya%20Bharathi%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1749901812802!5m2!1sen!2sin"
                 width="100%"
-                height="250"
+                height="450"
+                style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Google Maps - CBIT"
               ></iframe>
             </div>
-            <a
-              href="https://www.cbit.ac.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cbit_contact footer-link mt-3 d-block"
-            >
-              <p>
-                Chaitanya Bharathi Institute Of Technology <br /> Gandipet,
-                Hyderabad
-              </p>
-            </a>
           </Col>
+        </Row>
 
-          {/* IEEE CBIT Navigation */}
-          <Col md={4} className="mb-4 mb-md-0">
+        {/* Links Section */}
+        <Row className="justify-content-center text-center">
+          <Col md={4} className="mb-4">
             <h3 className="footer-heading">IEEE CBIT</h3>
             <ul className="list-unstyled footer-links-list">
               <li>
@@ -78,15 +70,11 @@ const Footer = () => {
             </ul>
           </Col>
 
-          {/* Get In Touch */}
-          <Col md={4}>
+          <Col md={4} className="mb-4">
             <h3 className="footer-heading">Get In Touch</h3>
             <ul className="list-unstyled footer-links-list">
               <li>
-                <a
-                  href="mailto:cbit_ieee@gmail.com"
-                  className="footer-link"
-                >
+                <a href="mailto:cbit_ieee@gmail.com" className="footer-link">
                   <FaEnvelope size={22} className="me-2 footer-icon" />
                   Email
                 </a>
@@ -115,7 +103,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://linktr.ee/ieee_cbitsb?fbclid=PAZXh0bgNhZW0CMTEAAaZXoXCD077Uo20aZ1Eqw16P3p41riLOMhUsLlLFj7FpZv89GyHWKMXiLNc_aem_ZmFrZWR1bW15MTZieXRlcw"
+                  href="https://linktr.ee/ieee_cbitsb"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-link"
@@ -126,7 +114,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://x.com/IeeeCbit?t=IERGxoAIdJ2X3SxuLZngGg&s=09"
+                  href="https://x.com/IeeeCbit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-link"
@@ -157,11 +145,13 @@ const Footer = () => {
                 : "Click to fill the form"}
             </Tooltip>
 
-            {isContactFormVisible && (
-              <div className="contact-form-fade-in mt-4">
-                <ContactForm />
-              </div>
-            )}
+            <div
+              className={`contact-form-container ${
+                isContactFormVisible ? "fade-in" : "fade-out"
+              }`}
+            >
+              {isContactFormVisible && <ContactForm />}
+            </div>
           </Col>
         </Row>
 
