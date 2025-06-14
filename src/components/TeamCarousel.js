@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Carousel, Container } from "react-bootstrap";
+import "./TeamCarousel.css"; // Import the CSS file for animations
 
 const teamMembers = [
   {
@@ -155,7 +156,10 @@ const TeamCarousel = ({ onSlideChange }) => {
         controls={false}
       >
         {teamMembers.map((member, index) => (
-          <Carousel.Item key={index}>
+          <Carousel.Item
+            key={index}
+            className={`fade-in ${startCarousel ? "visible" : ""}`} // Add fade-in class
+          >
             <img
               className="team-carousel-img"
               src={`images/${member.image}`}
