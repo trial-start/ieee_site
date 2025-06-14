@@ -4,7 +4,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useUser } from "../features/authentication/useUser";
 import Logout from "../features/authentication/Logout";
-import "./NavBar.css"; // Import the custom CSS file
+import "./NavBar.css";
 
 const NavBar = ({
   hideCoreTeam,
@@ -24,7 +24,6 @@ const NavBar = ({
       const currentScrollPos = window.pageYOffset;
 
       if (navbar) {
-        // Ensure navbar exists before manipulating style
         if (prevScrollPos > currentScrollPos || currentScrollPos < 10) {
           navbar.style.transform = "translateY(0)";
           navbar.classList.remove("navbar-hidden");
@@ -43,7 +42,9 @@ const NavBar = ({
   const handleToggle = () => setExpanded(!expanded);
   const closeNav = () => setExpanded(false);
 
-  const isHomePage = location.pathname === "/"; // Check if the current page is the homepage
+  const isHomePage = location.pathname === "/";
+  const isAddEventPage = location.pathname === "/add-event";
+  const isEventsPage = location.pathname.startsWith("/events");
 
   return (
     <Navbar
@@ -53,7 +54,7 @@ const NavBar = ({
       expand="lg"
       fixed="top"
       expanded={expanded}
-      onToggle={handleToggle} // Use onToggle prop for Navbar
+      onToggle={handleToggle}
     >
       <Container fluid="xxl">
         <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">
@@ -73,13 +74,23 @@ const NavBar = ({
         <Navbar.Collapse id="navbar-collapse" className="justify-content-end">
           <Nav className="align-items-lg-center nav-links-container">
             {isHomePage && (
-              <Nav.Link href="#societies" className="nav-link-custom">
-                Societies
-              </Nav.Link>
+              <>
+                <Nav.Link href="#about" className="nav-link-custom">
+                  About
+                </Nav.Link>
+                <Nav.Link href="#societies" className="nav-link-custom">
+                  Societies
+                </Nav.Link>
+              </>
             )}
-            {!isHomePage && (
+            {!isHomePage && !isAddEventPage && (
               <Nav.Link as={NavLink} to="/" className="nav-link-custom">
                 Home
+              </Nav.Link>
+            )}
+            {!isAddEventPage && !isHomePage && !isEventsPage && (
+              <Nav.Link href="#about" className="nav-link-custom">
+                About
               </Nav.Link>
             )}
             {!hideCoreTeam && (
@@ -87,9 +98,14 @@ const NavBar = ({
                 Core Team
               </Nav.Link>
             )}
-            {!hideEvents && (
+            {!hideEvents && !isEventsPage && (
               <Nav.Link href="#events" className="nav-link-custom">
                 Events
+              </Nav.Link>
+            )}
+            {isEventsPage && (
+              <Nav.Link href="#event-details" className="nav-link-custom">
+                About Event
               </Nav.Link>
             )}
             {!hideContactUs && (
