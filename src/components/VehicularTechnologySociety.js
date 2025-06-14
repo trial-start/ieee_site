@@ -48,12 +48,12 @@ const VehicularTechnologySociety = ({ imgs, num }) => {
   ];
 
   return (
-    <div className="cs-page-container" style={{minHeight: '100vh' }}>
+    <div className="cs-page-container">
       <NavBar itemId="about" itemName="About" teamType="Team" />
       <section className="society-section" id="about">
         <h2 className="section-heading">Vehicular Technology Society</h2>
         {/* <Carousel val="x" imgs={imgs} /> */}
-        <p className="section-description" style={{textAlign: 'justify'}}>
+        <p className="section-description">
         Accelerate your journey into the future of mobility with CBIT IEEE’s Vehicular Technology Society (VTS)! Aligned with the globally recognized IEEE VTS, our chapter brings together passionate students, engineers, and innovators exploring the cutting edge of transportation technology.
 
 Dive into a world of intelligent transport systems, electric vehicles, autonomous driving, and V2X communication. Through expert-led workshops, hands-on sessions, and technical talks, VTS equips you with the skills and insights to thrive in a fast-evolving industry.
@@ -64,10 +64,10 @@ Join us in driving the future—one idea at a time.
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{ textAlign: "center" }}>
+        <h2 className="section-heading">
         Leadership Team 2024-2025
         </h2>
-        <p className="section-description-text" style={{ textAlign: "center" }}>
+        <p className="section-description-text">
           Meet the dedicated members of our Vehicular Technology Society's Team
         </p>
         

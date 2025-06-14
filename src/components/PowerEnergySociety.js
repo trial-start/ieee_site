@@ -43,7 +43,7 @@ const PowerEnergySociety = ({ imgs, num }) => {
   ];
 
   return (
-    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
+    <div className="cs-page-container">
       <NavBar itemId="about" itemName="About" teamType="Team" />
       <section className="society-section" id="about">
         <h2 className="section-heading">Power and Energy Society</h2>
@@ -61,10 +61,10 @@ const PowerEnergySociety = ({ imgs, num }) => {
         </p>
       </section>
       <section className="core-team-section" id="coreteam">
-        <h2 className="section-heading" style={{ textAlign: "center" }}>
+        <h2 className="section-heading">
           Leadership Team 2024-2025
         </h2>
-        <p className="section-description-text" style={{ textAlign: "center" }}>
+        <p className="section-description-text">
           Meet the dedicated members of our Power and Energy Society's Team
         </p>
         

@@ -48,7 +48,7 @@ const ComputerSociety = ({ imgs, num }) => {
   ];
 
   return (
-    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
+    <div className="cs-page-container">
       <NavBar itemId="about" itemName="About" teamType="Team" />
 
       {/* About Section */}
