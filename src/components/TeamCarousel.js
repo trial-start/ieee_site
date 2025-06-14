@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Carousel, Container } from "react-bootstrap";
-// import teamMembers from "./teamMembers"; // Import array of team members
+import "./TeamCarousel.css"; // Import the CSS file for animations
+
 const teamMembers = [
   {
     name: "Bob Johnson",
@@ -121,17 +122,44 @@ const teamMembers = [
 ];
 
 const TeamCarousel = ({ onSlideChange }) => {
+  const [startCarousel, setStartCarousel] = useState(false);
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !startCarousel) {
+          setStartCarousel(true);
+        }
+      },
+      { threshold: 0.1 } // Adjust threshold as needed
+    );
+
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+
+    return () => {
+      if (carouselRef.current) {
+        observer.unobserve(carouselRef.current);
+      }
+    };
+  }, [startCarousel]);
+
   return (
-    <Container className="mt-3">
+    <Container className="mt-3" ref={carouselRef}>
       <Carousel
-        interval={3000}
+        interval={startCarousel ? 3000 : null} // Start interval only when visible
         pause={true}
         className="custom-carousel"
         onSlide={onSlideChange}
         controls={false}
       >
         {teamMembers.map((member, index) => (
-          <Carousel.Item key={index}>
+          <Carousel.Item
+            key={index}
+            className={`fade-in ${startCarousel ? "visible" : ""}`} // Add fade-in class
+          >
             <img
               className="team-carousel-img"
               src={`images/${member.image}`}

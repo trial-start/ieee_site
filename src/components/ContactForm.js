@@ -40,7 +40,7 @@ const ContactForm = () => {
 
     // Simulate email sending
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       showAlert("success", "Email sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -53,153 +53,152 @@ const ContactForm = () => {
 
   const styles = {
     container: {
-      backgroundSize: '200% 200%',
-      animation: 'gradientShift 15s ease infinite',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '24px',
+      backgroundSize: "200% 200%",
+      animation: "gradientShift 15s ease infinite",
+      display: "flex",
+      justifyContent: "center", // Center horizontally
+      padding: "24px",
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-      minHeight: '100vh'
+      minHeight: "100vh", // Keep full height for background effect
     },
     mainWrapper: {
-      width: '100%',
-      maxWidth: '500px'
+      width: "100%",
+      maxWidth: "500px",
     },
     header: {
-      textAlign: 'center',
-      marginBottom: '28px'
+      textAlign: "center",
+      marginBottom: "28px",
     },
     title: {
-      fontSize: '2rem',
-      fontWeight: '700',
-      color: '#fff', // Changed from transparent/violet to white
-      background: 'none', // Remove gradient
-      backgroundClip: 'unset',
-      WebkitBackgroundClip: 'unset',
-      marginBottom: '8px',
-      textShadow: '0 0 10px rgba(102, 126, 234, 0.2)'
+      fontSize: "2rem",
+      fontWeight: "700",
+      color: "#fff",
+      background: "none",
+      backgroundClip: "unset",
+      WebkitBackgroundClip: "unset",
+      marginBottom: "8px",
+      textShadow: "0 0 10px rgba(102, 126, 234, 0.2)",
     },
     subtitle: {
-      color: 'white',
-      fontSize: '1rem',
-      fontWeight: '300'
+      color: "white",
+      fontSize: "1rem",
+      fontWeight: "300",
     },
     alert: {
-      marginBottom: '20px',
-      padding: '12px 16px',
-      borderRadius: '10px',
-      border: '1px solid',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      animation: 'slideIn 0.3s ease-out',
-      backdropFilter: 'blur(6px)',
-      fontSize: '0.95rem'
+      marginBottom: "20px",
+      padding: "12px 16px",
+      borderRadius: "10px",
+      border: "1px solid",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      animation: "slideIn 0.3s ease-out",
+      backdropFilter: "blur(6px)",
+      fontSize: "0.95rem",
     },
     alertSuccess: {
-      backgroundColor: 'rgba(34, 197, 94, 0.15)',
-      borderColor: '#22c55e',
-      color: '#4ade80'
+      backgroundColor: "rgba(34, 197, 94, 0.15)",
+      borderColor: "#22c55e",
+      color: "#4ade80",
     },
     alertDanger: {
-      backgroundColor: 'rgba(239, 68, 68, 0.15)',
-      borderColor: '#ef4444',
-      color: '#f87171'
+      backgroundColor: "rgba(239, 68, 68, 0.15)",
+      borderColor: "#ef4444",
+      color: "#f87171",
     },
     alertClose: {
-      background: 'none',
-      border: 'none',
-      color: 'inherit',
-      fontSize: '1.2rem',
-      cursor: 'pointer',
-      padding: '0',
-      marginLeft: '10px'
+      background: "none",
+      border: "none",
+      color: "inherit",
+      fontSize: "1.2rem",
+      cursor: "pointer",
+      padding: "0",
+      marginLeft: "10px",
     },
     formContainer: {
-      background: '#22223b', // Changed from violet gradient to dark for contrast with white
-      backdropFilter: 'blur(10px)',
-      borderRadius: '16px',
-      padding: '24px',
-      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)',
-      border: '1px solid rgba(255, 255, 255, 0.15)'
+      background: "#22223b", // Changed from violet gradient to dark for contrast with white
+      backdropFilter: "blur(10px)",
+      borderRadius: "16px",
+      padding: "24px",
+      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)",
+      border: "1px solid rgba(255, 255, 255, 0.15)",
     },
     formGroup: {
-      marginBottom: '20px'
+      marginBottom: "20px",
     },
     label: {
-      display: 'block',
-      fontSize: '0.95rem',
-      fontWeight: '500',
-      color: '#ffffff',
-      marginBottom: '8px'
+      display: "block",
+      fontSize: "0.95rem",
+      fontWeight: "500",
+      color: "#ffffff",
+      marginBottom: "8px",
     },
     input: {
-      width: '100%',
-      padding: '12px 16px',
-      borderRadius: '10px',
-      background: 'rgba(255, 255, 255, 0.12)',
-      backdropFilter: 'blur(6px)',
-      border: '1px solid rgba(255, 255, 255, 0.2)',
-      color: 'white',
-      fontSize: '1rem',
-      outline: 'none',
-      transition: 'all 0.3s ease'
+      width: "100%",
+      padding: "12px 16px",
+      borderRadius: "10px",
+      background: "rgba(255, 255, 255, 0.12)",
+      backdropFilter: "blur(6px)",
+      border: "1px solid rgba(255, 255, 255, 0.2)",
+      color: "white",
+      fontSize: "1rem",
+      outline: "none",
+      transition: "all 0.3s ease",
     },
     textarea: {
-      width: '100%',
-      padding: '12px 16px',
-      borderRadius: '10px',
-      background: 'rgba(255, 255, 255, 0.12)',
-      backdropFilter: 'blur(6px)',
-      border: '1px solid rgba(255, 255, 255, 0.2)',
-      color: '#ffffff',
-      fontSize: '1rem',
-      minHeight: '120px',
-      resize: 'vertical',
-      outline: 'none',
-      transition: 'all 0.3s ease',
-      fontFamily: 'inherit'
+      width: "100%",
+      padding: "12px 16px",
+      borderRadius: "10px",
+      background: "rgba(255, 255, 255, 0.12)",
+      backdropFilter: "blur(6px)",
+      border: "1px solid rgba(255, 255, 255, 0.2)",
+      color: "#ffffff",
+      fontSize: "1rem",
+      minHeight: "120px",
+      resize: "vertical",
+      outline: "none",
+      transition: "all 0.3s ease",
+      fontFamily: "inherit",
     },
     hint: {
-      fontSize: '0.8rem',
-      color: '#9ca3af',
-      marginTop: '6px'
+      fontSize: "0.8rem",
+      color: "#9ca3af",
+      marginTop: "6px",
     },
     button: {
-      width: '100%',
-      padding: '14px 24px',
-      borderRadius: '10px',
-      background: isSubmitting 
-        ? '#bbb' // Changed from violet gradient to gray when submitting
-        : '#3399ff', // Changed from violet gradient to white
-      border: 'none',
-      color: '#22223b', // Button text color to dark for contrast
-      fontSize: '1rem',
-      fontWeight: '600',
-      cursor: isSubmitting ? 'not-allowed' : 'pointer',
-      transition: 'all 0.3s ease',
-      boxShadow: '0 4px 15px -2px rgba(102, 126, 234, 0.1)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: '10px'
+      width: "100%",
+      padding: "14px 24px",
+      borderRadius: "10px",
+      background: isSubmitting
+        ? "#bbb" // Changed from violet gradient to gray when submitting
+        : "#3399ff", // Changed from violet gradient to white
+      border: "none",
+      color: "#22223b", // Button text color to dark for contrast
+      fontSize: "1rem",
+      fontWeight: "600",
+      cursor: isSubmitting ? "not-allowed" : "pointer",
+      transition: "all 0.3s ease",
+      boxShadow: "0 4px 15px -2px rgba(102, 126, 234, 0.1)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: "10px",
     },
     spinner: {
-      width: '16px',
-      height: '16px',
-      border: '2px solid rgba(34, 34, 59, 0.2)',
-      borderTop: '2px solid #22223b',
-      borderRadius: '50%',
-      animation: 'spin 1s linear infinite',
-      marginRight: '8px'
+      width: "16px",
+      height: "16px",
+      border: "2px solid rgba(34, 34, 59, 0.2)",
+      borderTop: "2px solid #22223b",
+      borderRadius: "50%",
+      animation: "spin 1s linear infinite",
+      marginRight: "8px",
     },
     footer: {
-      textAlign: 'center',
-      marginTop: '20px',
-      color: '#9ca3af',
-      fontSize: '0.85rem'
-    }
+      textAlign: "center",
+      marginTop: "20px",
+      color: "#9ca3af",
+      fontSize: "0.85rem",
+    },
   };
 
   const cssAnimations = `
@@ -270,12 +269,16 @@ const ContactForm = () => {
 
           {/* Alert */}
           {alert && (
-            <div style={{
-              ...styles.alert,
-              ...(alert.variant === 'success' ? styles.alertSuccess : styles.alertDanger)
-            }}>
+            <div
+              style={{
+                ...styles.alert,
+                ...(alert.variant === "success"
+                  ? styles.alertSuccess
+                  : styles.alertDanger),
+              }}
+            >
               <span>{alert.message}</span>
-              <button 
+              <button
                 style={styles.alertClose}
                 onClick={() => setAlert(null)}
               >
@@ -286,12 +289,9 @@ const ContactForm = () => {
 
           {/* Form Container */}
           <div style={styles.formContainer} className="form-container">
-            
             {/* Name Field */}
             <div style={styles.formGroup}>
-              <label style={styles.label}>
-                Name
-              </label>
+              <label style={styles.label}>Name</label>
               <input
                 type="text"
                 name="name"
@@ -305,9 +305,7 @@ const ContactForm = () => {
 
             {/* Email Field */}
             <div style={styles.formGroup}>
-              <label style={styles.label}>
-                Email
-              </label>
+              <label style={styles.label}>Email</label>
               <input
                 type="email"
                 name="email"
@@ -324,9 +322,7 @@ const ContactForm = () => {
 
             {/* Message Field */}
             <div style={styles.formGroup}>
-              <label style={styles.label}>
-                Message
-              </label>
+              <label style={styles.label}>Message</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -350,13 +346,12 @@ const ContactForm = () => {
                   Sending...
                 </>
               ) : (
-                'Send Message'
+                "Send Message"
               )}
             </button>
           </div>
 
           {/* Footer */}
-         
         </div>
       </div>
     </>
