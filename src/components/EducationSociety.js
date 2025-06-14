@@ -71,7 +71,7 @@ const EducationSociety = ({ imgs, num }) => {
         <h2 className="section-heading" style={{ textAlign: "center" }}>
           Team 2024-2025
         </h2>
-        <p className="section-description" style={{ textAlign: "center" }}>
+        <p className="section-description-text" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Education Society's Team
         </p>
         
