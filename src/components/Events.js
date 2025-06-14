@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { HiTrash } from "react-icons/hi2";
@@ -16,19 +16,45 @@ const Events = ({ by = "" }) => {
   const { isAuthenticated } = useUser();
   const { isDeleting, deleteEvent } = useDeleteEvent();
 
-  const events =
-    by === ""
+  const events = useMemo(() => {
+    return by === ""
       ? allEvents || [] // Ensure events is an array even if allEvents is undefined
       : (allEvents || []).filter((event) => {
           return event.conductedBy.includes(by);
         });
+  }, [allEvents, by]);
 
   const initialEventsToShow = 3;
   const [eventsToShow, setEventsToShow] = useState(initialEventsToShow);
   const [showFullDescription, setShowFullDescription] = useState(
     Array(events?.length).fill(false)
   );
-  const [isHovered, setIsHovered] = useState(false);
+  const [visibleCards, setVisibleCards] = useState([]);
+  const eventsRef = useRef(null);
+
+  useEffect(() => {
+    const currentRef = eventsRef.current; // Copy the ref value to a variable
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Mark all cards as visible when the section is in the viewport
+          setVisibleCards(events.map((_, index) => index));
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use the copied variable here
+      }
+    };
+  }, [events]);
 
   const handleViewMore = () => {
     if (eventsToShow === initialEventsToShow) setEventsToShow(events.length);
@@ -69,24 +95,20 @@ const Events = ({ by = "" }) => {
     return <EventNotFound check={false} />;
 
   return (
-    <>
+    <div ref={eventsRef}>
       <Row className="events-container">
         {events.slice(0, eventsToShow).map((event, index) => (
           <Col key={index} md={4} className="mb-4">
             <Card
               className={`shadow-sm border-0 h-100 card-animate card-hover ${
-                isHovered ? "visible" : ""
+                visibleCards.includes(index) ? "visible" : ""
               }`}
               style={{
                 margin: "20px",
                 borderRadius: "20px",
                 overflow: "hidden",
                 backgroundColor: "#0d1117",
-                transform: isHovered ? "scale(1.05)" : "scale(1)",
-                transition: "transform 0.3s ease",
               }}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(true)}
             >
               <Card.Img
                 variant="top"
@@ -139,7 +161,7 @@ const Events = ({ by = "" }) => {
                       borderRadius: "10px", // Rounded corners
                       padding: "10px 20px", // Padding for better spacing
                       transition: "background-color 0.3s ease", // Smooth hover effect
-                      marginTop: "20px"
+                      marginTop: "20px",
                     }}
                     onMouseEnter={(e) =>
                       (e.target.style.backgroundColor = "#4682b4")
@@ -170,7 +192,7 @@ const Events = ({ by = "" }) => {
           </Button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
