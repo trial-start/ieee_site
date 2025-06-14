@@ -1,29 +1,59 @@
 import React from "react";
 import NavBar from "./NavBar";
-import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
-import Carousel from "./Carousel";
 import Events from "./Events";
 import TeamMembers from "./TeamMembers";
+import "./ComputerSociety.css"; 
+
+const LeadershipMember = ({ name, position, imageSrc }) => (
+  <div className="leadership-member">
+    <img src={imageSrc} alt={`${name} - ${position}`} className="leadership-img" />
+    <h3 className="leadership-name">{name}</h3>
+    <p className="leadership-position">{position}</p>
+  </div>
+);
 
 const SignalProcessingSociety = ({ imgs, num }) => {
   const teamMembers = [
-    { name: "Mythri", position: "Documentation" },
-    { name: "Sruthi", position: "Documentation" },
-    { name: "Shankar Narayana", position: "Tech" },
-    { name: "Samhitha", position: "Tech" },
-    { name: "Chaitanyya", position: "Tech" },
-    { name: "Manikanta", position: "Design" },
-    { name: "Srilekha", position: "Design" },
-    { name: "Yashasvi", position: "SM & PR" },
+    { name: "LINGAM SAI TEJA", position: "Design" },
+    { name: "PALAPARTHI VAIDEHI", position: "Design" },
+    { name: "PAINENI JAHNAVI", position: "Design" },
+    { name: "AKASH SUDHIR", position: "Documentation" },
+    { name: "SRI SATHVIK VARMA SARIPELLA", position: "Documentation" },
+    { name: "MEGHA ANNAVARAPU", position: "Events & PR" },
+    { name: "SHEROJI RAHUL", position: "Events & PR" },
+    { name: "SOUMYA VEMURI", position: "Events & PR" },
+    { name: "YEKULA MAHIDHAR KUMAR REDDY", position: "Events & PR" },
+    { name: "A RAJESHWARI", position: "Social Media" },
+    { name: "RUKMINI LANKA", position: "Social Media" },
+    { name: "KURA SAMIKSHA REDDY", position: "Tech" },
+    { name: "MADHURI", position: "Tech" },
+    { name: "VANGALA BHAVYA SRI", position: "Tech" },
+    { name: "K SAI SUSHANTH REDDY", position: "Design" },
+   
+
   ];
+
+  const chairLeadership = [
+    {
+      name: "Sruthi Madhavan",
+      position: "Chair",
+      image: "../images/sps/img-1 2025.png", // <--- IMPORTANT: Update with actual filename
+    },
+    {
+      name: "Surya Teja",
+      position: "Vice Chair",
+      image: "../images/sps/img-2 2025.png", // <--- IMPORTANT: Update with actual filename
+    },
+  ];
+
   return (
-    <div style={{ backgroundColor: '#9ccae9', minHeight: '100vh' }}>
+    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about" style={{ textAlign: 'center',backgroundColor: '#9ccae9', minHeight: '100vh' }}>
+      <section className="society-section" id="about" style={{ textAlign: 'center', minHeight: '100vh' }}>
         <h2 className="section-heading">Signal Processing Society</h2>
-        <Carousel val="x" imgs={imgs} />
-        <p className="section-description" style={{textAlign: 'justify'}}>
+        {/* <Carousel val="x" imgs={imgs} /> */}
+        <p className="section-description cs-description-spacing" style={{textAlign: 'justify'}}>
           The CBIT IEEE Student Chapter's Signal Processing Society (SPS) branch
           fuels your passion for analyzing, interpreting, and manipulating
           signals - the building blocks of audio, speech, images, and more.
@@ -37,18 +67,30 @@ const SignalProcessingSociety = ({ imgs, num }) => {
           embark on a rewarding journey into the world of signals!
         </p>
       </section>
-      <section className="core-team-section" id="coreteam" style={{ backgroundColor: '#9ccae9', minHeight: '100vh' }}>
+      <section className="core-team-section" id="coreteam" style={{minHeight: '100vh' }}>
         <h2 className="section-heading" style={{ textAlign: "center" }}>
-          Team 2023-2024
+          Leadership Team 2024-2025
         </h2>
-        <p className="section-description" style={{ textAlign: "center" }}>
+        <p className="section-description-text" style={{ textAlign: "center" }}>
           Meet the dedicated members of our Signal Processing Society's Team
         </p>
-        <CoreTeam num={num} folder="sps" names={["Bhagath", "P.Ajay reddy"]} />
-        <h4 style={{ textAlign: "center" }}>Junior EB</h4>
+        <div className="leadership-grid">
+          {chairLeadership.map((member, index) => (
+            <LeadershipMember
+              key={index}
+              name={member.name}
+              position={member.position}
+              imageSrc={member.image}
+            />
+          ))}
+        </div>
+        
+
+        <h4 className="junior-eb-heading">Junior Executive Board</h4>
         <TeamMembers members={teamMembers} />
+
       </section>
-      <section className="core-team-section" id="events" style={{ backgroundColor: '#9ccae9', minHeight: '100vh' }}>
+      <section className="core-team-section" id="events" style={{ minHeight: '100vh' }}>
         <h2 className="section-heading">Events</h2>
         <p className="section-description">Check out our past events.</p>
         <Events by="Signal Processing Society" />
