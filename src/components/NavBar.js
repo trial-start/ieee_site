@@ -1,40 +1,49 @@
 // NavBar.js
-import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
-import { useUser } from '../features/authentication/useUser';
-import Logout from '../features/authentication/Logout';
-import './NavBar.css'; // Import the custom CSS file
+import React, { useState, useEffect } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { useUser } from "../features/authentication/useUser";
+import Logout from "../features/authentication/Logout";
+import "./NavBar.css"; // Import the custom CSS file
 
-const NavBar = ({ hideCoreTeam, hideEvents, hideContactUs, additionalLinks = [] }) => {
+const NavBar = ({
+  hideCoreTeam,
+  hideEvents,
+  hideContactUs,
+  additionalLinks = [],
+}) => {
   const [expanded, setExpanded] = useState(false);
   const { isAuthenticated } = useUser();
+  const location = useLocation(); // Get the current route
 
   useEffect(() => {
     let prevScrollPos = window.pageYOffset;
-    const navbar = document.querySelector('.custom-navbar');
+    const navbar = document.querySelector(".custom-navbar");
 
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
-      if (navbar) { // Ensure navbar exists before manipulating style
+      if (navbar) {
+        // Ensure navbar exists before manipulating style
         if (prevScrollPos > currentScrollPos || currentScrollPos < 10) {
-          navbar.style.transform = 'translateY(0)';
-          navbar.classList.remove('navbar-hidden');
+          navbar.style.transform = "translateY(0)";
+          navbar.classList.remove("navbar-hidden");
         } else {
-          navbar.style.transform = 'translateY(-100%)';
-          navbar.classList.add('navbar-hidden');
+          navbar.style.transform = "translateY(-100%)";
+          navbar.classList.add("navbar-hidden");
         }
       }
       prevScrollPos = currentScrollPos;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleToggle = () => setExpanded(!expanded);
   const closeNav = () => setExpanded(false);
+
+  const isHomePage = location.pathname === "/"; // Check if the current page is the homepage
 
   return (
     <Navbar
@@ -53,13 +62,26 @@ const NavBar = ({ hideCoreTeam, hideEvents, hideContactUs, additionalLinks = [] 
             alt="IEEE Logo"
             className="navbar-logo"
           />
-          <span className="navbar-title">IEEE CBIT</span> {/* Changed to IEEE CBIT for clarity */}
+          <span className="navbar-title">IEEE CBIT</span>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="navbar-collapse" className="navbar-toggler-custom" />
+        <Navbar.Toggle
+          aria-controls="navbar-collapse"
+          className="navbar-toggler-custom"
+        />
 
         <Navbar.Collapse id="navbar-collapse" className="justify-content-end">
           <Nav className="align-items-lg-center nav-links-container">
+            {isHomePage && (
+              <Nav.Link href="#societies" className="nav-link-custom">
+                Societies
+              </Nav.Link>
+            )}
+            {!isHomePage && (
+              <Nav.Link as={NavLink} to="/" className="nav-link-custom">
+                Home
+              </Nav.Link>
+            )}
             {!hideCoreTeam && (
               <Nav.Link href="#coreteam" className="nav-link-custom">
                 Core Team
@@ -81,7 +103,12 @@ const NavBar = ({ hideCoreTeam, hideEvents, hideContactUs, additionalLinks = [] 
               </Nav.Link>
             ))}
             {isAuthenticated && (
-              <Nav.Link as={NavLink} to="/add-event" onClick={closeNav} className="nav-link-custom">
+              <Nav.Link
+                as={NavLink}
+                to="/add-event"
+                onClick={closeNav}
+                className="nav-link-custom"
+              >
                 Add Event
               </Nav.Link>
             )}
