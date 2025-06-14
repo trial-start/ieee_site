@@ -63,12 +63,27 @@ const CreateEventForm = () => {
       }}
     >
       <Container className="mt-4">
-        <NavBar />
+        <NavBar
+          hideCoreTeam={true} // Hides "Core Team"
+          hideEvents={true} // Hides "Events"
+          hideContactUs={true} // Hides "Contact Us"
+          additionalLinks={[
+            { name: "Home", href: "/" }, // Adds "Home" link
+          ]}
+        />
         <Row className="justify-content-md-center">
           <Col xs={12} md={8}>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="title">
-                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                <Form.Label
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.2rem",
+                    marginBottom: "10px",
+                    color: "#ffffff", // Updated font color to white
+                  }}
+                  className="mt-2"
+                >
                   Title
                 </Form.Label>
                 <Form.Control
@@ -77,12 +92,22 @@ const CreateEventForm = () => {
                   value={title}
                   disabled={isLoading}
                   onChange={(e) => setTitle(e.target.value)}
+                  style={{
+                    borderRadius: "10px",
+                    padding: "10px",
+                    fontSize: "1rem",
+                  }}
                 />
               </Form.Group>
 
               <Form.Group controlId="description">
                 <Form.Label
-                  style={{ fontWeight: "bold", textAlign: "justify" }}
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.2rem",
+                    marginBottom: "10px",
+                    color: "#ffffff", // Updated font color to white
+                  }}
                   className="mt-2"
                 >
                   Description
@@ -94,26 +119,52 @@ const CreateEventForm = () => {
                   value={description}
                   disabled={isLoading}
                   onChange={(e) => setDescription(e.target.value)}
+                  style={{
+                    borderRadius: "10px",
+                    padding: "10px",
+                    fontSize: "1rem",
+                  }}
                 />
               </Form.Group>
 
               <Form.Group controlId="image">
-                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                <Form.Label
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.2rem",
+                    marginBottom: "10px",
+                    color: "#ffffff", // Updated font color to white
+                  }}
+                  className="mt-2"
+                >
                   Event Image
                 </Form.Label>
                 <Form.Control
                   type="file"
-                  placeholder="Enter image url"
+                  placeholder="Upload event images"
                   disabled={isLoading}
                   accept="image/*"
                   onChange={handleFileUpload}
                   multiple
                   name="images[]"
+                  style={{
+                    borderRadius: "10px",
+                    padding: "10px",
+                    fontSize: "1rem",
+                  }}
                 />
               </Form.Group>
 
               <Form.Group controlId="date">
-                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                <Form.Label
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.2rem",
+                    marginBottom: "10px",
+                    color: "#ffffff", // Updated font color to white
+                  }}
+                  className="mt-2"
+                >
                   Date
                 </Form.Label>
                 <Form.Control
@@ -122,11 +173,24 @@ const CreateEventForm = () => {
                   value={date}
                   disabled={isLoading}
                   onChange={(e) => setDate(e.target.value)}
+                  style={{
+                    borderRadius: "10px",
+                    padding: "10px",
+                    fontSize: "1rem",
+                  }}
                 />
               </Form.Group>
 
               <Form.Group controlId="location">
-                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                <Form.Label
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.2rem",
+                    marginBottom: "10px",
+                    color: "#ffffff", // Updated font color to white
+                  }}
+                  className="mt-2"
+                >
                   Location
                 </Form.Label>
                 <Form.Control
@@ -135,11 +199,24 @@ const CreateEventForm = () => {
                   value={location}
                   disabled={isLoading}
                   onChange={(e) => setLocation(e.target.value)}
+                  style={{
+                    borderRadius: "10px",
+                    padding: "10px",
+                    fontSize: "1rem",
+                  }}
                 />
               </Form.Group>
 
               <Form.Group controlId="conductedBy">
-                <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                <Form.Label
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.2rem",
+                    marginBottom: "10px",
+                    color: "#ffffff", // Updated font color to white
+                  }}
+                  className="mt-2"
+                >
                   Conducted By
                 </Form.Label>
                 <Form.Control
@@ -147,6 +224,11 @@ const CreateEventForm = () => {
                   value={conductedBy}
                   disabled={isLoading}
                   onChange={(e) => setConductedBy(e.target.value)}
+                  style={{
+                    borderRadius: "10px",
+                    padding: "10px",
+                    fontSize: "1rem",
+                  }}
                 >
                   <option value="">Select conducted by</option>
                   <option value="Robotics and Automation Society">
@@ -165,6 +247,9 @@ const CreateEventForm = () => {
                   <option value="Circuits and Systems Society">
                     Circuits and Systems Society
                   </option>
+                  <option value="Vehicular Technology Society">
+                    Vehicular Technology Society
+                  </option>
                   <option value="Education Society">Education Society</option>
                   <option value="Other">Other</option>
                 </Form.Control>
@@ -172,7 +257,15 @@ const CreateEventForm = () => {
 
               {conductedBy === "Other" && (
                 <Form.Group controlId="customConductedBy">
-                  <Form.Label style={{ fontWeight: "bold" }} className="mt-2">
+                  <Form.Label
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "1.2rem",
+                      marginBottom: "10px",
+                      color: "#ffffff", // Updated font color to white
+                    }}
+                    className="mt-2"
+                  >
                     Please specify
                   </Form.Label>
                   <Form.Control
@@ -181,6 +274,11 @@ const CreateEventForm = () => {
                     value={customConductedBy}
                     disabled={isLoading}
                     onChange={(e) => setCustomConductedBy(e.target.value)}
+                    style={{
+                      borderRadius: "10px",
+                      padding: "10px",
+                      fontSize: "1rem",
+                    }}
                   />
                 </Form.Group>
               )}
@@ -190,6 +288,17 @@ const CreateEventForm = () => {
                 variant="primary"
                 disabled={isLoading}
                 type="submit"
+                style={{
+                  backgroundColor: "#1e90ff",
+                  borderColor: "#1e90ff",
+                  fontWeight: "bold",
+                  borderRadius: "10px",
+                  padding: "10px 20px",
+                  fontSize: "1.2rem",
+                  transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.target.style.backgroundColor = "#4682b4")}
+                onMouseLeave={(e) => (e.target.style.backgroundColor = "#1e90ff")}
               >
                 Create Event
               </Button>

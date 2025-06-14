@@ -6,7 +6,7 @@ import { useUser } from '../features/authentication/useUser';
 import Logout from '../features/authentication/Logout';
 import './NavBar.css'; // Import the custom CSS file
 
-const NavBar = ({ itemId, itemName, val, hideCoreTeam }) => {
+const NavBar = ({ hideCoreTeam, hideEvents, hideContactUs, additionalLinks = [] }) => {
   const [expanded, setExpanded] = useState(false);
   const { isAuthenticated } = useUser();
 
@@ -60,22 +60,26 @@ const NavBar = ({ itemId, itemName, val, hideCoreTeam }) => {
 
         <Navbar.Collapse id="navbar-collapse" className="justify-content-end">
           <Nav className="align-items-lg-center nav-links-container">
-            <Nav.Link href={`#${itemId}`} onClick={closeNav} className="nav-link-custom">
-              {itemName}
-            </Nav.Link>
             {!hideCoreTeam && (
-              <Nav.Link href="#coreteam" onClick={closeNav} className="nav-link-custom">
+              <Nav.Link href="#coreteam" className="nav-link-custom">
                 Core Team
               </Nav.Link>
             )}
-            {val !== 'x' && (
-              <Nav.Link href="#events" onClick={closeNav} className="nav-link-custom">
+            {!hideEvents && (
+              <Nav.Link href="#events" className="nav-link-custom">
                 Events
               </Nav.Link>
             )}
-            <Nav.Link href="#contact1" onClick={closeNav} className="nav-link-custom">
-              Contact Us
-            </Nav.Link>
+            {!hideContactUs && (
+              <Nav.Link href="#contact1" className="nav-link-custom">
+                Contact Us
+              </Nav.Link>
+            )}
+            {additionalLinks.map((link, index) => (
+              <Nav.Link key={index} href={link.href} className="nav-link-custom">
+                {link.name}
+              </Nav.Link>
+            ))}
             {isAuthenticated && (
               <Nav.Link as={NavLink} to="/add-event" onClick={closeNav} className="nav-link-custom">
                 Add Event
