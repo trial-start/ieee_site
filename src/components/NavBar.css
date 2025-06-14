@@ -147,8 +147,8 @@
   .logout-button {
     margin-left: 0;
     margin-top: 1.2rem; /* Slightly more space */
-    width: 90%; /* A bit less than 100% for inner padding */
-    max-width: 250px; /* Max width for mobile button */
+    width: 100%; /* Make the button take full width */
+    max-width: none; /* Remove max-width to allow full width */
     text-align: center;
   }
 }
