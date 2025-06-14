@@ -50,7 +50,7 @@ const CircuitsAndSystems = ({ imgs, num }) => {
   ];
 
   return (
-    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
+    <div className="cs-page-container">
       <NavBar itemId="about" itemName="About" teamType="Team" />
       <section className="society-section" id="about">
         <h2 className="section-heading">Circuits and Systems Society</h2>

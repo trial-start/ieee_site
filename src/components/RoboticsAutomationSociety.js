@@ -44,20 +44,20 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
   ];
 
   return (
-    <div  className="cs-page-container" style={{ minHeight: '100vh' }}>
+    <div  className="cs-page-container">
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about" style={{ textAlign: 'center',minHeight: '100vh' }}>
+      <section className="society-section" id="about">
         <h2 className="section-heading">Robotics and Automation Society</h2>
         {/* <Carousel val="x" imgs={imgs} /> */}
-        <p className="section-description cs-description-spacing" style={{textAlign: 'justify'}}>
+        <p className="section-description cs-description-spacing">
         The IEEE Robotics and Automation Society (IEEE RAS) is a global community dedicated to advancing innovation, education, and fundamental research in robotics and automation. IEEE RAS fosters the development and dissemination of scientific knowledge in these fields, supporting the professional growth of its members and promoting the impact of robotics and automation on society. Through conferences, publications, and technical activities, IEEE RAS connects professionals, researchers, and students, enabling collaboration and the exchange of ideas to drive technological advancements and address real-world challenges in robotics and automation. The society also provides resources for career development, including networking opportunities, technical workshops, and continuing education programs. IEEE RAS plays a pivotal role in shaping the future of robotics and automation, influencing industry standards and fostering the next generation of innovators and leaders in the field.
         </p>
       </section>
-      <section className="core-team-section" id="coreteam" style={{minHeight: '100vh' }}>
-        <h2 className="section-heading" style={{ textAlign: "center" }}>
+      <section className="core-team-section" id="coreteam">
+        <h2 className="section-heading">
         Leadership Team 2024-2025
         </h2>
-        <p className="section-description-text" style={{ textAlign: "center" }}>
+        <p className="section-description-text">
           Meet the dedicated members of our Robotics and Automation Society's
           Team
         </p>
@@ -78,9 +78,9 @@ const RoboticsAutomationSociety = ({ imgs, num }) => {
         <h4 className="junior-eb-heading">Junior Executive Board</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events" style={{minHeight: '100vh' }}>
+      <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
-        <p className="section-description">Check out our past events.</p>
+        <p className="section-description-text">Check out our past events.</p>
         <Events by="Robotics and Automation Society" />
       </section>
       <Footer />

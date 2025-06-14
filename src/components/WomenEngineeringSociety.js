@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Events from "./Events";
 import TeamMembers from "./TeamMembers";
+import "./ComputerSociety.css";
 
 const LeadershipMember = ({ name, position, imageSrc }) => (
   <div className="leadership-member">
@@ -38,12 +39,12 @@ const WomenEngineering = ({ imgs, num }) => {
   ];
 
   return (
-    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
+    <div className="cs-page-container">
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about" style={{ textAlign: 'center', minHeight: '100vh' }}>
+      <section className="society-section" id="about">
         <h2 className="section-heading">Women in Engineering Society</h2>
         {/* <Carousel val="x" imgs={imgs} /> */}
-        <p className="section-description cs-description-spacing" style={{textAlign: 'justify'}}>
+        <p className="section-description cs-description-spacing">
           The CBIT IEEE Women in Engineering (WIE) branch, a vibrant extension
           of the global IEEE WIE initiative, empowers you to excel in
           engineering and technology. Here, you'll find a network of supportive
@@ -59,11 +60,11 @@ const WomenEngineering = ({ imgs, num }) => {
           part of something bigger.
         </p>
       </section>
-      <section className="core-team-section" id="coreteam" style={{minHeight: '100vh' }}>
-        <h2 className="section-heading" style={{ textAlign: "center" }}>
+      <section className="core-team-section" id="coreteam">
+        <h2 className="section-heading">
         Leadership Team 2024-2025
         </h2>
-        <p className="section-description-text" style={{ textAlign: "center" }}>
+        <p className="section-description-text">
           Meet the dedicated members of our Women in Engineering Society's Team
         </p>
         <div className="leadership-grid">
@@ -81,9 +82,9 @@ const WomenEngineering = ({ imgs, num }) => {
         <h4 className="junior-eb-heading">Junior Executive Board</h4>
         <TeamMembers members={teamMembers} />
       </section>
-      <section className="core-team-section" id="events" style={{minHeight: '100vh' }}>
+      <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
-        <p className="section-description">Check out our past events.</p>
+        <p className="section-description-text">Check out our past events.</p>
         <Events by="Women in Engineering Society" />
       </section>
       <Footer />

@@ -30,8 +30,6 @@ const SignalProcessingSociety = ({ imgs, num }) => {
     { name: "MADHURI", position: "Tech" },
     { name: "VANGALA BHAVYA SRI", position: "Tech" },
     { name: "K SAI SUSHANTH REDDY", position: "Design" },
-   
-
   ];
 
   const chairLeadership = [
@@ -48,12 +46,12 @@ const SignalProcessingSociety = ({ imgs, num }) => {
   ];
 
   return (
-    <div className="cs-page-container" style={{ minHeight: '100vh' }}>
+    <div className="cs-page-container">
       <NavBar itemId="about" itemName="About" teamType="Team" />
-      <section className="society-section" id="about" style={{ textAlign: 'center', minHeight: '100vh' }}>
+      <section className="society-section" id="about">
         <h2 className="section-heading">Signal Processing Society</h2>
         {/* <Carousel val="x" imgs={imgs} /> */}
-        <p className="section-description cs-description-spacing" style={{textAlign: 'justify'}}>
+        <p className="section-description cs-description-spacing">
           The CBIT IEEE Student Chapter's Signal Processing Society (SPS) branch
           fuels your passion for analyzing, interpreting, and manipulating
           signals - the building blocks of audio, speech, images, and more.
@@ -67,11 +65,11 @@ const SignalProcessingSociety = ({ imgs, num }) => {
           embark on a rewarding journey into the world of signals!
         </p>
       </section>
-      <section className="core-team-section" id="coreteam" style={{minHeight: '100vh' }}>
-        <h2 className="section-heading" style={{ textAlign: "center" }}>
+      <section className="core-team-section" id="coreteam">
+        <h2 className="section-heading">
           Leadership Team 2024-2025
         </h2>
-        <p className="section-description-text" style={{ textAlign: "center" }}>
+        <p className="section-description-text">
           Meet the dedicated members of our Signal Processing Society's Team
         </p>
         <div className="leadership-grid">
@@ -90,9 +88,9 @@ const SignalProcessingSociety = ({ imgs, num }) => {
         <TeamMembers members={teamMembers} />
 
       </section>
-      <section className="core-team-section" id="events" style={{ minHeight: '100vh' }}>
+      <section className="core-team-section" id="events">
         <h2 className="section-heading">Events</h2>
-        <p className="section-description">Check out our past events.</p>
+        <p className="section-description-text">Check out our past events.</p>
         <Events by="Signal Processing Society" />
       </section>
       <Footer />
