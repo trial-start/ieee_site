@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "./NavBar";
-import CoreTeam from "./CoreTeam";
 import Footer from "./Footer";
 import Events from "./Events";
 import TeamMembers from "./TeamMembers";
