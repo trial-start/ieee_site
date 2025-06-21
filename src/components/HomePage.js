@@ -46,12 +46,14 @@ export default function HomePage() {
           }}
           id="about"
         >
-          <h1 style={{ textAlign: "center", color: '#0118ab' }}>IEEE CBIT</h1>
-          The IEEE CBIT Student Chapter at Chaitanya Bharathi Institute of Technology is a pioneering club and student branch affiliated with IEEE. It provides a platform for students to engage with technology, conducts events, seminars, and webinars, and network with professionals. The club hosts events like Robovanza, Masterclasses, Membership Drives and many more every year. Being part of this club allows students to stay updated on the latest developments in the technical and research fields. Led by a passionate student team and supported by faculty advisors, we offer a stimulating environment to explore interests, hone skills, and prepare for a successful tech career.<br/> 
+          <h1 style={{ textAlign: "center", color: 'white' }}>IEEE CBIT</h1>
+          <p style={{color:'white' }}>
+            The IEEE CBIT Student Chapter at Chaitanya Bharathi Institute of Technology is a pioneering club and student branch affiliated with IEEE. It provides a platform for students to engage with technology, conducts events, seminars, and webinars, and network with professionals. The club hosts events like Robovanza, Masterclasses, Membership Drives and many more every year. Being part of this club allows students to stay updated on the latest developments in the technical and research fields. Led by a passionate student team and supported by faculty advisors, we offer a stimulating environment to explore interests, hone skills, and prepare for a successful tech career.<br/> 
           IEEE CBIT comprises seven specialized societies, each focused on specific areas of engineering and technology, including the Circuits and Systems Society, Computer Society, Education Society, Power and Energy Society, Robotics and Automation Society, Signal Processing Society, and Women in Engineering Society.
-        </p>
+       
+          </p> </p>
         <div className="section" id="societies">
-          <h2 className="section-heading">Societies</h2>
+          <h2 style={{color:'white' }} className="section-heading">Societies</h2>
           <SocietyCards />
           <hr className="section-divider" />
         </div>
@@ -61,15 +63,15 @@ export default function HomePage() {
           <hr className="section-divider" />
         </div> */}
         <div className="section" id="coreteam">
-          <h2 className="section-heading">
-            {"IEEE Senior Executive Board 2023-2024"}
+          <h2 style={{color:'white',fontSize: '52px' }} className="section-heading">
+            {"IEEE Senior Executive Board 2024-2025"}
           </h2>
           <TeamCarousel onSlideChange={setSlideIndex} />
           <hr className="section-divider" />
         </div>
 
         <div className="section" id="events">
-          <h2 className="section-heading">Events</h2>
+          <h2 style={{color:'white' }} className="section-heading">Events</h2>
           <Events />
           <hr className="section-divider" />
         </div>

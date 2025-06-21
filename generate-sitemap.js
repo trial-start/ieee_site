@@ -14,6 +14,7 @@ const routes = [
   { url: "/education-society", changefreq: "monthly", priority: 0.8 },
   { url: "/login", changefreq: "monthly", priority: 0.8 },
   { url: "/power-energy-society", changefreq: "monthly", priority: 0.8 },
+  { url: "/vehicular-technology-society", changefreq: "monthly", priority: 0.8 },
   { url: "/events/:id", changefreq: "monthly", priority: 0.8 },
   { url: "/add-event", changefreq: "monthly", priority: 0.8 },
   { url: "*", changefreq: "monthly", priority: 0.8 },

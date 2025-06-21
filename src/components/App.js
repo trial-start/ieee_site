@@ -9,6 +9,7 @@ import RoboticsAutomationSociety from "./RoboticsAutomationSociety";
 import WomenEngineeringSociety from "./WomenEngineeringSociety";
 import EducationSociety from "./EducationSociety";
 import PowerEnergySociety from "./PowerEnergySociety";
+import VehicularTechnologySociety from "./VehicularTechnologySociety"
 import EventsPage from "./EventsPage";
 import { Toaster } from "react-hot-toast";
 
@@ -17,6 +18,11 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import CreateEventForm from "../features/events/CreateEventForm";
 import LoginForm from "../features/authentication/loginForm";
 import ProtectedRoute from "./ProtectedRoute";
+
+
+import BackgroundVideo from './BackgroundVideo';
+import ScrollToTop from "./ScrollToTop";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,9 +34,12 @@ const queryClient = new QueryClient({
 });
 function App() {
   return (
+    
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <BrowserRouter>
+         <BackgroundVideo />
+         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="computer-society" element={<ComputerSociety />} />
@@ -49,6 +58,10 @@ function App() {
           <Route
             path="women-engineering-society"
             element={<WomenEngineeringSociety />}
+          />
+          <Route
+            path="vehicular-technology-society"
+            element={<VehicularTechnologySociety />}
           />
           <Route path="education-society" element={<EducationSociety />} />
           <Route path="login" element={<LoginForm />} />
@@ -90,32 +103,3 @@ function App() {
 }
 
 export default App;
-
-// import Carousel from "./Carousel";
-// import CoreTeam from "./CoreTeam";
-// import NavBar from "./NavBar";
-// import SocietyCards from "./SocietyCards";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// function App() {
-//   return (
-//     <div className="app-container">
-//       <NavBar />
-//       <div className="section">
-//         <Carousel />
-//       </div>
-//       <div className="section" id="societies">
-//         <h2 className="section-heading">Societies</h2>
-//         <SocietyCards />
-//         <hr className="section-divider" />
-//       </div>
-//       <div className="section" id="coreteam">
-//         <h2 className="section-heading">Core Team</h2>
-//         <CoreTeam />
-//         <hr className="section-divider" />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
